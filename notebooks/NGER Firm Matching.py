@@ -1,13 +1,33 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Oct 14 18:18:41 2022
 
-@author: Connor
-"""
 import pandas as pd
 import os
 import requests
 import io
+
+#%%
+working_directory = 'C:/PythonWD' #set location using back slashes
+
+os.chdir(working_directory)
+
+print("Current working directory: {0}".format(os.getcwd()))
+
+
+def createFolder(directory):
+    try:
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+            output_path = os.makedirs(directory)
+            print(output_path)
+    except OSError:
+        print ('Error: Creating directory. ' +  directory)
+        
+
+# Folder where outputs will be saved (by default a folder within the working directory) 
+createFolder('./output/') 
+output_path = 'C:/PythonWD/output/'
+
+print('Set WD: Done')
+#%%
 
 "Import Files"
 #NGER Greenhouse Gas and Energy Information by Corporation
@@ -56,6 +76,7 @@ nger_2019 = nger_2019.drop(nger_2019.columns[[1,5]],axis=1)
 nger_2020 = nger_2020.drop(nger_2020.columns[[1,5]],axis=1)
 nger_2021 = nger_2021.drop(nger_2021.columns[[1,5]],axis=1)
 
+
 "Standarize Headings"
 
 nger_list = [nger_2009,nger_2010,nger_2011,nger_2012,nger_2013,nger_2014,nger_2015,nger_2016,nger_2017,nger_2018,nger_2019,nger_2020,nger_2021]
@@ -102,12 +123,55 @@ for i in nger_list:
 
 "Combined Datasets"
 nger_data = pd.DataFrame(columns=['year', 'corporation', 'scope1', 'scope2', 'energy_consumption','total_emissions'])
-nger_data_list = [nger_2009,nger_2010,nger_2011,nger_2012,nger_2013,nger_2014,nger_2015,nger_2016,nger_2017,nger_2018,nger_2019,nger_2020,nger_2021]
-nger_data = pd.concat(nger_data_list)
-nger_data = nger_data.dropna(how='all',subset=['firm_name', 'scope1', 'scope2', 'energy_consumption', 'total_emissions'])
+nger_list = [nger_2009,nger_2010,nger_2011,nger_2012,nger_2013,nger_2014,nger_2015,nger_2016,nger_2017,nger_2018,nger_2019,nger_2020,nger_2021]
+nger_data = pd.concat(nger_list)
+print(list(nger_data))
 
-print('Number of Observations:')
-print (len(nger_data))
 
-#with pd.option_context('display.max_rows', None, 'display.max_columns', None):
-   # display(nger_data)
+
+"Clean up nger_data"
+
+#remove comma's from emissions values 
+nger_data['scope1'] = nger_data['scope1'].replace(",", "", regex=True)
+nger_data['scope2'] = nger_data['scope2'].replace(",", "", regex=True)
+nger_data['total_emissions'] = nger_data['total_emissions'].replace(",", "", regex=True)
+nger_data['energy_consumption'] = nger_data['energy_consumption'].replace(",", "", regex=True)
+
+#remove spaces's from emissions values 
+nger_data['scope1'] = nger_data['scope1'].replace(" ", "", regex=True)
+nger_data['scope2'] = nger_data['scope2'].replace(" ", "", regex=True)
+nger_data['total_emissions'] = nger_data['total_emissions'].replace(" ", "", regex=True)
+nger_data['energy_consumption'] = nger_data['energy_consumption'].replace(" ", "", regex=True)
+
+#remove alphanumeric charaters from emissions values
+nger_data['scope1'] = nger_data['scope1'].str.replace('[a-z]', '', regex=True, flags=re.IGNORECASE)
+nger_data['scope2'] = nger_data['scope2'].str.replace('[a-z]', '',regex=True, flags=re.IGNORECASE)
+nger_data['total_emissions'] = nger_data['total_emissions'].str.replace('[a-z]', '',regex=True, flags=re.IGNORECASE)
+nger_data['energy_consumption'] = nger_data['energy_consumption'].str.replace('[a-z]', '',regex=True, flags=re.IGNORECASE)
+
+#replace blanks with nan
+nger_data = nger_data.replace(r'^\s*$', np.nan, regex=True)
+
+#drop rows with missing scope1 & 2 data
+nger_data = nger_data.dropna(axis=0, how= 'all', subset=['scope1', 'scope2'])
+
+#convert emissions values to float
+nger_data['scope1'] = nger_data['scope1'].astype(float)
+nger_data['scope2'] = nger_data['scope2'].astype(float)
+nger_data['total_emissions'] = nger_data['total_emissions'].astype(float)
+nger_data['energy_consumption'] = nger_data['energy_consumption'].astype(float)
+
+#convert year column to date time format
+#nger_data['year'] =  pd.to_datetime(nger_data['year'], format='%Y').dt.to_period("Y")
+nger_data['year'] = nger_data['year'].astype(str)
+
+
+
+
+"Save to csv file"
+output_filename = 'nger_data.csv'
+outputname = output_path + output_filename
+nger_data.to_csv(outputname, mode='w')
+print ('Exported: '+outputname)
+
+print('Collate & Format Raw Data: NGER Data: Done')
