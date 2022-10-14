@@ -6,7 +6,7 @@ Notebooks
 Raw Data
 Output Data
 
-View Notebooks in Browser
+View Notebooks in Browser:
 https://nbviewer.org/github/connorpn/cnolan-thesis/tree/main/notebooks/
 
 Download Notebooks Only (download and open with juypter etc):
