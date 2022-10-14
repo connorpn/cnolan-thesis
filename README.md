@@ -6,11 +6,11 @@ Notebooks
 Raw Data
 Output Data
 
-View Notebooks in Browser:
+View Notebooks in Browser:<br>
 https://nbviewer.org/github/connorpn/cnolan-thesis/tree/main/notebooks/
 
-Download Notebooks Only (download and open with juypter etc):
+Download Notebooks Only (download and open with juypter etc):<br>
 https://downgit.github.io/#/home?url=https://github.com/connorpn/cnolan-thesis/tree/main/notebooks
 
-Run Notebooks (runs in browser using mybinder):
+Run Notebooks (runs in browser using mybinder):<br>
 https://hub.gke2.mybinder.org/user/connorpn-cnolan-thesis-p155h4cn/lab/tree/notebooks
