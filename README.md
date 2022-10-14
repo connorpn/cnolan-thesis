@@ -1,10 +1,10 @@
 # cnolan-thesis
 **Repository for C.Nolan Honours Thesis**
 
-**Contains:**
-Notebooks
-Raw Data
-Output Data
+**Contains:**<br>
+Notebooks<br>
+Raw Data<br>
+Output Data<br>
 
 View Notebooks in Browser:<br>
 https://nbviewer.org/github/connorpn/cnolan-thesis/tree/main/notebooks/
