@@ -1,7 +1,7 @@
 # cnolan-thesis
-Repository for C.Nolan Honours Thesis
+**Repository for C.Nolan Honours Thesis**
 
-Contains:
+**Contains:**
 Notebooks
 Raw Data
 Output Data
