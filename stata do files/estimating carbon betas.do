@@ -1,6 +1,6 @@
 clear
 
-import delimited "https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/output/carbon_beta_log_scope1.csv"
+import delimited "https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/output/carbon_beta_log_scope1_vars.csv"
 
 ssc install winsor
 
@@ -24,4 +24,4 @@ ssc install asreg
 bys ticker_encode: asreg winsor_ret winsor_mktrf winsor_smb winsor_hml winsor_wml winsor_pmc
 
 
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\output\stata_estimating_carbon_beta.csv", replace
+export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\output\carbon_beta_log_scope1.csv", replace
