@@ -16,7 +16,7 @@ ssc install winsor
 winsor bm, gen(winsor_bm) p(0.025)
 winsor roe, gen(winsor_roe) p(0.025)
 winsor leverage, gen(winsor_leverage) p(0.025)
-winsor investa, gen(winsor_investa) p(0.02)
+winsor investa, gen(winsor_investa) p(0.025)
 winsor salesgr, gen(winsor_salesgr) p(0.005)
 winsor epsgr, gen(winsor_epsgr) p(0.005)
 
