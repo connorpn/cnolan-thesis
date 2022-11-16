@@ -31,59 +31,59 @@ destring log_scope2, replace force
 eststo clear
 
 eststo: reghdfe ret log_scope1 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-predict coeff_log_scope1_yes, xb
+predict coeff_log_scope1_y, xb
 sort date
-by date: egen _b_log_scope1 = mean(coeff_log_scope1_yes)
+by date: egen _b_log_scope1_y = mean(coeff_log_scope1_y)
 estadd local year_month_fe "yes" , replace
 estadd local industry_fe "yes" , replace
 
 eststo: reghdfe ret log_scope2 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-predict coeff_log_scope2_yes, xb
+predict coeff_log_scope2_y, xb
 sort date
-by date: egen _b_log_scope2 = mean(coeff_log_scope2_yes)
+by date: egen _b_log_scope2_y = mean(coeff_log_scope2_y)
 estadd local year_month_fe "yes" , replace
 estadd local industry_fe "yes" , replace
 
 eststo: reghdfe ret log_total_emissions logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-predict coeff_log_total_emissions_yes, xb
+predict coeff_log_total_emissions_y, xb
 sort date
-by date: egen _b_log_total_emissions = mean(coeff_log_total_emissions_yes)
+by date: egen _b_log_total_emissions_y = mean(coeff_log_total_emissions_y)
 estadd local year_month_fe "yes" , replace
 estadd local industry_fe "yes" , replace
 
 eststo: reghdfe ret log_energy_consumption logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-predict coeff_log_energy_consumption_yes, xb
+predict coeff_log_energy_y, xb
 sort date
-by date: egen _b_log_energy_consumption = mean(coeff_log_energy_consumption_yes)
+by date: egen _b_log_energy_y = mean(coeff_log_energy_y)
 estadd local year_month_fe "yes" , replace
 estadd local industry_fe "yes" , replace
 
 
 eststo: reghdfe ret log_scope1 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-predict coeff_log_scope1_no, xb
+predict coeff_log_scope1_n, xb
 sort date
-by date: egen _b_log_scope1 = mean(coeff_log_scope1_no)
+by date: egen _b_log_scope1_n = mean(coeff_log_scope1_n)
 estadd local year_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
 eststo: reghdfe ret log_scope2 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-predict coeff_log_scope2_no, xb
+predict coeff_log_scope2_n, xb
 sort date
-by date: egen _b_log_scope2 = mean(coeff_log_scope2_no)
+by date: egen _b_log_scope2_n = mean(coeff_log_scope2_n)
 estadd local year_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
 eststo: reghdfe ret log_total_emissions logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-predict coeff_log_total_emissions_no, xb
+predict coeff_log_total_emissions_n, xb
 sort date
-by date: egen _b_log_total_emissions = mean(coeff_log_total_emissions_no)
+by date: egen _b_log_total_emissions_n = mean(coeff_log_total_emissions_n)
 estadd local year_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
 eststo: reghdfe ret log_energy_consumption logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-predict coeff_log_energy_consumption_no, xb
+predict coeff_log_energy_n, xb
 sort date
-by date: egen _b_log_energy_consumption = mean(coeff_log_energy_consumption_no)
+by date: egen _b_log_energy_n = mean(coeff_log_energy_n)
 estadd local year_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
@@ -95,59 +95,59 @@ esttab using "regression output - carbon emissions and stock returns (log emissi
 eststo clear
 
 eststo: reghdfe ret change_scope1 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-predict coeff_change_scope1_yes, xb
+predict coeff_change_scope1_y, xb
 sort date
-by date: egen _b_change_scope1 = mean(coeff_change_scope1_yes)
+by date: egen _b_change_scope1_y = mean(coeff_change_scope1_y)
 estadd local year_month_fe "yes" , replace
 estadd local industry_fe "yes" , replace
 
 eststo: reghdfe ret change_scope2 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-predict coeff_change_scope2_yes, xb
+predict coeff_change_scope2_y, xb
 sort date
-by date: egen _b_change_scope2 = mean(coeff_change_scope2_yes)
+by date: egen _b_change_scope2_y = mean(coeff_change_scope2_y)
 estadd local year_month_fe "yes" , replace
 estadd local industry_fe "yes" , replace
 
 eststo: reghdfe ret change_total_emissions logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-predict coeff_change_total_emissions_yes, xb
+predict coeff_change_total_emissions_y, xb
 sort date
-by date: egen _b_change_total_emissions = mean(coeff_change_total_emissions_yes)
+by date: egen _b_change_total_emissions_y = mean(coeff_change_total_emissions_y)
 estadd local year_month_fe "yes" , replace
 estadd local industry_fe "yes" , replace
 
 eststo: reghdfe ret change_energy_consumption logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-predict coeff_change_energy_consumption_yes, xb
+predict coeff_change_energy_y, xb
 sort date
-by date: egen _b_change_energy_consumption = mean(coeff_change_energy_consumption_yes)
+by date: egen _b_change_energy_y = mean(coeff_change_energy_y)
 estadd local year_month_fe "yes" , replace
 estadd local industry_fe "yes" , replace
 
 
 eststo: reghdfe ret change_scope1 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-predict coeff_change_scope1_no, xb
+predict coeff_change_scope1_n, xb
 sort date
-by date: egen _b_change_scope1 = mean(coeff_change_scope1_no)
+by date: egen _b_change_scope1_n = mean(coeff_change_scope1_n)
 estadd local year_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
 eststo: reghdfe ret change_scope2 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-predict coeff_change_scope2_no, xb
+predict coeff_change_scope2_n, xb
 sort date
-by date: egen _b_change_scope2 = mean(coeff_change_scope2_no)
+by date: egen _b_change_scope2_n = mean(coeff_change_scope2_n)
 estadd local year_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
 eststo: reghdfe ret change_total_emissions logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-predict coeff_change_total_emissions_no, xb
+predict coeff_change_total_emissions_n, xb
 sort date
-by date: egen _b_change_total_emissions = mean(coeff_change_total_emissions_no)
+by date: egen _b_change_total_emissions_n = mean(coeff_change_total_emissions_n)
 estadd local year_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
 eststo: reghdfe ret change_energy_consumption logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-predict coeff_change_energy_consumption_no, xb
+predict coeff_change_energy_n, xb
 sort date
-by date: egen _b_change_energy_consumption = mean(coeff_change_energy_consumption_no)
+by date: egen _b_change_energy_n = mean(coeff_change_energy_n)
 estadd local year_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
@@ -159,59 +159,59 @@ esttab using "regression output - carbon emissions and stock returns (change emi
 eststo clear
 
 eststo: reghdfe ret scope1_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-predict coeff_scope1_int_yes, xb
+predict coeff_scope1_int_y, xb
 sort date
-by date: egen _b_scope1_int = mean(coeff_scope1_int_yes)
+by date: egen _b_scope1_int_y = mean(coeff_scope1_int_y)
 estadd local year_month_fe "yes" , replace
 estadd local industry_fe "yes" , replace
 
 eststo: reghdfe ret scope2_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-predict coeff_scope2_int_yes, xb
+predict coeff_scope2_int_y, xb
 sort date
-by date: egen _b_scope2_int = mean(coeff_scope2_int_yes)
+by date: egen _b_scope2_int_y = mean(coeff_scope2_int_y)
 estadd local year_month_fe "yes" , replace
 estadd local industry_fe "yes" , replace
 
 eststo: reghdfe ret total_emissions_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-predict coeff_total_emissions_int_yes, xb
+predict coeff_total_emissions_int_y, xb
 sort date
-by date: egen _b_total_emissions_int = mean(coeff_total_emissions_int_yes)
+by date: egen _b_total_emissions_int_y = mean(coeff_total_emissions_int_y)
 estadd local year_month_fe "yes" , replace
 estadd local industry_fe "yes" , replace
 
 eststo: reghdfe ret energy_consumption_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-predict coeff_energy_consumption_int_yes, xb
+predict coeff_energy_consumption_int_y, xb
 sort date
-by date: egen _b_energy_consumption_int = mean(coeff_energy_consumption_int_yes)
+by date: egen _b_energy_consumption_int_y = mean(coeff_energy_consumption_int_y)
 estadd local year_month_fe "yes" , replace
 estadd local industry_fe "yes" , replace
 
 
 eststo: reghdfe ret scope1_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-predict coeff_scope1_int_no, xb
+predict coeff_scope1_int_n, xb
 sort date
-by date: egen _b_scope1_int = mean(coeff_scope1_int_no)
+by date: egen _b_scope1_int_n = mean(coeff_scope1_int_n)
 estadd local year_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
 eststo: reghdfe ret scope2_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-predict coeff_scope2_int_no, xb
+predict coeff_scope2_int_n, xb
 sort date
-by date: egen _b_scope2_int = mean(coeff_scope2_int_no)
+by date: egen _b_scope2_int_n = mean(coeff_scope2_int_n)
 estadd local year_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
 eststo: reghdfe ret total_emissions_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-predict coeff_total_emissions_int_no, xb
+predict coeff_total_emissions_int_n, xb
 sort date
-by date: egen _b_total_emissions_int = mean(coeff_total_emissions_int_no)
+by date: egen _b_total_emissions_int_n = mean(coeff_total_emissions_int_n)
 estadd local year_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
 eststo: reghdfe ret energy_consumption_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-predict coeff_energy_consumption_int_no, xb
+predict coeff_energy_consumption_int_n, xb
 sort date
-by date: egen _b_energy_consumption_int = mean(coeff_energy_consumption_int_no)
+by date: egen _b_energy_consumption_int_n = mean(coeff_energy_consumption_int_n)
 estadd local year_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
@@ -221,7 +221,10 @@ esttab using "regression output - carbon emissions and stock returns (int emissi
 
 eststo clear
 
+cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\output"
+
+export delimited using "csr_carbon_premium.csv", replace
+
 cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\stata do files"
 
 save "regression - carbon emissions and stock returns.do", replace
-
