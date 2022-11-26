@@ -1,56 +1,56 @@
 \begin{table}[htbp]\centering
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 \caption{Carbon Beta and Firm Characteristics: log\_energy\_consumption emissions}
-\begin{tabular}{l*{1}{c}}
+\begin{tabular}{l*{4}{c}}
 \hline\hline
-                    &\multicolumn{1}{c}{(1)}\\
-                    &\multicolumn{1}{c}{carbon\_beta}\\
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+                    &\multicolumn{1}{c}{carbon\_beta}&\multicolumn{1}{c}{carbon\_beta}&\multicolumn{1}{c}{carbon\_beta}&\multicolumn{1}{c}{carbon\_beta}\\
 \hline
-logsize             &       0.160         \\
-                    &     (0.280)         \\
+logsize             &      -0.279         &      -0.140         &       0.168         &       0.160         \\
+                    &     (0.266)         &     (0.236)         &     (0.287)         &     (0.280)         \\
 [1em]
-bm                  &      -0.353         \\
-                    &     (0.327)         \\
+bm                  &      -0.112         &     -0.0925         &      -0.350         &      -0.353         \\
+                    &     (0.290)         &     (0.281)         &     (0.323)         &     (0.327)         \\
 [1em]
-leverage            &      -0.196         \\
-                    &     (1.043)         \\
+leverage            &      -0.503         &       0.413         &      -0.112         &      -0.196         \\
+                    &     (1.661)         &     (1.688)         &     (1.093)         &     (1.043)         \\
 [1em]
-mom                 &      -2.060         \\
-                    &     (1.768)         \\
+mom                 &       2.761         &       3.057         &      -2.003         &      -2.060         \\
+                    &     (2.705)         &     (2.558)         &     (1.803)         &     (1.768)         \\
 [1em]
-investa             &       4.301         \\
-                    &     (2.921)         \\
+investa             &       5.579         &       4.451         &       4.129         &       4.301         \\
+                    &     (5.585)         &     (5.129)         &     (2.898)         &     (2.921)         \\
 [1em]
-roe                 &      0.0109         \\
-                    &    (0.0247)         \\
+roe                 &      0.0193         &      0.0188         &     0.00985         &      0.0109         \\
+                    &    (0.0290)         &    (0.0279)         &    (0.0254)         &    (0.0247)         \\
 [1em]
-logppe              &       0.347         \\
-                    &     (0.214)         \\
+logppe              &       0.686\sym{***}&       0.331\sym{*}  &       0.291         &       0.347         \\
+                    &     (0.205)         &     (0.181)         &     (0.237)         &     (0.214)         \\
 [1em]
-beta                &       0.183         \\
-                    &     (0.159)         \\
+beta                &       0.545\sym{**} &       0.575\sym{**} &       0.173         &       0.183         \\
+                    &     (0.214)         &     (0.222)         &     (0.154)         &     (0.159)         \\
 [1em]
-volat               &     -0.0279         \\
-                    &     (0.193)         \\
+volat               &       0.350         &       0.296         &     -0.0348         &     -0.0279         \\
+                    &     (0.335)         &     (0.311)         &     (0.186)         &     (0.193)         \\
 [1em]
-salesgr             &      -0.140         \\
-                    &    (0.0990)         \\
+salesgr             &      -0.142         &      -0.127         &      -0.130         &      -0.140         \\
+                    &     (0.108)         &     (0.108)         &    (0.0990)         &    (0.0990)         \\
 [1em]
-epsgr               &     0.00170         \\
-                    &   (0.00243)         \\
+epsgr               &     0.00260         &     0.00237         &     0.00166         &     0.00170         \\
+                    &   (0.00299)         &   (0.00281)         &   (0.00237)         &   (0.00243)         \\
 [1em]
-log\_energy\_consumption&     -0.0785         \\
-                    &     (0.240)         \\
+log\_energy\_consumption&                     &       0.296\sym{***}&                     &     -0.0785         \\
+                    &                     &     (0.108)         &                     &     (0.240)         \\
 [1em]
-Constant            &      -9.176\sym{***}\\
-                    &     (2.959)         \\
+Constant            &      -8.495\sym{*}  &      -8.851\sym{*}  &      -9.368\sym{***}&      -9.176\sym{***}\\
+                    &     (4.713)         &     (4.559)         &     (3.066)         &     (2.959)         \\
 \hline
-Year/Month FE       &         yes         \\
-Industry FE         &         yes         \\
-Observations        &        3224         \\
-R2-Adj              &       0.428         \\
+Year/Month FE       &         yes         &         yes         &         yes         &         yes         \\
+Industry FE         &          no         &          no         &         yes         &         yes         \\
+Observations        &        3224         &        3224         &        3224         &        3224         \\
+R2-Adj              &      0.0406         &      0.0536         &       0.428         &       0.428         \\
 \hline\hline
-\multicolumn{2}{l}{\footnotesize Standard errors in parentheses}\\
-\multicolumn{2}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\multicolumn{5}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
 \end{tabular}
 \end{table}
