@@ -1,0 +1,56 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Carbon Beta and Firm Characteristics: change\_scope1 emissions}
+\begin{tabular}{l*{4}{c}}
+\hline\hline
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+                    &\multicolumn{1}{c}{carbon\_beta}&\multicolumn{1}{c}{carbon\_beta}&\multicolumn{1}{c}{carbon\_beta}&\multicolumn{1}{c}{carbon\_beta}\\
+\hline
+logsize             &      -0.645\sym{***}&      -0.645\sym{***}&     -0.0548         &     -0.0549         \\
+                    &     (0.175)         &     (0.175)         &     (0.385)         &     (0.385)         \\
+[1em]
+bm                  &      -0.322         &      -0.324         &      -0.152         &      -0.152         \\
+                    &     (0.421)         &     (0.421)         &     (0.380)         &     (0.379)         \\
+[1em]
+leverage            &      -3.048\sym{**} &      -3.043\sym{**} &      -0.976         &      -0.976         \\
+                    &     (1.354)         &     (1.354)         &     (1.358)         &     (1.356)         \\
+[1em]
+mom                 &      -1.103         &      -1.143         &      -3.916         &      -3.921         \\
+                    &     (3.484)         &     (3.475)         &     (3.303)         &     (3.276)         \\
+[1em]
+investa             &     -0.0435         &     -0.0543         &       1.232         &       1.233         \\
+                    &     (2.748)         &     (2.752)         &     (2.468)         &     (2.467)         \\
+[1em]
+roe                 &      0.0702\sym{***}&      0.0703\sym{***}&      0.0651\sym{**} &      0.0651\sym{**} \\
+                    &    (0.0227)         &    (0.0228)         &    (0.0323)         &    (0.0322)         \\
+[1em]
+logppe              &       0.408\sym{**} &       0.405\sym{**} &      -0.397         &      -0.397         \\
+                    &     (0.162)         &     (0.165)         &     (0.474)         &     (0.475)         \\
+[1em]
+beta                &     -0.0156         &     -0.0103         &      -0.461\sym{*}  &      -0.460\sym{*}  \\
+                    &     (0.242)         &     (0.243)         &     (0.272)         &     (0.271)         \\
+[1em]
+volat               &       0.132         &       0.130         &      -0.145         &      -0.145         \\
+                    &     (0.184)         &     (0.183)         &     (0.182)         &     (0.183)         \\
+[1em]
+salesgr             &      -0.193\sym{*}  &      -0.192\sym{*}  &     -0.0978         &     -0.0976         \\
+                    &     (0.102)         &     (0.102)         &     (0.165)         &     (0.166)         \\
+[1em]
+epsgr               &     0.00378\sym{*}  &     0.00377\sym{*}  &     0.00290         &     0.00290         \\
+                    &   (0.00216)         &   (0.00216)         &   (0.00204)         &   (0.00205)         \\
+[1em]
+change\_scope1       &                     &    1.78e-08         &                     &    1.26e-09         \\
+                    &                     &  (2.31e-08)         &                     &  (2.11e-08)         \\
+[1em]
+Constant            &       7.461         &       7.510         &       11.49\sym{**} &       11.49\sym{**} \\
+                    &     (4.487)         &     (4.519)         &     (5.648)         &     (5.722)         \\
+\hline
+Year/Month FE       &         yes         &         yes         &         yes         &         yes         \\
+Industry FE         &          no         &          no         &         yes         &         yes         \\
+Observations        &        2879         &        2879         &        2879         &        2879         \\
+R2-Adj              &       0.119         &       0.119         &       0.378         &       0.377         \\
+\hline\hline
+\multicolumn{5}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}
