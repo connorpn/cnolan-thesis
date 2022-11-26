@@ -1,4 +1,14 @@
 clear
+save "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\notebooks and stata do files\8.1 Carbon Beta and Firm Characteristics (Regression).do", replace
+
+ssc install numdate
+ssc install winsor
+ssc install ftools
+ssc install reghdfe
+ssc install estout
+
+
+clear
 
 ssc install numdate
 ssc install winsor
