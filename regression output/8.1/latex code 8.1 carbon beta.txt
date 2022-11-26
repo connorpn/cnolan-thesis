@@ -1,0 +1,20 @@
+\documentclass[12pt, letterpaper]{article}
+\title{Carbon Beta and Firm Characteristics}
+\author{Connor Nolan\thanks{UQ Business School}}
+\date{November 2022}
+\begin{document}
+\maketitle
+We have now added a title, author and date to our first \LaTeX{} document!
+\input{log_scope1.tex}
+\input{log_scope2.tex}
+\input{log_total_emissions.tex}
+\input{log_energy_consumption.tex}
+\input{change_scope1.tex}
+\input{change_scope2.tex}
+\input{change_total_emissions.tex}
+\input{change_energy_consumption.tex}
+\input{scope1_int.tex}
+\input{scope2_int.tex}
+\input{total_emissions_int.tex}
+\input{energy_consumption_int.tex}
+\end{document}
