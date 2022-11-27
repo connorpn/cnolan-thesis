@@ -1,0 +1,36 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Carbon Premium and Risk Factors: log emissions}
+\begin{tabular}{l*{8}{c}}
+\hline\hline
+                    &\multicolumn{2}{c}{LN S1}                  &\multicolumn{2}{c}{LN S2}                  &\multicolumn{2}{c}{LN TOTAL}               &\multicolumn{2}{c}{LN ENERGY}              \\\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         &\multicolumn{1}{c}{(7)}         &\multicolumn{1}{c}{(8)}         \\
+\hline
+MKTRF               &                     &    0.000782         &                     &    0.000232         &                     &  -0.0000673         &                     &    0.000245         \\
+                    &                     &  (0.000480)         &                     &  (0.000617)         &                     &  (0.000305)         &                     &  (0.000353)         \\
+[1em]
+HML                 &                     &  -0.0000526         &                     &     0.00175\sym{*}  &                     &    0.000867         &                     &    -0.00104         \\
+                    &                     &  (0.000766)         &                     &  (0.000922)         &                     &  (0.000738)         &                     &  (0.000719)         \\
+[1em]
+SMB                 &                     &  -0.0000794         &                     &     0.00101         &                     &    0.000158         &                     &    0.000245         \\
+                    &                     &  (0.000673)         &                     &  (0.000723)         &                     &  (0.000411)         &                     &  (0.000709)         \\
+[1em]
+CMA                 &                     &     0.00102         &                     &   -0.000559         &                     &   -0.000930         &                     &     0.00157         \\
+                    &                     &  (0.000941)         &                     &   (0.00156)         &                     &   (0.00143)         &                     &   (0.00102)         \\
+[1em]
+MOM                 &                     &    0.000262         &                     &   -0.000140         &                     &    0.000288         &                     &   -0.000165         \\
+                    &                     &  (0.000508)         &                     &  (0.000744)         &                     &  (0.000434)         &                     &  (0.000590)         \\
+[1em]
+BAB                 &                     &     -0.0954\sym{*}  &                     &      0.0477         &                     &      0.0187         &                     &      0.0228         \\
+                    &                     &    (0.0487)         &                     &    (0.0776)         &                     &    (0.0300)         &                     &    (0.0409)         \\
+[1em]
+Constant            &    0.000728         &     0.00108         &     0.00149         &    0.000945         &    -0.00121         &    -0.00158         &    0.000955         &    0.000474         \\
+                    &   (0.00140)         &   (0.00177)         &   (0.00293)         &   (0.00323)         &   (0.00177)         &   (0.00188)         &   (0.00162)         &   (0.00173)         \\
+\hline
+Observations        &         135         &         135         &         133         &         133         &         135         &         135         &         135         &         135         \\
+R2-Adj              &                     &                     &                     &                     &                     &                     &                     &                     \\
+\hline\hline
+\multicolumn{9}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{9}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}
