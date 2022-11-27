@@ -1,0 +1,60 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Carbon Beta and Firm Characteristics: scope1\_int emissions}
+\begin{tabular}{l*{4}{c}}
+\hline\hline
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+                    &\multicolumn{1}{c}{ret}&\multicolumn{1}{c}{ret}&\multicolumn{1}{c}{ret}&\multicolumn{1}{c}{ret}\\
+\hline
+carbon\_beta         &       0.383         &       0.471\sym{*}  &       0.417         &       0.469         \\
+                    &     (0.271)         &     (0.275)         &     (0.391)         &     (0.410)         \\
+[1em]
+logsize             &      -0.375\sym{*}  &      -0.462\sym{**} &       0.209         &       0.148         \\
+                    &     (0.218)         &     (0.216)         &     (0.337)         &     (0.334)         \\
+[1em]
+bm                  &      -1.482\sym{***}&      -1.738\sym{***}&      -1.621\sym{***}&      -1.835\sym{***}\\
+                    &     (0.343)         &     (0.375)         &     (0.399)         &     (0.420)         \\
+[1em]
+leverage            &      -1.356         &      -1.094         &      -1.465         &      -0.731         \\
+                    &     (1.031)         &     (1.053)         &     (1.087)         &     (1.359)         \\
+[1em]
+mom                 &      -1.763         &      -2.398         &      -10.39         &      -11.00         \\
+                    &     (7.836)         &     (7.970)         &     (10.39)         &     (10.42)         \\
+[1em]
+investa             &       7.333\sym{**} &       7.590\sym{**} &       13.43\sym{***}&       13.76\sym{***}\\
+                    &     (3.293)         &     (3.238)         &     (4.352)         &     (4.165)         \\
+[1em]
+roe                 &      -0.218\sym{***}&      -0.209\sym{***}&      -0.256\sym{***}&      -0.245\sym{***}\\
+                    &    (0.0564)         &    (0.0527)         &    (0.0547)         &    (0.0501)         \\
+[1em]
+logppe              &       0.358         &       0.370         &      -0.348         &      -0.385         \\
+                    &     (0.237)         &     (0.236)         &     (0.393)         &     (0.419)         \\
+[1em]
+beta                &       0.110         &       0.106         &       0.501         &       0.357         \\
+                    &     (0.265)         &     (0.264)         &     (0.530)         &     (0.536)         \\
+[1em]
+volat               &       0.513         &       0.598         &       0.306         &       0.360         \\
+                    &     (0.502)         &     (0.530)         &     (0.499)         &     (0.513)         \\
+[1em]
+salesgr             &       0.355         &       0.382         &       0.381         &       0.413         \\
+                    &     (0.367)         &     (0.364)         &     (0.313)         &     (0.313)         \\
+[1em]
+epsgr               &     0.00858         &     0.00722         &     0.00849\sym{*}  &     0.00743         \\
+                    &   (0.00523)         &   (0.00501)         &   (0.00507)         &   (0.00504)         \\
+[1em]
+scope1\_int          &                     &  -0.0000314\sym{**} &                     &  -0.0000311         \\
+                    &                     & (0.0000126)         &                     & (0.0000193)         \\
+[1em]
+Constant            &       2.888         &       4.691         &       5.195         &       7.452\sym{*}  \\
+                    &     (3.051)         &     (3.048)         &     (3.661)         &     (4.009)         \\
+\hline
+Year/Month FE       &         yes         &         yes         &         yes         &         yes         \\
+Industry FE         &          no         &          no         &         yes         &         yes         \\
+Observations        &        3356         &        3356         &        3356         &        3356         \\
+R2-Adj              &       0.199         &       0.199         &       0.197         &       0.197         \\
+\hline\hline
+\multicolumn{5}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{5}{l}{\footnotesize Dependent Variable (ret): Monthly Excess Return (x100)}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}
