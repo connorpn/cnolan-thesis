@@ -1,0 +1,36 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Determinants of Carbon Emissions}
+\begin{tabular}{l*{12}{c}}
+\hline\hline
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}&\multicolumn{1}{c}{(9)}&\multicolumn{1}{c}{(10)}&\multicolumn{1}{c}{(11)}&\multicolumn{1}{c}{(12)}\\
+                    &\multicolumn{1}{c}{log\_scope1}&\multicolumn{1}{c}{log\_scope2}&\multicolumn{1}{c}{log\_total\_emissions}&\multicolumn{1}{c}{log\_energy\_consumption}&\multicolumn{1}{c}{change\_scope1}&\multicolumn{1}{c}{change\_scope2}&\multicolumn{1}{c}{change\_total\_emissions}&\multicolumn{1}{c}{change\_energy\_consumption}&\multicolumn{1}{c}{scope1\_int}&\multicolumn{1}{c}{scope2\_int}&\multicolumn{1}{c}{total\_emissions\_int}&\multicolumn{1}{c}{energy\_consumption\_int}\\
+\hline
+Constant            &       0.970         &      -2.545         &      -0.955         &       3.977\sym{*}  &  -3477742.1         &    -54517.9         &-5.01130e+12\sym{***}& -33645575.8\sym{*}  &     59084.9\sym{*}  &      2589.2\sym{**} & 436993291.1         &    191079.0\sym{*}  \\
+                    &     (2.655)         &     (3.279)         &     (4.923)         &     (2.134)         & (2620307.7)         &   (66060.8)         &(1.41228e+12)         &(17191873.9)         &   (30305.5)         &    (1134.5)         &(2.05406e+09)         &   (99109.9)         \\
+[1em]
+LOGSIZE             &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         \\
+[1em]
+B/M                 &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         \\
+[1em]
+ROE                 &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         \\
+[1em]
+LEVERAGE            &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         \\
+[1em]
+INVEST/A            &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         \\
+[1em]
+LOGPPE              &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         \\
+[1em]
+SALESGR             &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         \\
+[1em]
+EPSGR               &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         &         Yes         \\
+\hline
+Year FE             &         yes         &         yes         &         yes         &         yes         &         yes         &         yes         &         yes         &         yes         &         yes         &         yes         &         yes         &         yes         \\
+Industry FE         &         yes         &         yes         &         yes         &         yes         &         yes         &         yes         &         yes         &         yes         &         yes         &         yes         &         yes         &         yes         \\
+Observations        &         437         &         433         &         437         &         435         &         367         &         367         &         367         &         366         &         437         &         437         &         437         &         435         \\
+R2-Adj              &       0.768         &       0.657         &       0.687         &       0.827         &     0.00103         &     -0.0464         &     -0.0835         &     -0.0603         &       0.267         &       0.340         &       0.193         &       0.384         \\
+\hline\hline
+\multicolumn{13}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{13}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}
