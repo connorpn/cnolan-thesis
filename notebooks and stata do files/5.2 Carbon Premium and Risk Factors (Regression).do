@@ -110,5 +110,4 @@ esttab  using "emissions_int.tex",
 #delimit cr
 
 
-cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\notebooks and stata do files"
-save "5.2 Carbon Premium and Risk Factors (Regression).do", replace
+*END
