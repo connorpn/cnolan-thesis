@@ -36,6 +36,9 @@ cross_sectional_returns_data = pd.read_csv ('https://raw.githubusercontent.com/c
 ms_data = pd.read_csv ('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/output/ms_data.csv')
 asx500_filtered = pd.read_csv ('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/output/asx500_filtered.csv')
 monthly_marketcap = pd.read_csv ('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/data/ds_marketcap_monthly.csv')
+asx500_returns = pd.read_csv ('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/output/asx500_returns.csv')
+famafrench_factors = pd.read_csv ('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/output/famafrench_factors.csv')
+
 #%% create seperate portfolios 
 
 '''
@@ -122,9 +125,15 @@ pmc_factor['pmc'] = pmc_factor.nger_ret - pmc_factor.asx500_ret
 
 
 #%% 
-
 "set up cross sectional variables for regression" 
 
-pmc_factor_vars = pd.merge(cross_sectional_returns_data, pmc_factor[['yearmonth','pmc']], how='left', on=['yearmonth'])
+pmc_factor_vars = pmc_factor[['yearmonth','pmc']]
 
-pmc_factor_vars = pd.merge()
+pmc_factor_vars = pd.merge(pmc_factor_vars, famafrench_factors, how='left', on=['yearmonth'])
+pmc_factor_vars = pd.merge(pmc_factor_vars, asx500_returns, how='left', on=['yearmonth'])
+
+pmc_factor_vars = pmc_factor_vars.rename(columns={'asx500_ret': 'rmrf'})
+
+pmc_factor_vars = pmc_factor_vars[['yearmonth','rmrf','smb','hml','rmw','cma','wml','pmc']]
+
+carbon_beta_vars = pd.merge(cross_sectional_returns_data [['yearmonth','ticker','industry', 'ret']], pmc_factor_vars, how = 'left', on =['yearmonth'])

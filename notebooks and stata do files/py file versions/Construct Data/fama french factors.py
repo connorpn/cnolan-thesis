@@ -57,6 +57,7 @@ famafrench = pd.merge(famafrench,exchange_rate[['yearmonth','exchange_return']],
 
 famafrench_factors = ['smb','hml','rmw','cma','wml']
 for i in famafrench_factors:
+    famafrench[i] = famafrench[i] / 100
     famafrench[i] = ((1 + famafrench[i]) * (1 + famafrench['exchange_return'])) - 1
 
 famafrench = famafrench[['yearmonth', 'year', 'month', 'smb', 'hml', 'rmw', 'cma', 'wml']]
