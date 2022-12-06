@@ -94,15 +94,37 @@ asx500 = asx500.loc[(asx500['yearmonth'] >= 200807) & (asx500['yearmonth'] <= 20
 #%%
 "monthly marketcap"
 marketcap = monthly_marketcap
+marketcap['yearmonth'] = marketcap['yearmonth'].astype(int)
 
 marketcap = pd.melt(marketcap, id_vars = ['yearmonth', 'year', 'month'], value_vars= ['29M', 'ARI', 'ABB1', 'ABC', 'ABY1', 'AIS', 'AGL', 'ALK', 'AQZ', 'AMP', 'ALD', 'ALG', 'AOE', 'AHY', 'AIO', 'AGO', 'AMI', 'AZJ', 'AST', 'AQC', 'AHG', 'BPT', 'BGA', 'BHP', 'BIN', 'BSL', 'BLD', 'B2Y', 'BKN', 'BKW', 'BRS', 'CAA', 'CBH1', 'CEY', 'CTP', 'CHC', 'CIM', 'CWY', 'CCL', 'CGJ', 'CBA', 'CWN', 'CSL', 'CSR', 'CDU', 'CER', 'CRG', 'DCN', 'DJS', 'DXS', 'DOW', 'APE', 'ENV1', 'EPW', 'EVT', 'EVN', 'ESG', 'ELD', 'ENE1', 'FMG', 'FGL1', 'FXJ', 'FLX1', 'FML', 'GCY', 'GFF', 'GNC', 'GRR', 'GCL', 'GNS', 'HVN', 'HSO', 'HGO', 'HRL', 'IGO', 'ILU', 'IMA', 'IPL', 'ING', 'IVA', 'IGR', 'IPG2', 'JBH', 'KZL', 'LLC', 'LAU', 'AEJ'], var_name = 'ticker', value_name='marketcap',col_level=None)
 marketcap['marketcap'] = marketcap['marketcap'].astype(float)
 marketcap['marketcap'] = marketcap['marketcap'] * 1000000
 
 pmc = cross_sectional_returns_data[['yearmonth','ticker','ret']]
-pmc = pd.merge(pmc, marketcap[['yearmonth','ticker','marketcap']], how='left', on=['ticker'])
+
+pmc = pd.merge(pmc, marketcap[['yearmonth','ticker','marketcap']], how='left', on=['ticker','yearmonth'])
 
 pmc['weighted_returns'] =  pmc['ret'] * (pmc['marketcap'] / pmc.groupby(['yearmonth'])['marketcap'].transform('sum'))
 pmc['nger_ret'] = pmc.groupby(['yearmonth'])['weighted_returns'].transform('sum')
 
+pmc = pmc[['yearmonth','nger_ret']]
+pmc = pmc.drop_duplicates(subset=['yearmonth']).reset_index(drop=True)
 
+pmc = pmc.loc[(pmc['yearmonth'] >= 200807) & (pmc['yearmonth'] <= 202206)]
+
+#%%
+
+"calculate pmc"
+
+pmc_factor = pd.merge(pmc, asx500, how='left',on=['yearmonth'])
+
+pmc_factor['pmc'] = pmc_factor.nger_ret - pmc_factor.asx500_ret
+
+
+#%% 
+
+"set up cross sectional variables for regression" 
+
+pmc_factor_vars = pd.merge(cross_sectional_returns_data, pmc_factor[['yearmonth','pmc']], how='left', on=['yearmonth'])
+
+pmc_factor_vars = pd.merge()
