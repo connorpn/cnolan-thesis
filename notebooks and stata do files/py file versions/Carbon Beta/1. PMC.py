@@ -137,3 +137,10 @@ pmc_factor_vars = pmc_factor_vars.rename(columns={'asx500_ret': 'rmrf'})
 pmc_factor_vars = pmc_factor_vars[['yearmonth','rmrf','smb','hml','rmw','cma','wml','pmc']]
 
 carbon_beta_vars = pd.merge(cross_sectional_returns_data [['yearmonth','ticker','industry', 'ret']], pmc_factor_vars, how = 'left', on =['yearmonth'])
+
+"Save carbon_beta_vars"
+output_filename = 'carbon_beta_vars.csv'
+output_path = 'C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/regression/regression variables/'
+outputname = output_path + output_filename
+carbon_beta_vars.to_csv(outputname, mode='w', index=False)
+print("Exported File: " + outputname)
