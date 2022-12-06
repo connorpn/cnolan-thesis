@@ -1,0 +1,496 @@
+Ticker,Name,"GICS Ind Name
+","GICS Ind
+","Price:M-1
+","Price (I)
+","Market Cap
+"
+TGP AT Equity,360 Capital Group Ltd,Capital Markets,402030,0.63499999,0.514999986,43956228
+A2B AT Equity,A2B Australia Ltd,Road & Rail,203040,6.820000172,6.849999905,824993408
+ABP AT Equity,Abacus Property Group,Equity Real Estate Investment Trusts (REITs),601010,0.899999976,0.330000013,213815232
+ACN AT Equity,Acer Energy Ltd,N/A,--,0.354999989,0.245000005,46464984
+ARI AT Equity,ACN 004 410 833 Ltd,Metals & Mining,151040,4.599999905,3.450000048,3045595648
+1255121D AT Equity,ACN 086 760 303 Pty Ltd,N/A,--,1.019999981,1.129999995,440431744
+ACR AT Equity,Acrux Ltd,Pharmaceuticals,352020,0.939999998,0.660000026,105204136
+ABC AT Equity,Adbri Ltd,Construction Materials,151020,3.089999914,2.269999981,1254148992
+ADY AT Equity,Admiralty Resources NL,Metals & Mining,151040,0.052000001,0.026000001,29469906
+AED AT Equity,AED Oil Ltd,N/A,--,1.450000048,1.289999962,199681408
+AGL AT Equity,AGL Energy Ltd,Multi-Utilities,551030,13.69999981,13.97000027,6193656832
+AWB AT Equity,Agrium Asia Pacific Ltd,N/A,--,2.779999971,2.619999886,921733312
+AIZ AT Equity,Air New Zealand Ltd,Airlines,203020,0.819999993,0.764999986,811758464
+AJL AT Equity,AJ Lucas Group Ltd,Construction & Engineering,201030,5.670000076,4.099999905,277782784
+1878181D AT Equity,Albidon Ltd,N/A,--,1.100000024,0.444999993,73483256
+LEP AT Equity,ALE Property Group,Equity Real Estate Investment Trusts (REITs),601010,2.849999905,2.690000057,247346848
+ALS AT Equity,Alesco Corp Ltd,N/A,--,5.920000076,5.599999905,515575200
+1278636D AT Equity,Allco Finance Group Ltd,N/A,--,0.200000003,0.140000001,52249048
+AGS AT Equity,Alliance Resources Ltd,Metals & Mining,151040,0.610000014,0.569999993,156095232
+1801846D AT Equity,Allied Gold Mining Ltd,N/A,--,0.319999993,0.215000004,88363776
+ALQ AT Equity,ALS Ltd,Professional Services,202020,32.09999847,24.05999947,1265028992
+AWC AT Equity,Alumina Ltd,Metals & Mining,151040,3.069999933,2.119999886,3094897408
+AMC AT Equity,Amcor PLC,Containers & Packaging,151030,5.400000095,5.800000191,4877075456
+AMP AT Equity,AMP Ltd,Diversified Financial Services,402010,6.980000019,5.409999847,10208362496
+1850998D AT Equity,Andean Resources Ltd,N/A,--,0.899999976,0.850000024,341759328
+ATM AT Equity,Aneka Tambang Tbk,Metals & Mining,151040,3,--,--
+AGG AT Equity,AngloGold Ashanti Ltd,Metals & Mining,151040,6.389999866,5.349999905,9487797248
+ANN AT Equity,Ansell Ltd,Health Care Equipment & Supplies,351010,12.69999981,12.60000038,1715603328
+2079925D AT Equity,Anvil Mining Ltd,N/A,--,6.349999905,3.029999971,215871136
+APA AT Equity,APA Group,Gas Utilities,551020,3.049999952,2.930000067,1401232640
+HDF AT Equity,APA Sub Group,N/A,--,2.390000105,2.279999971,483878240
+AXM AT Equity,Apex Minerals NL,N/A,--,0.419999987,0.25,97588424
+AEZ AT Equity,APN European Retail Property Group,N/A,--,0.189999998,0.125,68113824
+APD AT Equity,APN Property Group Ltd,Equity Real Estate Investment Trusts (REITs),601010,0.49000001,0.219999999,29406080
+AQP AT Equity,Aquarius Platinum Ltd,Metals & Mining,151040,5.869999886,3.019999981,987828736
+AQA AT Equity,Aquila Resources Ltd,Metals & Mining,151040,9.199999809,3.670000076,908125696
+ARB AT Equity,ARB Corp Ltd,Auto Components,251010,3.869999886,3.450000048,229649600
+ALG AT Equity,Ardent Leisure Group Ltd,"Hotels, Restaurants & Leisure",253010,1.480000019,1.129999995,267394496
+ALL AT Equity,Aristocrat Leisure Ltd,"Hotels, Restaurants & Leisure",253010,6.460000038,3.799999952,1730252928
+AOE AT Equity,Arrow Energy Holdings Pty Ltd,N/A,--,2.900000095,2.480000019,1743096576
+ASZ AT Equity,ASG Group Ltd,IT Services,451020,0.699999988,0.579999983,76067520
+APZ AT Equity,Aspen Group Ltd/Australia,Equity Real Estate Investment Trusts (REITs),601010,1.139999986,0.689999998,200622128
+AJA AT Equity,Astro Japan Property Group,Equity Real Estate Investment Trusts (REITs),601010,0.584999979,0.439999998,227894832
+ASX AT Equity,ASX Ltd,Capital Markets,402030,30.14999962,29.89999962,5117340160
+AGO AT Equity,Atlas Iron Ltd,Metals & Mining,151040,1.549999952,0.814999998,237555072
+AUB AT Equity,AUB Group Ltd,Insurance,403010,4.300000191,3.799999952,190493632
+AIA AT Equity,Auckland International Airport Ltd,Transportation Infrastructure,203050,1.620000005,1.570000052,1921833344
+AAX AT Equity,Ausenco Ltd,Construction & Engineering,201030,11.26000023,4.349999905,398365600
+AST AT Equity,AusNet Services Ltd,Electric Utilities,551010,1.039999962,1.100000024,2301947904
+ASB AT Equity,Austal Ltd,Aerospace & Defense,201010,2.380000114,1.75999999,331002496
+1840084D AT Equity,Austar United Communications Pty Ltd,N/A,--,1.129999995,0.899999976,1146799360
+AEO AT Equity,Austereo Group Ltd,N/A,--,1.595000029,1.399999976,483802080
+ARH AT Equity,Australasian Resources Ltd,Metals & Mining,151040,0.814999998,0.409999996,181405648
+ANZ AT Equity,Australia & New Zealand Banking Group Ltd,Banks,401010,18.75,17.36000061,35428716544
+AAC AT Equity,Australian Agricultural Co Ltd,Food Products,302020,2.700000048,1.899999976,501946752
+1803385D AT Equity,Australian Gas Networks Ltd,Gas Utilities,551020,0.654999971,0.639999986,570481600
+API AT Equity,Australian Pharmaceutical Industries Ltd,Health Care Providers & Services,351020,0.63499999,0.560000002,144114032
+AVG AT Equity,Australian Vintage Ltd,Beverages,302010,0.709999979,0.600000024,76564144
+AUW AT Equity,Australian Wealth Management Ltd,N/A,--,1.205000043,0.795000017,490129728
+ABA AT Equity,Auswide Bank Ltd,Thrifts & Mortgage Finance,401020,8.600000381,7.78000021,229290608
+AHG AT Equity,Automotive Holdings Group Ltd,Specialty Retail,255040,1.690000057,0.850000024,162171424
+AOG AT Equity,Aveo Group,Real Estate Management & Development,601020,3.849999905,1.149999976,404094496
+AVJ AT Equity,AVJennings Ltd,Household Durables,252010,0.569999993,0.389999986,103983560
+AVO AT Equity,Avoca Resources Ltd,N/A,--,1.985000014,1.480000019,329827328
+AWE AT Equity,AWE Ltd,"Oil, Gas & Consumable Fuels",101020,2.559999943,2.5,1302055040
+BNB AT Equity,Babcock & Brown Ltd,N/A,--,1.945000052,1.284999967,462206176
+BOQ AT Equity,Bank of Queensland Ltd,Banks,401010,13.14999962,13.31999969,2064369536
+BMN AT Equity,Bannerman Energy Ltd,"Oil, Gas & Consumable Fuels",101020,0.670000017,0.280000001,42217000
+BPT AT Equity,Beach Energy Ltd,"Oil, Gas & Consumable Fuels",101020,0.904999971,0.970000029,1002786624
+BEC AT Equity,Becton Property Group,N/A,--,0.519999981,0.194999993,32452174
+BFG AT Equity,Bell Financial Group Ltd,Capital Markets,402030,0.949999988,0.620000005,150170512
+BEN AT Equity,Bendigo & Adelaide Bank Ltd,Banks,401010,11.60000038,13.18000031,3589649408
+PAG AT Equity,Bengerang Ltd,N/A,--,1.360000014,1.220000029,183000000
+BHP AT Equity,BHP Group Ltd,Metals & Mining,151040,31,27.98999977,1.50482E+11
+BBG AT Equity,Billabong International Ltd,"Textiles, Apparel & Luxury Goods",252030,13.69999981,11.92000008,2501760000
+BTA AT Equity,Biota Holdings Ltd/Old,N/A,--,0.685000002,0.340000004,59351760
+BKL AT Equity,Blackmores Ltd,Personal Products,303020,17.37000084,15.5,252594208
+1851985D AT Equity,Blackthorn Resources Ltd,Metals & Mining,151040,0.02,0.013,13895050
+BLV AT Equity,Blossomvale Holdings Ltd,Energy Equipment & Services,101010,0.419999987,0.300000012,--
+BSL AT Equity,BlueScope Steel Ltd,Metals & Mining,151040,7.320000172,4.409999847,3407796992
+1923730D AT Equity,Boart Longyear Ltd,Metals & Mining,151040,1.120000005,0.435000002,653737536
+BOL AT Equity,Boom Logistics Ltd,Trading Companies & Distributors,201070,1.184999943,0.88499999,151182512
+BLD AT Equity,Boral Ltd,Construction Materials,151020,6.119999886,4.510000229,2641764096
+BOC AT Equity,Bougainville Copper Ltd,Metals & Mining,151040,0.980000019,0.649999976,260690624
+BKN AT Equity,Bradken Ltd,Machinery,201060,8.699999809,4.949999809,611413568
+BXB AT Equity,Brambles Ltd,Commercial Services & Supplies,202010,7.699999809,7.940000057,10990754816
+BVA AT Equity,Bravura Solutions Ltd,Software,451030,0.400000006,0.289999992,41182524
+BRG AT Equity,Breville Group Ltd,Household Durables,252010,0.920000017,0.699999988,90660712
+BKW AT Equity,Brickworks Ltd,Construction Materials,151020,11.93000031,10.60000038,1408444288
+BRS AT Equity,Broadspectrum Pty Ltd,Commercial Services & Supplies,202010,7.590000153,4.070000172,806118848
+BRM AT Equity,Brockman Mining Australia Pty Ltd,N/A,--,0.879999995,0.61500001,81677592
+BAO AT Equity,Brookfield Australian Opportunities Fund,N/A,--,0.460000008,0.289999992,--
+BPA AT Equity,Brookfield Prime Property Fund,Equity Real Estate Investment Trusts (REITs),601010,0.330000013,0.115000002,32402962
+BWP AT Equity,BWP Trust,Equity Real Estate Investment Trusts (REITs),601010,1.794999957,1.625,496476480
+CNX AT Equity,Carbon Energy Ltd,"Oil, Gas & Consumable Fuels",101020,0.540000021,0.289999992,142476016
+CDD AT Equity,Cardno Ltd,Commercial Services & Supplies,202010,4.5,3.809999943,287363168
+1907708D AT Equity,Cardtronics Pty Ltd,N/A,--,0.115000002,0.100000001,127957408
+CVN AT Equity,Carnarvon Energy Ltd,"Oil, Gas & Consumable Fuels",101020,0.314999998,0.280000001,188530880
+2076150D AT Equity,CBH Resources Ltd,N/A,--,0.07,0.052999999,46612776
+CEG AT Equity,CEC Group Ltd,N/A,--,0.25,0.170000002,13542658
+CWP AT Equity,Cedar Woods Properties Ltd,Real Estate Management & Development,601020,2.099999905,1.799999952,99248576
+1771993D AT Equity,Cellestis Pty Ltd,N/A,--,2.150000095,2.00999999,192963616
+CNT AT Equity,Centamin PLC,Metals & Mining,151040,0.814999998,0.720000029,631741824
+CEY AT Equity,Centennial Coal Co Pty Ltd,N/A,--,3.680000067,3.5,1299428224
+AAH AT Equity,Cephalon Australia Pty Ltd,N/A,--,0.819999993,0.774999976,182114144
+CFU AT Equity,Ceramic Fuel Cells Ltd,Electrical Equipment,201040,0.340000004,0.135000005,46540668
+CJO AT Equity,Cerro Resources NL,N/A,--,0.150000006,0.115000002,45342948
+CGX AT Equity,CGA Mining Ltd,N/A,--,1.49000001,0.800000012,187101600
+CDI AT Equity,Challenger Diversified Properties Group,Equity Real Estate Investment Trusts (REITs),601010,0.600000024,0.564999998,306164928
+CIF AT Equity,Challenger Infrastructure Fund,N/A,--,2.599999905,2.230000019,781110784
+CKT AT Equity,Challenger Kenedix Japan Trust,N/A,--,1.100000024,0.600000024,90058384
+CGF AT Equity,Challenger Ltd,Diversified Financial Services,402010,2.390000105,1.639999986,1027659072
+CHC AT Equity,Charter Hall Group,Equity Real Estate Investment Trusts (REITs),601010,0.879999995,0.444999993,215946224
+CQO AT Equity,Charter Hall Office REIT,N/A,--,0.779999971,0.284999996,582037248
+CQR AT Equity,Charter Hall Retail REIT,Equity Real Estate Investment Trusts (REITs),601010,0.949999988,0.234999999,325729152
+CQE AT Equity,Charter Hall Social Infrastructure REIT,Equity Real Estate Investment Trusts (REITs),601010,0.349999994,0.270000011,36442820
+CIM AT Equity,CIMIC Group Ltd,Construction & Engineering,201030,37.54999924,24.79999924,7389700608
+CTO AT Equity,Citigold Corp Ltd,Metals & Mining,151040,0.224999994,0.200000003,147237376
+CCX AT Equity,City Chic Collective Ltd,Specialty Retail,255040,0.680000007,0.310000002,59061384
+CIY AT Equity,City Pacific Ltd,N/A,--,0.194999993,0.129999995,21128068
+1804154D AT Equity,Civeo Pty Ltd,N/A,--,2.299999952,1.590000033,261931856
+CWY AT Equity,Cleanaway Waste Management Ltd,Commercial Services & Supplies,202010,7,3.569999933,1101888000
+CPR AT Equity,Clivpee Ltd,N/A,--,0.405000001,0.165000007,20955000
+CLO AT Equity,Clough Ltd,N/A,--,0.670000017,0.38499999,257194528
+CMV AT Equity,CMA Corp Ltd,Commercial Services & Supplies,202010,0.270000011,0.200000003,88153616
+CNP AT Equity,CNPR Group,N/A,--,0.088,0.075999998,64228820
+1583949D AT Equity,Coal & Allied Industries Pty Ltd,N/A,--,112,95,8225546752
+CCL AT Equity,Coca-Cola Europacific Partners API Pty Ltd,Beverages,302010,8.25,8.050000191,5921097728
+COH AT Equity,Cochlear Ltd,Health Care Equipment & Supplies,351010,59.29999924,57,3189081600
+CXC AT Equity,Coeur Mining Inc,Metals & Mining,151040,1.899999976,0.850000024,469129696
+1783715D AT Equity,Coffey International Ltd,Commercial Services & Supplies,202010,2.400000095,1.75,209152480
+CBA AT Equity,Commonwealth Bank of Australia,Banks,401010,42.61999893,40.29999924,56225157120
+CMR AT Equity,Compass Resources Ltd,N/A,--,0.479999989,0.444999993,60523604
+CPU AT Equity,Computershare Ltd,IT Services,451020,9.300000191,8.399999619,4667494400
+CEU AT Equity,ConnectEast Group,N/A,--,0.814999998,0.725000024,1211436416
+CQT AT Equity,Conquest Mining Pty Ltd,N/A,--,0.245000005,0.159999996,43479872
+CMJ AT Equity,Consolidated Media Holdings Pty Ltd,N/A,--,2.460000038,2.059999943,1420734336
+CRT AT Equity,Consolidated Rutile Ltd,N/A,--,0.349999994,0.310000002,113644696
+COE AT Equity,Cooper Energy Ltd,"Oil, Gas & Consumable Fuels",101020,0.335000008,0.289999992,73156360
+CUO AT Equity,CopperCo Ltd,N/A,--,0.245000005,0.098999999,85253808
+COU AT Equity,Count Financial Ltd,N/A,--,1.399999976,1.110000014,285201152
+CTY AT Equity,Country Road Group Pty Ltd,Specialty Retail,255040,3.5,3.539999962,244461072
+2161538D AT Equity,Crane Group Ltd,N/A,--,10.97999954,8.949999809,602526592
+CCP AT Equity,Credit Corp Group Ltd,Consumer Finance,402020,0.685000002,0.600000024,26402040
+CMW AT Equity,Cromwell Property Group,Equity Real Estate Investment Trusts (REITs),601010,0.805000007,0.620000005,439363200
+CRH AT Equity,Crowe Horwath Australasia Ltd,Professional Services,202020,1.039999962,0.920000017,239208080
+CWN AT Equity,Crown Resorts Ltd,"Hotels, Restaurants & Leisure",253010,8.5,6.699999809,4620835328
+CSV AT Equity,CSG Ltd,IT Services,451020,0.944999993,0.675000012,118618224
+CSL AT Equity,CSL Ltd,Biotechnology,352010,37.29999924,36.40000153,21936291840
+CSR AT Equity,CSR Ltd,Construction Materials,151020,2.480000019,2.160000086,2206108160
+CDU AT Equity,CuDeco Ltd,Metals & Mining,151040,2.279999971,1.419999957,168034416
+1837613D AT Equity,Cupric Pty Ltd,Metals & Mining,151040,1.159999967,0.280000001,87744328
+CVC AT Equity,CVC Ltd,Capital Markets,402030,1,0.819999993,141270176
+CLE AT Equity,Cyclone Metals Ltd,Metals & Mining,151040,0.360000014,0.219999999,111385096
+DJS AT Equity,David Jones Pty Ltd,Multiline Retail,255030,4.300000191,3.069999933,1505693824
+DYL AT Equity,Deep Yellow Ltd,"Oil, Gas & Consumable Fuels",101020,0.219999999,0.129999995,145759504
+DVN AU Equity,Devine Ltd,Real Estate Management & Development,601020,0.795000017,0.639999986,187836032
+1901467D AT Equity,Dexus,Equity Real Estate Investment Trusts (REITs),601010,1.429999948,0.745000005,2298405120
+CPA AT Equity,DEXUS CPA Trust,N/A,--,1.440000057,1.320000052,2134623488
+DKN AT Equity,DKN Financial Group Ltd,N/A,--,0.800000012,0.620000005,86017992
+DOM AT Equity,Dominion Mining Ltd,N/A,--,2.470000029,2.329999924,238839680
+DMP AT Equity,Domino's Pizza Enterprises Ltd,"Hotels, Restaurants & Leisure",253010,3.200000048,2.920000076,197112272
+DTZ AT Equity,Dotz Nano Ltd,"Electronic Equipment, Instruments & Components",452030,2.789999962,0.754999995,124575000
+DOW AT Equity,Downer EDI Ltd,Commercial Services & Supplies,202010,6.300000191,4.880000114,1586411904
+DUE AT Equity,DUET Group,Multi-Utilities,551030,2.579999924,2.400000095,1519353344
+DWS AT Equity,DWS Pty Ltd,IT Services,451020,1,0.620000005,82413376
+UXC AT Equity,DXC United Pty Ltd,IT Services,451020,0.935000002,0.779999971,151880816
+APE AT Equity,Eagers Automotive Ltd,Specialty Retail,255040,9.5,7.599999905,228084368
+AGP AT Equity,ECORA RESOURCES PLC,Metals & Mining,151040,--,--,--
+EDT AT Equity,EDT Retail Trust,N/A,--,0.310000002,0.093000002,87717888
+ERC AT Equity,Eircom Holdings Ltd,N/A,--,2.559999943,2,338081376
+ELD AT Equity,Elders Ltd,Food Products,302020,1.409999967,1.174999952,962518848
+EHL AT Equity,Emeco Holdings Ltd,Trading Companies & Distributors,201070,0.800000012,0.574999988,362961632
+1643690D AT Equity,Energy Developments Pty Ltd,Independent Power and Renewable Electricity Producers,551050,2.5,2.5,379300224
+ERA AT Equity,Energy Resources of Australia Ltd,"Oil, Gas & Consumable Fuels",101020,17,14.30000019,2727552000
+EWC AT Equity,Energy World Corp Ltd,Independent Power and Renewable Electricity Producers,551050,0.629999995,0.379999995,593243456
+EGG AT Equity,Enero Group Ltd,Media,502010,2.589999914,1.559999943,160313088
+EGN AT Equity,Engenco Ltd,Machinery,201060,0.970000029,0.535000026,62073536
+1917999D AT Equity,Equinox Minerals Ltd,N/A,--,3.099999905,1.325000048,785671680
+1349523D AT Equity,Equity Trustees Ltd,Capital Markets,402030,20.04999924,18.05999947,147384048
+EZL AT Equity,Euroz Hartleys Group Ltd,Capital Markets,402030,1.190000057,0.954999983,122240000
+EFG AT Equity,Everest Financial Group Ltd,N/A,--,0.189999998,0.094999999,23887020
+EVT AT Equity,EVT Ltd,Entertainment,502020,4.949999809,4.199999809,541690432
+FXJ AT Equity,Fairfax Media Ltd,Media,502010,2.640000105,1.919999957,2916679168
+FAN AT Equity,Fantastic Holdings Pty Ltd,Household Durables,252010,2.599999905,1.980000019,189343632
+FPA AT Equity,Fisher & Paykel Appliances Holdings Ltd,N/A,--,1.429999948,1.25999999,362730688
+FPH AT Equity,Fisher & Paykel Healthcare Corp Ltd,Health Care Equipment & Supplies,351010,2.430000067,2.519999981,1283890688
+FWD AT Equity,Fleetwood Ltd,Household Durables,252010,8.850000381,6.21999979,319325472
+FBU AT Equity,Fletcher Building Ltd,Building Products,201020,5.53000021,5,2530244096
+FLT AT Equity,Flight Centre Travel Group Ltd,"Hotels, Restaurants & Leisure",253010,18.98999977,13.94999981,1389542784
+FLC AT Equity,Fluence Corp Ltd,Machinery,201060,0.540000021,0.479999989,68450976
+CRE AT Equity,Focus Minerals Laverton Pty Ltd,N/A,--,0.115000002,0.075000003,44307188
+FEA AT Equity,Forest Enterprises Australia Ltd,N/A,--,0.469999999,0.405000001,164153376
+FMG AT Equity,Fortescue Metals Group Ltd,Metals & Mining,151040,4.659999847,2.950000048,8281907712
+1812574D AT Equity,Foster's Group Pty Ltd,N/A,--,5.519999981,5.71999979,10991956992
+ALZ AT Equity,Frasers Property AHL Ltd,Equity Real Estate Investment Trusts (REITs),601010,0.555000007,0.294999987,500464704
+MCG AT Equity,Frequency Infrastructure Pty Ltd,N/A,--,2.539999962,1.600000024,863797184
+FGX AT Equity,Future Generation Investment Co Ltd/Fund,Transportation Infrastructure,203050,2.140000105,1.625,618809408
+GJT AT Equity,Galileo Japan Trust,Equity Real Estate Investment Trusts (REITs),601010,0.280000001,0.170000002,68944960
+GDG AT Equity,Generation Development Group Ltd,Insurance,403010,0.310000002,0.349999994,42229668
+GBG AT Equity,Gindalbie Metals Ltd,Metals & Mining,151040,0.685000002,0.414999992,213301216
+GIR AT Equity,Giralia Resources NL,N/A,--,0.939999998,0.5,89092600
+GMI AT Equity,Global Mining Investments Ltd/fund,N/A,--,1.480000019,0.889999986,--
+GCL AT Equity,Gloucester Coal Ltd,N/A,--,9.25,4.300000191,353879264
+GFF AT Equity,Goodman Fielder Ltd,Food Products,302020,1.389999986,1.654999971,2192875008
+GMG AT Equity,Goodman Group,Equity Real Estate Investment Trusts (REITs),601010,2.368343353,0.935000002,1604308864
+IIF AT Equity,Goodman Sub-Trust Australia,N/A,--,1.549999952,0.335000008,377680928
+GPT AT Equity,GPT Group/The,Equity Real Estate Investment Trusts (REITs),601010,1.331521749,0.745000005,1652211200
+GNC AT Equity,GrainCorp Ltd,Food & Staples Retailing,301010,7.5,6.989999771,449763200
+GRR AT Equity,Grange Resources Ltd,Metals & Mining,151040,1.330000043,0.519999981,59965412
+GRD AT Equity,GRD Pty Ltd,N/A,--,0.660000026,0.460000008,88497096
+GTP AT Equity,Great Southern Ltd,N/A,--,0.414999992,0.360000014,118544440
+GOZ AT Equity,Growthpoint Properties Australia Ltd,Equity Real Estate Investment Trusts (REITs),601010,0.354999989,0.239999995,82922328
+GUD AT Equity,GUD Holdings Ltd,Auto Components,251010,5.900000095,4.699999809,271831552
+GNS AT Equity,Gunns Ltd,N/A,--,1.154999971,1.184999943,754690240
+GWA AT Equity,GWA Group Ltd,Building Products,201020,2.799999952,2.380000114,672191488
+GWR AT Equity,GWR Group Ltd,Metals & Mining,151040,1.279999971,0.485000014,66995864
+PBG AT Equity,Hanes Australasia Pty Ltd,Distributors,255010,1.929999948,1,502277888
+HVN AT Equity,Harvey Norman Holdings Ltd,Multiline Retail,255030,3.089999914,2.579999924,2740777216
+HST AT Equity,Hastie Group Ltd,N/A,--,2.430000067,1.450000048,238663328
+HLS AT Equity,Healius Ltd,Health Care Providers & Services,351020,5.150000095,4.599999905,1725046528
+HSP AT Equity,Healthscope Ltd,Health Care Providers & Services,351020,4.599999905,4.309999943,1078735616
+HLO AT Equity,Helloworld Travel Ltd,"Hotels, Restaurants & Leisure",253010,1.399999976,1.085000038,238214992
+HRR AT Equity,Heron Resources Ltd,Metals & Mining,151040,0.340000004,0.150000006,36140820
+HIL AT Equity,Hills Ltd,"Electronic Equipment, Instruments & Components",452030,4.260000229,3.859999895,731627520
+HZN AT Equity,Horizon Oil Ltd,"Oil, Gas & Consumable Fuels",101020,0.270000011,0.159999996,127761832
+HT1 AT Equity,HT&E Ltd,Media,502010,3.210000038,2.410000086,1181896320
+HUM AT Equity,Humm Group Ltd,Consumer Finance,402020,0.469999999,0.319999993,73109536
+IFN AT Equity,Iberdrola Australia Ltd,Independent Power and Renewable Electricity Producers,551050,1.049999952,0.845000029,741063936
+IGO AT Equity,IGO Ltd,Metals & Mining,151040,2.670000076,1.409999967,160195040
+IIN AT Equity,iiNet Ltd,Diversified Telecommunication Services,501010,1.38499999,1.289999962,195553936
+ILU AT Equity,Iluka Resources Ltd,Metals & Mining,151040,4.699999809,3.599999905,1370521856
+IMD AT Equity,Imdex Ltd,Metals & Mining,151040,1.25,0.469999999,86369784
+IPL AT Equity,Incitec Pivot Ltd,Chemicals,151010,5.070000172,4,4868922368
+IRN AT Equity,Indophil Resources NL,Metals & Mining,151040,0.889999986,0.584999979,229979824
+IDL AT Equity,Industrea Ltd,N/A,--,0.360000014,0.200000003,172604608
+INA AT Equity,Ingenia Communities Group,Equity Real Estate Investment Trusts (REITs),601010,0.314999998,0.135000005,59538944
+IFL AT Equity,Insignia Financial Ltd,Capital Markets,402030,5.570000172,4.199999809,289051552
+IAG AT Equity,Insurance Australia Group Ltd,Insurance,403010,4.099999905,3.799999952,7175663616
+1873283D AT Equity,International Coal Holdings Pty Ltd,N/A,--,2.430000067,1.279999971,298106368
+ITO AT Equity,Intoll Group,N/A,--,2.309999943,1.960000038,4711514624
+IVC AT Equity,InvoCare Ltd,Diversified Consumer Services,253020,4.849999905,4.900000095,493917056
+IRE AT Equity,IRESS Ltd,Software,451030,5.769999981,4.599999905,560709632
+ISF AT Equity,iSOFT Group Pty Ltd,N/A,--,0.75999999,0.649999976,507646144
+JML AT Equity,Jabiru Metals Ltd,N/A,--,0.245000005,0.140000001,69997912
+JHX AT Equity,James Hardie Industries PLC,Construction Materials,151020,4.96999979,4.25,1834006784
+JHG AT Equity,Janus Henderson Group PLC,Capital Markets,402030,2.319999933,1.25,906491264
+JBH AT Equity,JB Hi-Fi Ltd,Specialty Retail,255040,12.23999977,8.760000229,938680384
+KSC AT Equity,K&S Corp Ltd,Air Freight & Logistics,203010,3.099999905,2.890000105,200644896
+KZL AT Equity,Kagara Ltd,N/A,--,2.769999981,0.529999971,114691888
+KGM AT Equity,KalNorth Gold Mines Ltd,Metals & Mining,151040,0.699999988,0.699999988,85575000
+KAR AT Equity,Karoon Energy Ltd,"Oil, Gas & Consumable Fuels",101020,3.849999905,2.160000086,321176672
+KBC AT Equity,Keybridge Capital Ltd,Capital Markets,402030,0.409999996,0.270000011,46459064
+KCN AT Equity,Kingsgate Consolidated Ltd,Metals & Mining,151040,4.639999866,2.599999905,241697056
+LRL AT Equity,Labyrinth Resources Ltd,Metals & Mining,151040,0.200000003,--,104276944
+LTN AT Equity,Lantern Hotel Group Ltd,Equity Real Estate Investment Trusts (REITs),601010,0.569999993,0.479999989,--
+LLC AT Equity,Lendlease Corp Ltd,Real Estate Management & Development,601020,9.180000305,7,2826765824
+LLP AT Equity,Lendlease Primelife Ltd,N/A,--,0.414999992,0.209999993,143413056
+1874365D AT Equity,Lihir Gold Ltd,N/A,--,2.799999952,1.950000048,4266964736
+LNC AT Equity,Linc Energy Ltd,"Oil, Gas & Consumable Fuels",101020,5.010000229,2.950000048,1195552640
+LRF AT Equity,LinQ Resources Fund,N/A,--,0.699999988,0.409999996,--
+LNN AT Equity,Lion Nathan Pty Ltd,N/A,--,9.270000458,8.789999962,4695973888
+LST AT Equity,Lion Selection Pty Ltd,N/A,--,1.49000001,1.195000052,--
+LHB AT Equity,LionHub Group Ltd,Real Estate Management & Development,601020,0.100000001,0.035,4499575.5
+LYC AT Equity,Lynas Rare Earths Ltd,Metals & Mining,151040,0.709999979,0.319999993,207760832
+RCY AT Equity,Mackay City Auto Group Pty Ltd,N/A,--,0.185000002,0.150000006,120301512
+MAH AT Equity,Macmahon Holdings Ltd,Metals & Mining,151040,1.610000014,0.730000019,398787840
+MQG AT Equity,Macquarie Group Ltd,Capital Markets,402030,37,29.39999962,8310671360
+MXQ AT Equity,Max Trust,N/A,--,0.046,0.016000001,2823032
+MCM AT Equity,MC Mining Ltd,"Oil, Gas & Consumable Fuels",101020,2.49000001,1,411375392
+MMS AT Equity,McMillan Shakespeare Ltd,Professional Services,202020,2.349999905,2.150000095,145304304
+MCP AT Equity,McPherson's Ltd,Personal Products,303020,2.940000057,2.230000019,143854400
+MDL AT Equity,MD 064 377 420 Pty Ltd,Metals & Mining,151040,0.689999998,0.595000029,287753440
+MAY AT Equity,Melbana Energy Ltd,"Oil, Gas & Consumable Fuels",101020,0.209999993,0.155000001,64685004
+MLX AT Equity,Metals X Ltd,Metals & Mining,151040,0.194999993,0.144999996,172210960
+MTS AT Equity,Metcash Ltd,Food & Staples Retailing,301010,3.970000029,4.03000021,3082267392
+MRE AT Equity,Minara Resources Pty Ltd,N/A,--,1.629999995,1.039999962,485797728
+MCR AT Equity,Mincor Resources NL,Metals & Mining,151040,1.25,0.694999993,138223200
+MIN AT Equity,Mineral Resources Ltd,Metals & Mining,151040,6,2.5,310132000
+MBN AT Equity,Mirabela Nickel Ltd,Metals & Mining,151040,4.619999886,1.559999943,202474128
+MGR AT Equity,Mirvac Group,Equity Real Estate Investment Trusts (REITs),601010,2.640000105,0.985000014,1123845632
+MIX AT Equity,Mirvac Industrial Trust,Equity Real Estate Investment Trusts (REITs),601010,0.180000007,0.189999998,70234152
+1865113D AT Equity,Mirvac Office Trust,N/A,--,0.354999989,0.375,180416672
+1704623D AT Equity,Mirvac Real Estate Investment Trust,Metals & Mining,151040,0.620000005,0.444999993,279134528
+MCU AT Equity,Mitchell Communications Group Ltd,N/A,--,0.545000017,0.389999986,112722160
+MRM AT Equity,MMA Offshore Ltd,Energy Equipment & Services,101010,1.529999971,1.080000043,197713008
+MPO AT Equity,Molopo Energy Ltd,"Oil, Gas & Consumable Fuels",101020,1.110000014,0.644999981,117938512
+MND AT Equity,Monadelphous Group Ltd,Construction & Engineering,201030,12,8,674539968
+MOC AT Equity,Mortgage Choice Ltd,Thrifts & Mortgage Finance,401020,1,0.899999976,107045104
+MGX AT Equity,Mount Gibson Iron Ltd,Metals & Mining,151040,1.840000033,0.405000001,325764096
+MUE AT Equity,Multiplex European Property Fund,Equity Real Estate Investment Trusts (REITs),601010,0.400000006,0.270000011,66676528
+MMX AT Equity,Murchison Metals Ltd,N/A,--,1.274999976,0.75999999,313399168
+NAB AT Equity,National Australia Bank Ltd,Banks,401010,24.26000023,23.98999977,41205874688
+NHR AT Equity,National Hire Group Ltd,N/A,--,2,1.950000048,289383712
+NGI AT Equity,Navigator Global Investments Ltd,Capital Markets,402030,0.629999995,0.400000006,183833088
+NVT AT Equity,Navitas Ltd,Diversified Consumer Services,253020,2.25,2.109999895,724640704
+NHC AT Equity,New Hope Corp Ltd,"Oil, Gas & Consumable Fuels",101020,4.300000191,3.460000038,2802143232
+NZO AT Equity,New Zealand Oil & Gas Ltd,"Oil, Gas & Consumable Fuels",101020,1.070000052,1.100000024,422199168
+NCM AT Equity,Newcrest Mining Ltd,Metals & Mining,151040,27.62999916,20.79999924,9419496448
+NEM AT Equity,Newmont Corp,Metals & Mining,151040,4.900000095,4.070000172,17967036416
+NHF AT Equity,nib holdings Ltd/Australia,Insurance,403010,0.839999974,0.839999974,435010528
+NCK AT Equity,Nick Scali Ltd,Specialty Retail,255040,0.699999988,0.550000012,44550000
+NDO AT Equity,Nido Petroleum Pty Ltd,"Oil, Gas & Consumable Fuels",101020,0.224999994,0.159999996,168130368
+NWH AT Equity,NRW Holdings Ltd,Construction & Engineering,201030,1.700000048,0.620000005,155758272
+NUF AT Equity,Nufarm Ltd/Australia,Chemicals,151010,15.14999962,10.90999985,2035897600
+NPX AT Equity,Nuplex Industries Ltd,Chemicals,151010,4.75,4.599999905,379594304
+1882674D AT Equity,Oaks Hotels & Resorts Ltd,N/A,--,0.850000024,0.529999971,81567632
+OKN AT Equity,Oakton Ltd,IT Services,451020,3.5,1.799999952,161995136
+OGC AT Equity,OceanaGold Corp,Metals & Mining,151040,0.400000006,0.25999999,42025048
+OCP AT Equity,Oceania Capital Partners Ltd,Capital Markets,402030,1.950000048,1.804999948,172960096
+ODE AT Equity,Odessa Minerals Ltd,Metals & Mining,151040,0.439999998,0.180000007,61890496
+OSH AT Equity,Oil Search Ltd,"Oil, Gas & Consumable Fuels",101020,5.599999905,4.5,5039284224
+OMH AT Equity,OM Holdings Ltd,Metals & Mining,151040,2,1.090000033,518054240
+OTR AT Equity,Onterran Ltd,Construction & Engineering,201030,1.590000033,0.699999988,95068400
+ORI AT Equity,Orica Ltd,Chemicals,151010,20.95000076,19.35000038,6950448128
+ORG AT Equity,Origin Energy Ltd,Electric Utilities,551010,16.11000061,15.69999981,13868825600
+OVT AT Equity,Ovato Ltd,Commercial Services & Supplies,202010,1.230000019,0.964999974,327480384
+OZL AT Equity,OZ Minerals Ltd,Metals & Mining,151040,1.605000019,0.944999993,2949666048
+PAC AT Equity,Pacific Current Group Ltd,Capital Markets,402030,8,6.5,149960208
+1773029D AT Equity,Pacific National Holdings Pty Ltd,Road & Rail,203040,3.160000086,2.099999905,1467516416
+PDN AT Equity,Paladin Energy Ltd,"Oil, Gas & Consumable Fuels",101020,3.900000095,2.269999981,1393774080
+PNA AT Equity,PanAust Ltd,Metals & Mining,151040,0.555000007,0.219999999,316814944
+PAN AT Equity,Panoramic Resources Ltd,Metals & Mining,151040,1.470000029,1.080000043,207306320
+PFL AT Equity,Patties Foods Pty Ltd,Food Products,302020,0.980000019,0.949999988,131857440
+MCC AT Equity,Peabody Energy Australia PCI Pty Ltd,N/A,--,10.60000038,6.059999943,1285669504
+PPC AT Equity,Peet Ltd,Real Estate Management & Development,601020,2.25999999,1.889999986,420030592
+PDL AT Equity,Pendal Group Ltd,Capital Markets,402030,3.400000095,2.599999905,416000000
+PCG AT Equity,Pengana Capital Group Ltd,Capital Markets,402030,7.349999905,5.5,148727712
+PRN AT Equity,Perenti Ltd,Metals & Mining,151040,1.784999967,1.100000024,190559584
+PEM AT Equity,Perilya Ltd,N/A,--,0.300000012,0.234999999,46267412
+PPT AT Equity,Perpetual Ltd,Capital Markets,402030,46.79999924,34.93000031,1466867840
+PRU AT Equity,Perseus Mining Ltd,Metals & Mining,151040,0.839999974,0.330000013,57681988
+PSA AT Equity,Petsec Energy Ltd,"Oil, Gas & Consumable Fuels",101020,0.38499999,0.294999987,45485696
+PXS AT Equity,Pharmaxis Ltd,Pharmaceuticals,352020,2.25,1.5,291805952
+PNI AT Equity,Pinnacle Investment Management Group Ltd,Capital Markets,402030,1.200000048,0.99000001,94750624
+PWK AT Equity,PIPE Networks Pty Ltd,N/A,--,3.450000048,2.400000095,122371920
+PTM AT Equity,Platinum Asset Management Ltd,Capital Markets,402030,3.609999895,3.24000001,1817639936
+PLA AT Equity,Platinum Australia Ltd,N/A,--,1.595000029,0.589999974,129838648
+PMV AT Equity,Premier Investments Ltd,Specialty Retail,255040,4.510000229,4.110000134,575641280
+PIH AT Equity,Prime Infrastructure Group,N/A,--,0.330000013,0.189999998,451390784
+PTN AT Equity,Prime Retirement & Aged Care Property Trust/The,N/A,--,0.474999994,0.189999998,108010712
+PRG AT Equity,Programmed Maintenance Services Ltd,Commercial Services & Supplies,202010,3.900000095,3.099999905,303207584
+SKE AT Equity,Programmed Skilled Workforce Ltd,Professional Services,202020,2.900000095,2.450000048,300846784
+PRT AT Equity,PRT Co Ltd,Media,502010,2.24000001,1.830000043,233263152
+PFT AT Equity,Pure Foods Tasmania Ltd,Food Products,302020,0.670000017,0.305000007,127941152
+QAN AT Equity,Qantas Airways Ltd,Airlines,203020,3.130000114,2.420000076,4718082560
+QBE AT Equity,QBE Insurance Group Ltd,Insurance,403010,26.5,25.5,22670454784
+QGC AT Equity,QGC Pty Ltd,N/A,--,4.050000191,5.75,5323589120
+QUB AT Equity,Qube Holdings Ltd,Transportation Infrastructure,203050,0.720000029,0.574999988,--
+QIN AT Equity,Quintis Ltd,Paper & Forest Products,151050,1.169999957,0.930000007,175144208
+RMS AT Equity,Ramelius Resources Ltd,Metals & Mining,151040,0.714999974,0.529999971,98259832
+RHC AT Equity,Ramsay Health Care Ltd,Health Care Providers & Services,351020,10.05000019,10.10000038,1765144704
+1847636D AT Equity,RATCH - Australia Corp Pty Ltd,N/A,--,1.434999943,1.059999943,282728512
+NFK AT Equity,RCR Infrastructure Group XNFK Pty Ltd,N/A,--,1.200000048,0.529999971,68900000
+1847635D AT Equity,RCR Tomlinson Ltd,Construction & Engineering,201030,0.959999979,0.839999974,105634032
+REA AT Equity,REA Group Ltd,Interactive Media & Services,502030,4.800000191,4.409999847,561194944
+RKN AT Equity,Reckon Ltd,Software,451030,1.13499999,0.930000007,123518688
+RRT AT Equity,Record Realty,N/A,--,0.017999999,0.006,2395579.25
+AEJ AT Equity,Redbank Energy Ltd,Independent Power and Renewable Electricity Producers,551050,0.129999995,0.125,90791112
+RPF AT Equity,Redcape Property Fund,N/A,--,0.469999999,0.379999995,58004268
+RDF AT Equity,Redflex Holdings Ltd,"Electronic Equipment, Instruments & Components",452030,2.299999952,2.650000095,240872288
+REH AT Equity,Reece Ltd,Trading Companies & Distributors,201070,21,17.5,1742999936
+REX AT Equity,Regional Express Holdings Ltd,Airlines,203020,1.019999981,1,121254896
+TRS AT Equity,Reject Shop Ltd/The,Multiline Retail,255030,10.64999962,9.600000381,247849920
+RNE AT Equity,ReNu Energy Ltd,Independent Power and Renewable Electricity Producers,551050,1.210000038,0.75999999,219363344
+RMD AT Equity,ResMed Inc,Health Care Equipment & Supplies,351010,5.400000095,4.949999809,3747550976
+RSG AT Equity,Resolute Mining Ltd,Metals & Mining,151040,1.320000052,0.479999989,134896656
+AXA AT Equity,Resolution Life Aaph Ltd,N/A,--,5.03000021,4.400000095,7442099712
+REF AT Equity,Reverse Corp Ltd,Diversified Telecommunication Services,501010,1.5,1.294999957,119587032
+RIC AT Equity,Ridley Corp Ltd,Food Products,302020,0.964999974,0.774999976,234809808
+RIO AT Equity,Rio Tinto Ltd,Metals & Mining,151040,84.5,77.59999847,1.04926E+11
+RIV AT Equity,Riversdale Mining Ltd,N/A,--,8.350000381,3.049999952,573425920
+RNY AT Equity,RNY Property Trust,Equity Real Estate Investment Trusts (REITs),601010,0.135000005,0.170000002,44780364
+1937868D AT Equity,ROC Oil Co Pty Ltd,"Oil, Gas & Consumable Fuels",101020,1.049999952,0.61500001,355280032
+RPX AT Equity,RP Data Ltd,N/A,--,1.049999952,0.790000021,112795576
+RAT AT Equity,Rubicon America Trust,N/A,--,0.021,0.016000001,6490779.5
+REU AT Equity,Rubicon Europe Trust Group,N/A,--,0.016000001,0.004,1983103.125
+RJT AT Equity,Rubicon Japan Trust,N/A,--,0.025,0.009,3705300
+RHL AT Equity,Ruralco Holdings Ltd,Distributors,255010,4.199999809,3.700000048,169644992
+SAI AT Equity,SAI Global Ltd,Professional Services,202020,2.720000029,2.440000057,351127712
+1940877D AT Equity,Salmat Ltd,Media,502010,3.089999914,3.119999886,495431072
+STO AT Equity,Santos Ltd,"Oil, Gas & Consumable Fuels",101020,19.10000038,13.48999977,7883431936
+ESG AT Equity,Santos NSW Pty Ltd,N/A,--,0.389999986,0.395000011,305038976
+SDM AT Equity,Sedgman Pty Ltd,Construction & Engineering,201030,2.150000095,1.284999967,232551840
+SEK AT Equity,SEEK Ltd,Interactive Media & Services,502030,5.110000134,3.299999952,950716416
+SHV AT Equity,Select Harvests Ltd,Food Products,302020,5.199999809,3.849999905,151007392
+SRV AT Equity,Servcorp Ltd,Real Estate Management & Development,601020,3.5,3,241401904
+SSM AT Equity,Service Stream Ltd,Construction & Engineering,201030,1.059999943,0.86500001,155087936
+SVW AT Equity,Seven Group Holdings Ltd,Trading Companies & Distributors,201070,6.300000191,6.25,1267859968
+SWM AT Equity,Seven West Media Ltd,Media,502010,9,6.150000095,1286909696
+1702818D AT Equity,SGH Energy Pty Ltd,"Oil, Gas & Consumable Fuels",101020,1.11500001,0.545000017,351715872
+SIG AT Equity,Sigma Healthcare Ltd,Health Care Providers & Services,351020,1.195000052,1.25999999,1086365056
+SLX AT Equity,Silex Systems Ltd,Semiconductors & Semiconductor Equipment,453010,3.5,3.900000095,567800640
+SGM AT Equity,Sims Ltd,Metals & Mining,151040,29.79999924,14.19999981,2581409536
+SGT AT Equity,Singapore Telecommunications Ltd,Diversified Telecommunication Services,501010,2.690000057,2.5,39814983680
+SGX AT Equity,Sino Gold Mining Pty Ltd,N/A,--,4.179999828,3.5,1020640640
+2105597D AT Equity,Sirtex Medical Ltd,Biotechnology,352010,2.059999943,2.119999886,118228376
+SKT AT Equity,SKY Network Television Ltd,Media,502010,3.5,3.210000038,1249138816
+SKC AT Equity,SKYCITY Entertainment Group Ltd,"Hotels, Restaurants & Leisure",253010,3.029999971,2.920000076,1392336384
+1644836D AT Equity,SMS Management & Technology Ltd,Metals & Mining,151040,3.319999933,2.450000048,162745664
+SHL AT Equity,Sonic Healthcare Ltd,Health Care Providers & Services,351020,13.10000038,13.71000004,4707454464
+SXE AT Equity,Southern Cross Electrical Engineering Ltd,Construction & Engineering,201030,1.100000024,0.899999976,108000000
+SXL AT Equity,Southern Cross Media Group Ltd,Media,502010,2.650000095,1.25999999,270807776
+SKI AT Equity,Spark Infrastructure Group,Electric Utilities,551010,1.450000048,1.460000038,1472630400
+SPK AT Equity,Spark New Zealand Ltd,Diversified Telecommunication Services,501010,2.279999971,2.00999999,3674817024
+SPH AT Equity,Sphere Minerals Ltd,Metals & Mining,151040,1.059999943,0.745000005,110136480
+SRS AT Equity,Spicers Ltd,Trading Companies & Distributors,201070,1.607142806,1.399999976,806034432
+1684513D AT Equity,Spotless Group Ltd,N/A,--,3.279999971,2.5,547023744
+SBM AT Equity,St Barbara Ltd,Metals & Mining,151040,0.289999992,0.230000004,298709280
+SGB AU Equity,St George Bank Ltd,N/A,--,28.60000038,27.70000076,15692861440
+SST AT Equity,Steamships Trading Co Ltd,Industrial Conglomerates,201050,12,12,372098400
+SGP AT Equity,Stockland,Equity Real Estate Investment Trusts (REITs),601010,5.400000095,3.970000029,6103205888
+1719934D AT Equity,Stockland Aevum Ltd,N/A,--,1.75,1.350000024,168016944
+SRK AT Equity,Strike Resources Ltd/Australia,Metals & Mining,151040,0.660000026,0.5,65017152
+SUN AT Equity,Suncorp Group Ltd,Insurance,403010,9.300000191,8.010000229,8116930560
+SDL AT Equity,Sundance Resources Ltd,Metals & Mining,151040,0.219999999,0.094999999,178686944
+SDG AT Equity,Sunland Group Ltd,Real Estate Management & Development,601020,2.410000086,0.985000014,318696864
+SUL AT Equity,Super Retail Group Ltd,Specialty Retail,255040,2.470000029,2.190000057,233518832
+SWK AT Equity,Swick Mining Services Ltd,Metals & Mining,151040,1.049999952,0.569999993,86953152
+SYD AT Equity,Sydney Airport,Transportation Infrastructure,203050,2.700000048,2.140000105,3677919744
+SLP AT Equity,Sylvania Platinum Ltd,Metals & Mining,151040,1,0.860000014,--
+SYN AT Equity,Synergia Energy Ltd,"Oil, Gas & Consumable Fuels",101020,0.540000021,0.595000029,78691664
+TAH AT Equity,Tabcorp Holdings Ltd,"Hotels, Restaurants & Leisure",253010,8.079999924,6.849999905,3651031552
+TAL AT Equity,TAL Ltd,N/A,--,2.859999895,2.089999914,705409728
+TWO AT Equity,Talent2 International Ltd,Metals & Mining,151040,1.230000019,0.899999976,112362752
+TD1 AT Equity,Tali Digital Ltd,Health Care Technology,351030,0.159999996,0.115000002,48837624
+1627560D AT Equity,Tamaya Resources Ltd,Metals & Mining,151040,0.030999999,0.014,18271820
+TAP AT Equity,Tap Oil Ltd,"Oil, Gas & Consumable Fuels",101020,0.850000024,0.579999983,90761824
+TGR AT Equity,Tassal Group Ltd,Food Products,302020,2.24000001,1.75,237101552
+TTS AT Equity,Tatts Group Ltd,"Hotels, Restaurants & Leisure",253010,2.380000114,2.5,3163387392
+TNE AT Equity,Technology One Ltd,Software,451030,0.904999971,0.779999971,233118352
+2200359D AT Equity,Telstra Corp Ltd,Diversified Telecommunication Services,501010,4.179999828,4.119999886,51265449984
+TEN AT Equity,Ten Network Holdings Ltd,Media,502010,1.600000024,1.350000024,1249069568
+X64 AT Equity,Ten Sixty Four Ltd,Metals & Mining,151040,1.039999962,0.63499999,92905256
+TZN AT Equity,Terramin Australia Ltd,Metals & Mining,151040,1.345000029,0.800000012,87252320
+TTY AT Equity,Territory Resources Ltd,N/A,--,0.400000006,0.25999999,68797664
+FOX AT Equity,TFCF Corp,Entertainment,502020,15.30000019,14.85000038,38653939712
+TIA AT Equity,Tian An Australia Ltd,Real Estate Management & Development,601020,0.360000014,0.174999997,22862246
+TIM AT Equity,Timbercorp Ltd,N/A,--,0.61500001,0.50999999,179556416
+1782441D AT Equity,Tishman Speyer Office Fund,N/A,--,0.930000007,0.319999993,109766312
+TSL AT Equity,Titanium Sands Ltd,Metals & Mining,151040,1.460000038,0.810000002,124965752
+TOL AT Equity,Toll Holdings Ltd,Air Freight & Logistics,203010,6.940000057,5.980000019,3875895296
+TOE AT Equity,Toro Energy Ltd,"Oil, Gas & Consumable Fuels",101020,0.203958333,0.100000001,55575780
+TWR AT Equity,TOWER Ltd,Insurance,403010,1.355000019,1.335000038,256309328
+TCL AT Equity,Transurban Group,Transportation Infrastructure,203050,5.579999924,5.389999866,6861999616
+TRY AT Equity,Troy Resources Ltd,Metals & Mining,151040,1.340000033,1.00999999,70532848
+1849589D AT Equity,Trust Co Ltd/The,N/A,--,7.75,6.050000191,195791920
+IOF AT Equity,Trustee For The Armstrong Jones Office Fund/The,Equity Real Estate Investment Trusts (REITs),601010,1.419999957,1.105000019,1395927552
+TBG AT Equity,Tutt Bryant Group Ltd,N/A,--,1.299999952,0.779999971,101609512
+TZL AT Equity,TZ Ltd,"Electronic Equipment, Instruments & Components",452030,2.900000095,1.950000048,94474184
+UGL AT Equity,UGL Pty Ltd,Construction & Engineering,201030,12.73999977,9.510000229,1563409664
+UMC AT Equity,United Minerals Corp NL,N/A,--,1.110000014,0.644999981,99402440
+UOS AT Equity,United Overseas Australia Ltd,Real Estate Management & Development,601020,0.170000002,0.159999996,136314416
+UPG AT Equity,Unity Pacific Group,Equity Real Estate Investment Trusts (REITs),601010,0.670000017,0.389999986,90071280
+VPG AT Equity,Valad Property Group Pty Ltd,N/A,--,0.294999987,0.083999999,135072592
+WYL AT Equity,Valspar Paint Holdings Australia Pty Ltd,N/A,--,1.200000048,0.680000007,57746892
+VMG AT Equity,VDM Group Ltd,Construction & Engineering,201030,1.25999999,0.560000002,53337704
+NVN AT Equity,Vicinity Holdings Ltd,Equity Real Estate Investment Trusts (REITs),601010,2.25,2.039999962,4985501696
+VCX AT Equity,Vicinity Ltd,Equity Real Estate Investment Trusts (REITs),601010,0.115000002,0.109999999,251503936
+VLW AT Equity,Villa World Ltd,Real Estate Management & Development,601020,0.25999999,0.189999998,81103896
+VRLPA AT Equity,Village Roadshow Ltd,Entertainment,502020,1.200000048,0.894999981,262866400
+VRL AT Equity,Village Roadshow Ltd,Entertainment,502020,1.690000057,1.379999995,262866416
+VAH AT Equity,Virgin Australia Holdings Pty Ltd,Airlines,203020,0.314999998,0.344999999,362695392
+VEI AT Equity,Vision Eye Institute Ltd,Health Care Providers & Services,351020,1.179999948,0.74000001,55742800
+1832284D AT Equity,Viterra Pty Ltd,N/A,--,7.909999847,8.25,1413566592
+WJA AT Equity,Wameja Ltd,Software,451030,0.800000012,0.75,128276696
+WHS AT Equity,Warehouse Group Ltd/The,Multiline Retail,255030,2.650000095,3.349999905,1042506240
+WCB AT Equity,Warrnambool Cheese & Butter Factory Co Holdings Ltd,Food Products,302020,4.699999809,4.03000021,160167920
+SOL AT Equity,Washington H Soul Pattinson & Co Ltd,"Oil, Gas & Consumable Fuels",101020,10.80000019,8.739999771,2085718784
+WTP AT Equity,Watpac Ltd,Construction & Engineering,201030,2.170000076,1.559999943,186376784
+2064969D AT Equity,WDS Ltd,Construction & Engineering,201030,2.25999999,1.600000024,167835520
+WCG AT Equity,Webcentral Ltd,IT Services,451020,2.900000095,2.160000086,167552288
+WES AT Equity,Wesfarmers Ltd,Multiline Retail,255030,28.47999954,21.46999931,17425074176
+WSA AT Equity,Western Areas Ltd,Metals & Mining,151040,7.539999962,4.050000191,681382528
+WFD AT Equity,Westfield Corp,Equity Real Estate Investment Trusts (REITs),601010,16.63999939,16.39999962,31958284288
+WBC AT Equity,Westpac Banking Corp,Banks,401010,21.47999954,20.28000069,38416121856
+WEC AT Equity,White Energy Co Ltd,"Oil, Gas & Consumable Fuels",101020,2.950000048,1.975000024,263330912
+WHC AT Equity,Whitehaven Coal Ltd,"Oil, Gas & Consumable Fuels",101020,2.650000095,1.625,661613760
+CXP AT Equity,Winc Australia Pty Ltd,N/A,--,4.849999905,4.989999771,837076032
+WLC AT Equity,Wollongong Coal Ltd,Metals & Mining,151040,1.299999952,0.75,585127040
+WDS AT Equity,Woodside Energy Group Ltd,"Oil, Gas & Consumable Fuels",101020,51,41.88000107,29255399424
+WOW AT Equity,Woolworths Group Ltd,Food & Staples Retailing,301010,27.20000076,27.79999924,34033565696
+WOR AT Equity,Worley Ltd,Energy Equipment & Services,101010,30.29999924,14.94999981,3489325568
+WTF AT Equity,Wotif.com Holdings Ltd,Internet & Direct Marketing Retail,255020,3.700000048,3.460000038,720051648
+WPP AT Equity,WPP AUNZ Ltd,Media,502010,1.144999981,0.564999998,118027984
+THG AT Equity,Wynyard Properties Holdings Ltd,N/A,--,0.870000005,0.529999971,313539072
+1854137D AT Equity,Yancoal Resources Pty Ltd,N/A,--,16.97999954,11.85999966,2328414464
+MOL AT Equity,Young Australian Mines Ltd,Metals & Mining,151040,1.269999981,0.360000014,31029014
+ZIM AT Equity,Zimplats Holdings Ltd,Metals & Mining,151040,11.25,8.75,941829056
+ABS AT Equity,ZYX Learning Centres Ltd,N/A,--,0.839999974,--,--
