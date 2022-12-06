@@ -35,7 +35,7 @@ print('Set WD: Done')
 cross_sectional_returns_data = pd.read_csv ('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/output/carbon_emissions_stock_returns_vars.csv')
 ms_data = pd.read_csv ('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/output/ms_data.csv')
 asx500_filtered = pd.read_csv ('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/output/asx500_filtered.csv')
-
+monthly_marketcap = pd.read_csv ('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/data/ds_marketcap_monthly.csv')
 #%% create seperate portfolios 
 
 '''
@@ -92,5 +92,10 @@ asx500 = asx500.drop_duplicates(subset=['yearmonth']).reset_index(drop=True)
 asx500 = asx500.loc[(asx500['yearmonth'] >= 200807) & (asx500['yearmonth'] <= 202206)]
 
 #%%
+"monthly marketcap"
+marketcap = monthly_marketcap
+
+marketcap = pd.melt(marketcap, id_vars = ['ASX Code', 'Company Name', 'Item'], value_vars= ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'], var_name = 'year', value_name='capex',col_level=None)
+
 
 pmc = cross_sectional_returns_data[['ret', 'yearmonth']]
