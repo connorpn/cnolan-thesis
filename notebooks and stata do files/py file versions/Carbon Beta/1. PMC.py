@@ -95,7 +95,14 @@ asx500 = asx500.loc[(asx500['yearmonth'] >= 200807) & (asx500['yearmonth'] <= 20
 "monthly marketcap"
 marketcap = monthly_marketcap
 
-marketcap = pd.melt(marketcap, id_vars = ['ASX Code', 'Company Name', 'Item'], value_vars= ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'], var_name = 'year', value_name='capex',col_level=None)
+marketcap = pd.melt(marketcap, id_vars = ['yearmonth', 'year', 'month'], value_vars= ['29M', 'ARI', 'ABB1', 'ABC', 'ABY1', 'AIS', 'AGL', 'ALK', 'AQZ', 'AMP', 'ALD', 'ALG', 'AOE', 'AHY', 'AIO', 'AGO', 'AMI', 'AZJ', 'AST', 'AQC', 'AHG', 'BPT', 'BGA', 'BHP', 'BIN', 'BSL', 'BLD', 'B2Y', 'BKN', 'BKW', 'BRS', 'CAA', 'CBH1', 'CEY', 'CTP', 'CHC', 'CIM', 'CWY', 'CCL', 'CGJ', 'CBA', 'CWN', 'CSL', 'CSR', 'CDU', 'CER', 'CRG', 'DCN', 'DJS', 'DXS', 'DOW', 'APE', 'ENV1', 'EPW', 'EVT', 'EVN', 'ESG', 'ELD', 'ENE1', 'FMG', 'FGL1', 'FXJ', 'FLX1', 'FML', 'GCY', 'GFF', 'GNC', 'GRR', 'GCL', 'GNS', 'HVN', 'HSO', 'HGO', 'HRL', 'IGO', 'ILU', 'IMA', 'IPL', 'ING', 'IVA', 'IGR', 'IPG2', 'JBH', 'KZL', 'LLC', 'LAU', 'AEJ'], var_name = 'ticker', value_name='marketcap',col_level=None)
+marketcap['marketcap'] = marketcap['marketcap'].astype(float)
+marketcap['marketcap'] = marketcap['marketcap'] * 1000000
+
+pmc = cross_sectional_returns_data[['yearmonth','ticker','ret']]
+pmc = pd.merge(pmc, marketcap[['yearmonth','ticker','marketcap']], how='left', on=['ticker'])
+
+pmc['weighted_returns'] =  pmc['ret'] * (pmc['marketcap'] / pmc.groupby(['yearmonth'])['marketcap'].transform('sum'))
+pmc['nger_ret'] = pmc.groupby(['yearmonth'])['weighted_returns'].transform('sum')
 
 
-pmc = cross_sectional_returns_data[['ret', 'yearmonth']]
