@@ -1,10 +1,13 @@
 clear
 
+/*
 ssc install winsor
 ssc install numdate
 ssc install asreg
+*/
 
 import delimited "https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/regression/regression%20variables/carbon_beta_vars.csv"
+
 
 winsor ret, gen(winsor_ret) p(0.02)
 winsor rmrf, gen(winsor_rmrf) p(0.02)
