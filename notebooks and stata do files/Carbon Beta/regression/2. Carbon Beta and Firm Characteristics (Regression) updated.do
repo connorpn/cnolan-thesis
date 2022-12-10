@@ -107,6 +107,8 @@ esttab cb_variables log_scope1 log_scope2 log_total_emissions log_energy_consump
 	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
 	title(Carbon Beta and Firm Characteristics: log_scope1 emissions)
 	nomtitles
+	nodepvars
+	compress
 	replace;
 #delimit cr
 
