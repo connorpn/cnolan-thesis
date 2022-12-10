@@ -109,8 +109,7 @@ esttab cb_variables log_scope1 log_scope2 log_total_emissions log_energy_consump
 	title(Carbon Beta and Firm Characteristics: log_scope1 emissions)
 	nomtitles
 	nodepvars
-	compress
-	plain              
+	compress             
 	replace;
 #delimit cr
 
