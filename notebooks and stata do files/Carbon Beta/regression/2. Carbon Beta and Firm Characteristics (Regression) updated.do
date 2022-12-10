@@ -106,15 +106,16 @@ esttab cb_variables log_scope1 log_scope2 log_total_emissions log_energy_consump
 	s(date_fe industry_fe N r2_a,
 	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
 	rename(log_scope1 "LN S1" log_scope2 "LN S2" log_total_emissions "LN TOT" log_energy_consumption "LN ENG")
-	title(Carbon Beta and Firm Characteristics: log_scope1 emissions)
+	title(Carbon Beta and Firm Characteristics: Level of Emissions)
 	nomtitles
 	nodepvars
-	compress             
+	compress
+	nogaps
 	replace;
 #delimit cr
 
 
-
-
+*posthead(note("test"))
+*prehead(note("test"))
 
 
