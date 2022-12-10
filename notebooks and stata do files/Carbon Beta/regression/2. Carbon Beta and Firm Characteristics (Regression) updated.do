@@ -103,12 +103,13 @@ cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regress
 esttab cb_variables log_scope1 log_scope2 log_total_emissions log_energy_consumption cb_variables_ind log_scope1_ind log_scope2_ind log_total_emissions_ind log_energy_consumption_ind using "cbfc_log_emissions.tex", 
 	indicate(`r(indicate_fe)')
 	label se star(* 0.10 ** 0.05 *** 0.01)
-	s(date_fe industry_fe N r2_a,
-	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
+	s(date_fe industry_fe N r2_a log_scope1 log_scope2 log_total_emissions log_energy_consumption,
+	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj" "LN S1" "LN S2" "LN TOT" "LN ENG"))
 	title(Carbon Beta and Firm Characteristics: log_scope1 emissions)
 	nomtitles
 	nodepvars
 	compress
+	plain              
 	replace;
 #delimit cr
 
