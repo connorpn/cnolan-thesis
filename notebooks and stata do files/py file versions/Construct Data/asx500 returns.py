@@ -32,7 +32,7 @@ print('Set WD: Done')
 #%%
 os.chdir('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/output')
 
-asx500_all = pd.read_csv ('asx500_all.csv')
+asx500_all = pd.read_csv ('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/output/asx500_all.csv')
 
 
 #%%
@@ -40,7 +40,7 @@ asx500_all = pd.read_csv ('asx500_all.csv')
 "monthly asx500 returns"
 
 asx500 = asx500_all[['Ticker', 'Name', 'yearmonth', 'Market Cap\n','monthly return']]
-asx500 
+ 
 
 asx500 = asx500.rename(columns={'Market Cap\n': 'marketcap', 'monthly return':'ret'})
 

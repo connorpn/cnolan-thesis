@@ -152,3 +152,6 @@ output_path = 'C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-th
 outputname = output_path + output_filename
 carbon_beta_vars.to_csv(outputname, mode='w', index=False)
 print("Exported File: " + outputname)
+
+
+"RUN REGRESSION ON CARBON BETA VARS"
