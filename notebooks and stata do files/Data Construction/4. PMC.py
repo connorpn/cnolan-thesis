@@ -32,12 +32,12 @@ print('Set WD: Done')
 #%%
 'IMPORT DATA'
 
-cross_sectional_returns_data = pd.read_csv ('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/output/carbon_emissions_stock_returns_vars.csv')
-ms_data = pd.read_csv ('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/output/ms_data.csv')
-asx500_filtered = pd.read_csv ('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/output/asx500_filtered.csv')
-monthly_marketcap = pd.read_csv ('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/data/ds_marketcap_monthly.csv')
-asx500_returns = pd.read_csv ('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/output/asx500_returns.csv')
-famafrench_factors = pd.read_csv ('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/output/famafrench_factors.csv')
+cross_sectional_returns_data = pd.read_csv ('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/output/cross_sectional_returns_data.csv')
+ms_data = pd.read_csv ('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/output/ms_data.csv')
+asx500_filtered = pd.read_csv ('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/output/asx500_filtered.csv')
+monthly_marketcap = pd.read_csv ('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/data/ds_marketcap_monthly.csv')
+asx500_returns = pd.read_csv ('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/output/asx500_returns.csv')
+famafrench_factors = pd.read_csv ('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/output/famafrench_factors.csv')
 
 #%% create seperate portfolios 
 
@@ -147,7 +147,7 @@ print('Dropped: '+str(len_before-len(carbon_beta_vars)))
 
 #%%
 "Save carbon_beta_vars"
-output_filename = 'carbon_beta_vars.csv'
+output_filename = 'cb_carbon_beta_vars.csv'
 output_path = 'C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/regression/regression variables/'
 outputname = output_path + output_filename
 carbon_beta_vars.to_csv(outputname, mode='w', index=False)

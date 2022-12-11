@@ -42,24 +42,6 @@ industry = pd.read_csv ('C:/Users/conno/OneDrive/University Study/Honours Thesis
 matched_tickers = pd.read_csv("C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/output/matched_tickers.csv")
 matched_tickers_list = matched_tickers['ticker'].tolist()
 
-'''
-"GITHUB"
-"IMPORT DATA"
-
-nger_data_matched = pd.read_csv('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/output/nger_data_matched.csv',encoding = "ISO-8859-1")
-ms_data = pd.read_csv ('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/output/ms_data.csv', encoding='latin1')
-
-price_data = pd.read_csv('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/data/ds_matched_dailyprice.csv')
-marketcap = pd.read_csv('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/data/ds_marketcap.csv')
-beta = pd.read_csv('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/data/ds_beta.csv')
-industry = pd.read_csv ('https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/data/ds_ticker_industry.csv')
-
-matched_tickers = pd.read_csv("https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/output/matched_tickers_list.csv")
-matched_tickers_list = matched_tickers['ticker'].tolist()
-'''
-
-
-
 
 #%%
 
