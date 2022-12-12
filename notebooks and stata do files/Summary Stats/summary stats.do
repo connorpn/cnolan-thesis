@@ -52,5 +52,14 @@ rename winsor_volat volat
 rename winsor_salesgr salesgr
 rename winsor_epsgr epsgr
 
+cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\summary stats"
 
-logout, save(cb_summarize.tex) tex replace: tabstat log_scope1 log_scope2 log_total_emissions log_energy_consumption change_scope1 change_scope2 change_total_emissions change_energy_consumption scope1_int scope2_int total_emissions_int energy_consumption_int ret carbon_beta logsize bm leverage mom investa roe logppe beta volat salesgr epsgr, statistics(n mean sd min max p1 p5 p10 p25 p50 p75 p90 p95 p99 skewness kurtosis) columns(statistics)
+
+estpost tabstat log_scope1 log_scope2 log_total_emissions log_energy_consumption change_scope1 change_scope2 change_total_emissions change_energy_consumption scope1_int scope2_int total_emissions_int energy_consumption_int ret carbon_beta logsize bm leverage mom investa roe logppe beta volat salesgr epsgr, c(stat) stat(n mean sd min max p1 p5 p10 p25 p50 p75 p90 p95 p99 skewness kurtosis)
+
+
+esttab using "cb_summarize.tex", replace ////
+ cells("n sum(fmt(%6.0fc)) mean(fmt(%6.2fc)) sd(fmt(%6.2fc)) min max count p1 p5 p10 p25 p50 p75 p90 p95 p99 skewness kurtosis")   nonumber ///
+  nomtitle nonote noobs label booktabs ///
+  collabels("N" "Sum" "Mean" "SD" "Min" "Max")  ///
+  title("Summary Statistics \label{summarystats}")
