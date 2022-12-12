@@ -25,8 +25,7 @@ destring log_scope2, replace force
 * Run and store regressions
 
 
-*	log_emissions
-
+eststo clear
 
 eststo cb: ///
 reghdfe ret carbon_beta, ///
@@ -61,10 +60,10 @@ estadd local industry_fe "yes" , replace
 estfe, labels(date "Year/Month FE" industry "Industry FE")
 *estadd scalar r2_adjusted = e(r2_a)
 
-cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\carbon beta\3. pricing of carbon risk with carbon beta"
+cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\carbon beta"
 
 #delimit ;
-esttab cb cb_vars cb_ind cb_vars_ind using "pocr_log_emissions.tex", 
+esttab cb cb_vars cb_ind cb_vars_ind using "cb_pricing_risk.tex", 
 	indicate(`r(indicate_fe)')
 	label se star(* 0.10 ** 0.05 *** 0.01)
 	s(date_fe industry_fe N r2_a,
@@ -77,4 +76,3 @@ esttab cb cb_vars cb_ind cb_vars_ind using "pocr_log_emissions.tex",
 	replace;
 #delimit cr
 
-*prehead(note("test"))
