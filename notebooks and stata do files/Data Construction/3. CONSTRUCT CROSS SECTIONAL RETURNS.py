@@ -170,10 +170,16 @@ X
 
 ## int = (tons CO 2 e/AUD m.)
 independent_vars['revenue(m)'] = independent_vars['revenue'] / 1000000
+
 independent_vars['scope1_int'] = independent_vars['scope1'] /  independent_vars['revenue(m)']
 independent_vars['scope2_int'] = independent_vars['scope2'] /  independent_vars['revenue(m)']
 independent_vars['total_emissions_int'] = independent_vars['total_emissions'] /  independent_vars['revenue(m)']
 independent_vars['energy_consumption_int'] = independent_vars['energy_consumption'] / independent_vars['revenue(m)']
+
+independent_vars['scope1_int'] = independent_vars['scope1_int']/100
+independent_vars['scope2_int'] = independent_vars['scope2_int']/100
+independent_vars['total_emissions_int'] = independent_vars['total_emissions_int']/100
+independent_vars['energy_consumption_int'] = independent_vars['energy_consumption_int']/100
 
 
 "DROP BLANK OBSERVATIONS"
