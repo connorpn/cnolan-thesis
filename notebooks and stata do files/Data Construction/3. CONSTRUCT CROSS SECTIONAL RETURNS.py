@@ -145,14 +145,27 @@ independent_vars = independent_vars.drop_duplicates(['ticker', 'year','ticker'],
 
 independent_vars['year'] =  pd.to_datetime(independent_vars['year'], format='%Y').dt.to_period("Y")
 
-
+independent_vars = independent_vars.sort_values(by=['year'])
 #calculate yearly change in emissions by corporation for scope1, scope2, total_emissions, and energy consumption
 independent_vars['change_scope1'] = independent_vars.groupby(['ticker'])['scope1'].diff()
 independent_vars['change_scope2'] = independent_vars.groupby(['ticker'])['scope2'].diff()
 independent_vars['change_total_emissions'] = independent_vars.groupby(['ticker'])['total_emissions'].diff()
 independent_vars['change_energy_consumption'] = independent_vars.groupby(['ticker'])['energy_consumption'].diff()
 
+'''
+CALCULATE LOG CHANGE EMISSIONS
+'''
+independent_vars['change_scope1'] = np.log(independent_vars['change_scope1'])
+independent_vars['change_scope2'] = np.log(independent_vars['change_scope2'])
+independent_vars['change_total_emissions'] = np.log(independent_vars['change_scope2'])
+independent_vars['change_energy_consumption'] = np.log(independent_vars['change_scope2'])
 
+
+
+'''
+X
+'''
+#%%
 "EMISSIONS INTENSITY"
 
 ## int = (tons CO 2 e/AUD m.)

@@ -101,17 +101,6 @@ add_year(nger_2020,2020)
 add_year(nger_2021,2021)
 
 
-"Construct Total Emissions"
-
-def calculate_total_emissions(dataset):
-    dataset['total_emissions'] = dataset['scope1'] + dataset['scope2']
-    
-
-nger_list = [nger_2009,nger_2010,nger_2011,nger_2012,nger_2013,nger_2014,nger_2015,nger_2016,nger_2017,nger_2018,nger_2019,nger_2020,nger_2021]
-
-for i in nger_list:
-    calculate_total_emissions(i)
-
 
 "Combined Datasets"
 nger_data = pd.DataFrame(columns=['year', 'corporation', 'scope1', 'scope2', 'energy_consumption','total_emissions'])
@@ -127,19 +116,19 @@ print(list(nger_data))
 #remove comma's from emissions values 
 nger_data['scope1'] = nger_data['scope1'].replace(",", "", regex=True)
 nger_data['scope2'] = nger_data['scope2'].replace(",", "", regex=True)
-nger_data['total_emissions'] = nger_data['total_emissions'].replace(",", "", regex=True)
+#nger_data['total_emissions'] = nger_data['total_emissions'].replace(",", "", regex=True)
 nger_data['energy_consumption'] = nger_data['energy_consumption'].replace(",", "", regex=True)
 
 #remove spaces's from emissions values 
 nger_data['scope1'] = nger_data['scope1'].replace(" ", "", regex=True)
 nger_data['scope2'] = nger_data['scope2'].replace(" ", "", regex=True)
-nger_data['total_emissions'] = nger_data['total_emissions'].replace(" ", "", regex=True)
+#nger_data['total_emissions'] = nger_data['total_emissions'].replace(" ", "", regex=True)
 nger_data['energy_consumption'] = nger_data['energy_consumption'].replace(" ", "", regex=True)
 
 #remove alphanumeric charaters from emissions values
 nger_data['scope1'] = nger_data['scope1'].str.replace('[a-z]', '', regex=True, flags=re.IGNORECASE)
 nger_data['scope2'] = nger_data['scope2'].str.replace('[a-z]', '',regex=True, flags=re.IGNORECASE)
-nger_data['total_emissions'] = nger_data['total_emissions'].str.replace('[a-z]', '',regex=True, flags=re.IGNORECASE)
+#ger_data['total_emissions'] = nger_data['total_emissions'].str.replace('[a-z]', '',regex=True, flags=re.IGNORECASE)
 nger_data['energy_consumption'] = nger_data['energy_consumption'].str.replace('[a-z]', '',regex=True, flags=re.IGNORECASE)
 
 #replace blanks with nan
@@ -151,14 +140,35 @@ nger_data = nger_data.dropna(axis=0, how= 'all', subset=['scope1', 'scope2'])
 #convert emissions values to float
 nger_data['scope1'] = nger_data['scope1'].astype(float)
 nger_data['scope2'] = nger_data['scope2'].astype(float)
-nger_data['total_emissions'] = nger_data['total_emissions'].astype(float)
+#nger_data['total_emissions'] = nger_data['total_emissions'].astype(float)
 nger_data['energy_consumption'] = nger_data['energy_consumption'].astype(float)
 
 #convert year column to date time format
 #nger_data['year'] =  pd.to_datetime(nger_data['year'], format='%Y').dt.to_period("Y")
 nger_data['year'] = nger_data['year'].astype(str)
 
+"Construct Total Emissions"
 
+'''
+nger_list = [nger_2009,nger_2010,nger_2011,nger_2012,nger_2013,nger_2014,nger_2015,nger_2016,nger_2017,nger_2018,nger_2019,nger_2020,nger_2021]
+
+def convert_emissisons_float(dataset):
+    dataset['scope1'] = dataset['scope1'].astype(float)
+    dataset['scope2'] = dataset['scope2'].astype(float)
+    dataset['energy_consumption'] = dataset['energy_consumption'].astype(float)
+
+for i in nger_list:
+    convert_emissisons_float(i)
+    
+def calculate_total_emissions(dataset):
+    dataset['total_emissions'] = dataset['scope1'] + dataset['scope2']
+    
+
+
+for i in nger_list:
+    calculate_total_emissions(i)
+'''
+nger_data['total_emissions'] = nger_data['scope1'] + nger_data['scope2']
 
 "FORMAT NGER COMPANY NAMES FOR MATCHING"
 nger_data['firm_name']=nger_data['firm_name'].str.lower()
