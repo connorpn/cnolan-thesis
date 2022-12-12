@@ -12,7 +12,7 @@ ssc install erepost
 clear
 eststo clear
 
-import delimited "https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/regression/regression%20variables/carbon_beta_firm_characteristics_vars.csv"
+import delimited "Z:/OneDrive/University Study/Honours Thesis/cnolan-thesis/regression/regression variables/carbon_beta_firm_characteristics_vars.csv"
 
 
 label variable ticker "ticker"
@@ -97,10 +97,10 @@ estadd local industry_fe "yes" , replace
 estfe, labels(date "Year/Month FE" industry "Industry FE")
 *estadd scalar r2_adjusted = e(r2_a)
 
-cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\carbon beta\2. carbon beta and firm characteristics"
+cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\carbon beta"
 
 #delimit ;
-esttab cb_variables log_scope1 log_scope2 log_total_emissions log_energy_consumption cb_variables_ind log_scope1_ind log_scope2_ind log_total_emissions_ind log_energy_consumption_ind using "cbfc_log_emissions.tex", 
+esttab cb_variables log_scope1 log_scope2 log_total_emissions log_energy_consumption cb_variables_ind log_scope1_ind log_scope2_ind log_total_emissions_ind log_energy_consumption_ind using "cb_firm_characteristics.tex", 
 	indicate(`r(indicate_fe)')
 	label se star(* 0.10 ** 0.05 *** 0.01)
 	s(date_fe industry_fe N r2_a,
