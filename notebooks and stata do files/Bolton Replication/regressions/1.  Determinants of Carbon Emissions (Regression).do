@@ -15,6 +15,7 @@ cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regress
 import delimited "br_determinants_of_carbon_emissions.csv"
 
 destring log_scope2, replace force
+destring change_scope2, replace force
 
 label variable ticker "ticker"
 sort ticker
@@ -91,7 +92,7 @@ cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regress
 
 #delimit ;
 esttab log_scope1 log_scope2 log_total_emissions log_energy_consumption change_scope1 change_scope2 change_total_emissions change_energy_consumption scope1_int scope2_int total_emissions_int energy_consumption_int
-	using "br_determinants of carbon emissions.tex", 
+	using "br_determinants_of_carbon_emissions.tex", 
 	varlabels(
 	logsize LOGSIZE
 	winsor_bm B/M
