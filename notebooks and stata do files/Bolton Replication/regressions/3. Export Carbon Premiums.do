@@ -31,174 +31,56 @@ winsor epsgr, gen(winsor_epsgr) p(0.005)
 
 destring log_scope2, replace force
 
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv", replace
-
 
 
 *	WITHOUT INDUSTRY FE
 
+*log emissions
+
+bys date: asreg ret log_scope1 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr
+drop  _Nobs _R2 _adjR2 _b_logsize _b_winsor_bm _b_winsor_leverage _b_winsor_mom _b_winsor_investa _b_winsor_roe _b_logppe _b_beta _b_winsor_volat _b_winsor_salesgr _b_winsor_epsgr _b_cons
+
+bys date: asreg ret log_scope2 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr
+drop  _Nobs _R2 _adjR2 _b_logsize _b_winsor_bm _b_winsor_leverage _b_winsor_mom _b_winsor_investa _b_winsor_roe _b_logppe _b_beta _b_winsor_volat _b_winsor_salesgr _b_winsor_epsgr _b_cons
+
+bys date: asreg ret log_total_emissions logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr
+drop  _Nobs _R2 _adjR2 _b_logsize _b_winsor_bm _b_winsor_leverage _b_winsor_mom _b_winsor_investa _b_winsor_roe _b_logppe _b_beta _b_winsor_volat _b_winsor_salesgr _b_winsor_epsgr _b_cons
+
+bys date: asreg ret log_energy_consumption logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr
+drop  _Nobs _R2 _adjR2 _b_logsize _b_winsor_bm _b_winsor_leverage _b_winsor_mom _b_winsor_investa _b_winsor_roe _b_logppe _b_beta _b_winsor_volat _b_winsor_salesgr _b_winsor_epsgr _b_cons
 
 
-*log emissions no ind
-
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret log_scope1 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_log_scope1_noind.csv", replace
-
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret log_scope2 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_log_scope2_noind.csv", replace
-
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret log_total_emissions logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_log_total_emissions_noind.csv", replace
-
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret log_energy_consumption logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_log_energy_consumption_noind.csv", replace
 
 
-*change emissions no ind
+*change emissions
+bys date: asreg ret change_scope1 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr
+drop  _Nobs _R2 _adjR2 _b_logsize _b_winsor_bm _b_winsor_leverage _b_winsor_mom _b_winsor_investa _b_winsor_roe _b_logppe _b_beta _b_winsor_volat _b_winsor_salesgr _b_winsor_epsgr _b_cons
 
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret change_scope1 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_change_scope1_noind.csv", replace
+bys date: asreg ret change_scope2 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr
+drop  _Nobs _R2 _adjR2 _b_logsize _b_winsor_bm _b_winsor_leverage _b_winsor_mom _b_winsor_investa _b_winsor_roe _b_logppe _b_beta _b_winsor_volat _b_winsor_salesgr _b_winsor_epsgr _b_cons
 
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret change_scope2 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_change_scope2_noind.csv", replace
+bys date: asreg ret change_total_emissions logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr
+drop  _Nobs _R2 _adjR2 _b_logsize _b_winsor_bm _b_winsor_leverage _b_winsor_mom _b_winsor_investa _b_winsor_roe _b_logppe _b_beta _b_winsor_volat _b_winsor_salesgr _b_winsor_epsgr _b_cons
 
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret change_total_emissions logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_change_total_emissions_noind.csv", replace
-
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret change_energy_consumption logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_change_energy_consumption_noind.csv", replace
+bys date: asreg ret change_energy_consumption logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr
+drop  _Nobs _R2 _adjR2 _b_logsize _b_winsor_bm _b_winsor_leverage _b_winsor_mom _b_winsor_investa _b_winsor_roe _b_logppe _b_beta _b_winsor_volat _b_winsor_salesgr _b_winsor_epsgr _b_cons
 
 
-*int emissions no ind
 
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret scope1_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_scope1_int_noind.csv", replace
+* emissions int
+bys date: asreg ret scope1_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr
+drop  _Nobs _R2 _adjR2 _b_logsize _b_winsor_bm _b_winsor_leverage _b_winsor_mom _b_winsor_investa _b_winsor_roe _b_logppe _b_beta _b_winsor_volat _b_winsor_salesgr _b_winsor_epsgr _b_cons
 
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret scope2_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_scope2_int_noind.csv", replace
+bys date: asreg ret scope2_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr
+drop  _Nobs _R2 _adjR2 _b_logsize _b_winsor_bm _b_winsor_leverage _b_winsor_mom _b_winsor_investa _b_winsor_roe _b_logppe _b_beta _b_winsor_volat _b_winsor_salesgr _b_winsor_epsgr _b_cons
 
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret total_emissions_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_total_emissions_int_noind.csv", replace
+bys date: asreg ret total_emissions_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr
+drop  _Nobs _R2 _adjR2 _b_logsize _b_winsor_bm _b_winsor_leverage _b_winsor_mom _b_winsor_investa _b_winsor_roe _b_logppe _b_beta _b_winsor_volat _b_winsor_salesgr _b_winsor_epsgr _b_cons
 
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret energy_consumption_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_energy_consumption_int_noind.csv", replace
+bys date: asreg ret energy_consumption_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr
+drop  _Nobs _R2 _adjR2 _b_logsize _b_winsor_bm _b_winsor_leverage _b_winsor_mom _b_winsor_investa _b_winsor_roe _b_logppe _b_beta _b_winsor_volat _b_winsor_salesgr _b_winsor_epsgr _b_cons
 
 
-*	WITH INDUSTRY FE
+drop ticker industry ret log_scope1 log_scope2 log_total_emissions log_energy_consumption change_scope1 change_scope2 change_total_emissions change_energy_consumption scope1_int scope2_int total_emissions_int energy_consumption_int logsize bm leverage mom investa roe logppe beta volat salesgr epsgr ticker_encode date winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe winsor_volat winsor_salesgr winsor_epsgr
 
-
-*log emissions with ind
-
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret log_scope1 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_log_scope1_ind.csv", replace
-
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret log_scope2 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_log_scope2_ind.csv", replace
-
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret log_total_emissions logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_log_total_emissions_ind.csv", replace
-
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret log_energy_consumption logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_log_energy_consumption_ind.csv", replace
-
-
-*change emissions with ind
-
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret change_scope1 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_change_scope1_ind.csv", replace
-
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret change_scope2 logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_change_scope2_ind.csv", replace
-
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret change_total_emissions logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_change_total_emissions_ind.csv", replace
-
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret change_energy_consumption logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_change_energy_consumption_ind.csv", replace
-
-
-*int emissions with ind
-
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret scope1_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_scope1_int_ind.csv", replace
-
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret scope2_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_scope2_int_ind.csv", replace
-
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret total_emissions_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_total_emissions_int_ind.csv", replace
-
-clear
-import delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns_winsor.csv"
-reghdfe ret energy_consumption_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode year)
-regsave, tstat pval ci
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums\cp_energy_consumption_int_ind.csv", replace
+export delimited "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\br_carbon_premium_ts", replace

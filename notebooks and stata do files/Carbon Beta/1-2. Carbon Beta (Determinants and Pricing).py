@@ -33,7 +33,7 @@ print('Set WD: Done')
 #%%
 "IMPORT DATA"
 #FROM REGRESSION ON CARBON BETA VARS
-carbon_beta = pd.read_csv ('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/regression/regression outputs/carbon_beta_regression_output.csv')
+carbon_beta = pd.read_csv ('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/regression/regression outputs/carbon beta/carbon_beta_regression_output.csv')
 
 cross_sectional_returns_data = pd.read_csv ('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/output/cross_sectional_returns_data.csv')
 
