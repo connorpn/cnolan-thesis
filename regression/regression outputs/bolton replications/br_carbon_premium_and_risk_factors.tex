@@ -1,10 +1,11 @@
 \begin{table}[htbp]\centering
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-\caption{Carbon Premium and Traditional Risk Factors}
+\caption{Carbon Premium and Traditional Risk Factors: LOG EMISSIONS}
 \begin{tabular}{l*{8}{c}}
 \hline\hline
+                    &\multicolumn{8}{c}{Carbon Return Premium (Monthly)}                                                                                                                            \\\cmidrule(lr){2-9}
                     &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}\\
-                    &\multicolumn{1}{c}{log\_scope1}&\multicolumn{1}{c}{log\_scope1}&\multicolumn{1}{c}{log\_scope2}&\multicolumn{1}{c}{log\_scope2}&\multicolumn{1}{c}{log\_total\_emissions}&\multicolumn{1}{c}{log\_total\_emissions}&\multicolumn{1}{c}{log\_energy\_consumption}&\multicolumn{1}{c}{log\_energy\_consumption}\\
+                    &\multicolumn{1}{c}{LN S1}&\multicolumn{1}{c}{LN S1}&\multicolumn{1}{c}{LN S2}&\multicolumn{1}{c}{LN S2}&\multicolumn{1}{c}{LN TOT}&\multicolumn{1}{c}{LN TOT}&\multicolumn{1}{c}{LN ENG}&\multicolumn{1}{c}{LN ENG}\\
 \hline
 SMB                 &                     &     -0.0462         &                     &      0.0409         &                     &      -0.150         &                     &   -0.000831         \\
                     &                     &    (0.0520)         &                     &    (0.0867)         &                     &     (0.108)         &                     &    (0.0568)         \\
@@ -14,7 +15,7 @@ RMW                 &                     &     -0.0679         &               
                     &                     &    (0.0914)         &                     &    (0.0923)         &                     &     (0.158)         &                     &    (0.0653)         \\
 CMA                 &                     &      0.0611         &                     &      0.0138         &                     &       0.143         &                     &       0.128         \\
                     &                     &    (0.0969)         &                     &     (0.145)         &                     &     (0.156)         &                     &    (0.0876)         \\
-wml                 &                     &     0.00923         &                     &      0.0100         &                     &      0.0826         &                     &     -0.0138         \\
+WML                 &                     &     0.00923         &                     &      0.0100         &                     &      0.0826         &                     &     -0.0138         \\
                     &                     &    (0.0458)         &                     &    (0.0746)         &                     &    (0.0929)         &                     &    (0.0536)         \\
 \_cons              &    0.000457         &    0.000641         &    0.000845         &     0.00139         &    0.000554         &    0.000282         &    0.000481         &    0.000586         \\
                     &   (0.00137)         &   (0.00161)         &   (0.00270)         &   (0.00247)         &   (0.00226)         &   (0.00234)         &   (0.00161)         &   (0.00174)         \\
