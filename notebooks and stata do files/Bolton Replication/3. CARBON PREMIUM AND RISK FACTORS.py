@@ -37,6 +37,7 @@ RUN EXPORT CARBON PREMIUMS STATA FILE FIRST
 
 carbon_premium = pd.read_csv("C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/regression/regression outputs/bolton replications/br_carbon_premium_ts.csv")
 famafrench_factors = pd.read_csv ('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/output/famafrench_factors.csv')
+rmrf = pd.read_csv("C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis./output/rmrf.csv")
 
 #%%
 
@@ -47,6 +48,8 @@ carbon_premium_risk_factors = carbon_premium_risk_factors.rename(columns = {'_b_
 
 
 carbon_premium_risk_factors = carbon_premium_risk_factors.drop_duplicates('yearmonth').reset_index(drop=True)
+
+carbon_premium_risk_factors = pd.merge(carbon_premium_risk_factors, rmrf, on=['yearmonth'], how='left')
 #%%
 
 "Save carbon_premium_risk_factors"

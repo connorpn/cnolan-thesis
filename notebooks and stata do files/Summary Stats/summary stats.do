@@ -1,5 +1,6 @@
 clear
 eststo clear
+ssc install logout
 
 import delimited "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\summary stats\summ_stats.csv"
 
@@ -54,12 +55,32 @@ rename winsor_epsgr epsgr
 
 cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\summary stats"
 
+logout, save("cb_summarize.tex") tex replace: tabstat log_scope1 log_scope2 log_total_emissions log_energy_consumption change_scope1 change_scope2 change_total_emissions change_energy_consumption scope1_int scope2_int total_emissions_int energy_consumption_int ret carbon_beta logsize bm leverage mom investa roe logppe beta volat salesgr epsgr, c(stat) stat(n mean sd min max p1 p5 p10 p25 p50 p75 p90 p95 p99 skewness kurtosis)
 
-estpost tabstat log_scope1 log_scope2 log_total_emissions log_energy_consumption change_scope1 change_scope2 change_total_emissions change_energy_consumption scope1_int scope2_int total_emissions_int energy_consumption_int ret carbon_beta logsize bm leverage mom investa roe logppe beta volat salesgr epsgr, c(stat) stat(n mean sd min max p1 p5 p10 p25 p50 p75 p90 p95 p99 skewness kurtosis)
+/*
+foreach var of varlist _all {
+	label var `var' `var'
+}
+
+estpost tabstat log_scope1 log_scope2 log_total_emissions log_energy_consumption change_scope1 change_scope2 change_total_emissions change_energy_consumption scope1_int scope2_int total_emissions_int energy_consumption_int ret carbon_beta logsize bm leverage mom investa roe logppe beta volat salesgr epsgr, c(stat) stat(sum mean sd min max n)
+
+*stat(n mean sd min max p1 p5 p10 p25 p50 p75 p90 p95 p99 skewness kurtosis)
+
+esttab using "cb_summarize.tex", replace ////
+cells("sum mean sd min max n")
+
+*collabels("Sum" "Mean" "SD" "Min" "Max" "N")
 
 
 esttab using "cb_summarize.tex", replace ////
- cells("n sum(fmt(%6.0fc)) mean(fmt(%6.2fc)) sd(fmt(%6.2fc)) min max count p1 p5 p10 p25 p50 p75 p90 p95 p99 skewness kurtosis")   nonumber ///
+ cells("n sum(fmt(%6.0fc)) mean(fmt(%6.2fc)) sd(fmt(%6.2fc)) min max p1 p5 p10 p25 p50 p75 p90 p95 p99 skewness kurtosis")   nonumber ///
   nomtitle nonote noobs label booktabs ///
-  collabels("N" "Sum" "Mean" "SD" "Min" "Max")  ///
+  collabels("N" "Sum" "Mean" "SD" "Min" "Max" "p1" "p5" "p10" "p25" "p50" "p75" "p90" "p95" "p99" "skewness" "kurtosis")  ///
   title("Summary Statistics \label{summarystats}")
+
+  
+esttab using "cb_summarize.tex", replace ////
+cells("n sum(fmt(%6.0fc)) mean(fmt(%6.2fc)) sd(fmt(%6.2fc)) min max p1 p5 p10 p25 p50 p75 p90 p95 p99 skewness kurtosis")   nonumber ///
+nomtitle nonote noobs nolabel
+
+  */

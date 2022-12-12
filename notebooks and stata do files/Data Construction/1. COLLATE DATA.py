@@ -1263,7 +1263,22 @@ outputname = output_path + output_filename
 asx500_ret.to_csv(outputname, mode='w', index=False)
 print("Exported File: " + outputname)
 
+#%%
+rf = pd.read_csv('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/data/rf.csv')
+rf = rf.groupby(['yearmonth'])['rf'].agg('mean')
+rf = rf.reset_index()
+rf['rf'] = rf['rf']/100
 
+rmrf = pd.read_csv("C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis./output/asx500_returns.csv")
+rmrf = pd.merge(rmrf, rf, how='left', on=['yearmonth'])
+rmrf['rmrf'] = rmrf['asx500_ret'] - rmrf['rf']
+rmrf = rmrf[['yearmonth','rmrf']]
+
+"Save rmrf"
+output_filename = 'rmrf.csv'
+outputname = output_path + output_filename
+rmrf.to_csv(outputname, mode='w', index=False)
+print("Exported File: " + outputname)
 #%%
 print('COLLATE DATA - DONE')
 
