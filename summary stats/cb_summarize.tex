@@ -1,10 +1,9 @@
-\begin{table}[htbp]\centering
+{
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-\caption{Summary Statistics \label{summarystats}}
 \begin{tabular}{l*{1}{ccccccccccccccccc}}
-\toprule
-                    &           N&         Sum&        Mean&          SD&         Min&         Max&          p1&          p5&         p10&         p25&         p50&         p75&         p90&         p95&         p99&    skewness&    kurtosis\\
-\midrule
+\hline\hline
+                    &           n&         sum&        mean&          sd&         min&         max&          p1&          p5&         p10&         p25&         p50&         p75&         p90&         p95&         p99&    skewness&    kurtosis\\
+\hline
 log\_scope1          &            &            &            &            &            &            &    5.886104&    8.766395&    9.326433&    10.37499&    11.55877&    13.29929&    14.35332&    15.65436&    17.57897&            &            \\
 log\_scope2          &            &            &            &            &            &            &    4.127134&    7.793587&     9.98562&    10.85888&    11.50813&    12.09236&    12.97385&    13.72985&    14.12765&            &            \\
 log\_total\_emissions &            &            &            &            &            &            &    10.87228&    11.04404&    11.23696&    11.63955&    12.30971&    13.61941&     14.5437&    15.79257&       17.59&            &            \\
@@ -30,6 +29,6 @@ beta                &            &            &            &            &       
 volat, Winsorized fraction .005&            &            &            &            &            &            &      .02961&    .0511106&     .065876&    .0997209&    .1654746&    .3050252&    .5392872&    .8555633&    1.699756&            &            \\
 salesgr, Winsorized fraction .005&            &            &            &            &            &            &   -1.876323&   -.3975153&   -.1969562&   -.0262892&    .0287256&    .1239871&    .3146705&    .6355436&    1.272128&            &            \\
 epsgr, Winsorized fraction .005&            &            &            &            &            &            &   -154.1881&   -41.17265&   -15.61424&   -3.443038&    .4536827&    3.424126&    13.51172&    36.38573&     164.375&            &            \\
-\bottomrule
+\hline\hline
 \end{tabular}
-\end{table}
+}
