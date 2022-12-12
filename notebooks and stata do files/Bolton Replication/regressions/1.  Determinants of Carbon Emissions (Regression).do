@@ -10,8 +10,9 @@ ssc install erepost
 clear
 eststo clear
 
-cd 
-import delimited "https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/output/emissions_determinants_vars.csv"
+cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables"
+
+import delimited "br_determinants_of_carbon_emissions.csv"
 
 destring log_scope2, replace force
 
@@ -29,8 +30,7 @@ winsor salesgr, gen(winsor_salesgr) p(0.005)
 winsor epsgr, gen(winsor_epsgr) p(0.005)
 
 
-
-
+*regressions
 
 eststo log_scope1: reghdfe log_scope1 logsize winsor_bm winsor_roe winsor_leverage winsor_investa logppe winsor_salesgr winsor_epsgr, absorb(date industry) vce(cluster ticker_encode date)
 estadd local year_fe "yes" , replace
@@ -85,13 +85,13 @@ estadd local industry_fe "yes" , replace
 
 estfe, labels(date "Year/Month FE" industry "Industry FE")
 
-cd "Y:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression output\3.1 Determinants of Carbon Emissions"
+cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications"
 
-*erase "3.1 determinants of carbon emissions.tex"
+
 
 #delimit ;
-esttab log_scope1 log_scope2 log_total_emissions log_energy_consumption
-	using "3.1 determinants of carbon emissions (log emissions).tex", 
+esttab log_scope1 log_scope2 log_total_emissions log_energy_consumption change_scope1 change_scope2 change_total_emissions change_energy_consumption scope1_int scope2_int total_emissions_int energy_consumption_int
+	using "br_determinants of carbon emissions.tex", 
 	varlabels(
 	logsize LOGSIZE
 	winsor_bm B/M
@@ -111,59 +111,7 @@ esttab log_scope1 log_scope2 log_total_emissions log_energy_consumption
 	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
 	title(Determinants of Carbon Emissions: LOG EMISSIONS)
 	nomtitles
+	nodepvars
 	replace;
 #delimit cr
 
-#delimit ;
-esttab change_scope1 change_scope2 change_total_emissions change_energy_consumption
-	using "3.1 determinants of carbon emissions (change emissions).tex", 
-	varlabels(
-	logsize LOGSIZE
-	winsor_bm B/M
-	winsor_roe ROE
-	winsor_leverage LEVERAGE
-	winsor_investa INVEST/A
-	logppe LOGPPE
-	winsor_salesgr SALESGR
-	winsor_epsgr EPSGR
-	)
-	indicate(
-	`r(indicate_fe)'
-	)
-	order(logsize winsor_bm winsor_roe winsor_leverage winsor_investa logppe winsor_salesgr winsor_epsgr _cons)
-	label se star(* 0.10 ** 0.05 *** 0.01)
-	s(year_fe industry_fe N r2_a,
-	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
-	title(Determinants of Carbon Emissions: Yearly Change in Emissions)
-	nomtitles
-	replace;
-#delimit cr
-
-#delimit ;
-esttab scope1_int scope2_int total_emissions_int energy_consumption_int
-	using "3.1 determinants of carbon emissions (emissions int).tex", 
-	varlabels(
-	logsize LOGSIZE
-	winsor_bm B/M
-	winsor_roe ROE
-	winsor_leverage LEVERAGE
-	winsor_investa INVEST/A
-	logppe LOGPPE
-	winsor_salesgr SALESGR
-	winsor_epsgr EPSGR
-	)
-	indicate(
-	`r(indicate_fe)'
-	)
-	order(logsize winsor_bm winsor_roe winsor_leverage winsor_investa logppe 	winsor_salesgr winsor_epsgr _cons)
-	label se star(* 0.10 ** 0.05 *** 0.01)
-	s(year_fe industry_fe N r2_a,
-	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
-	title(Determinants of Carbon Emissions: Emission Intensity)
-	nomtitles
-	replace;
-#delimit cr
-
-*mlabels(,none) collabels(,none)
-
-save "Y:\OneDrive\University Study\Honours Thesis\cnolan-thesis\notebooks and stata do files\3.1 Determinants of Carbon Emissions (Regression).do", replace

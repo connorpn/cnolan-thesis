@@ -35,7 +35,7 @@ cross_sectional_returns_data = pd.read_csv ('C:/Users/conno/OneDrive/University 
 #%%
 "regression variables for bolton replication- determinants of carbon emissions"
 
-br_determinants_of_carbon_emissions = cross_sectional_returns_data[['yearmonth','ticker', 'industry',
+br_determinants_of_carbon_emissions = cross_sectional_returns_data[['year','ticker', 'industry',
                                                                     'log_scope1', 'log_scope2', 'log_total_emissions', 'log_energy_consumption', 'change_scope1', 'change_scope2', 'change_total_emissions', 'change_energy_consumption', 'scope1_int', 'scope2_int', 'total_emissions_int', 'energy_consumption_int',
                                                                     'logsize', 'bm', 'roe','leverage', 'investa','logppe','salesgr', 'epsgr']]
 
