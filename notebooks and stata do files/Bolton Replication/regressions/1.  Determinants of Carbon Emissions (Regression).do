@@ -94,6 +94,18 @@ cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regress
 esttab log_scope1 log_scope2 log_total_emissions log_energy_consumption change_scope1 change_scope2 change_total_emissions change_energy_consumption scope1_int scope2_int total_emissions_int energy_consumption_int
 	using "br_determinants_of_carbon_emissions.tex", 
 	varlabels(
+	log_scope1 "LN S1"
+	log_scope2 "LN S2"
+	log_total_emissions "LN TOT"
+	log_energy_consumption "LN ENG"
+	change_scope1 "\$\Delta\$ S1"
+	change_scope2 "\$\Delta\$ S2"
+	change_total_emissions "\$\Delta\$ TOT"
+	change_energy_consumption "\$\Delta\$ ENG"
+	scope1_int "S1 INT"
+	scope2_int "S2 INT"
+	total_emissions_int "TOT INT"
+	energy_consumption_int "ENG INT"
 	logsize LOGSIZE
 	winsor_bm B/M
 	winsor_roe ROE
@@ -111,8 +123,8 @@ esttab log_scope1 log_scope2 log_total_emissions log_energy_consumption change_s
 	s(year_fe industry_fe N r2_a,
 	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
 	title(Determinants of Carbon Emissions: LOG EMISSIONS)
-	nomtitles
-	nodepvars
+	depvars
 	replace;
 #delimit cr
 
+*nomtitles

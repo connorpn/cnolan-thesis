@@ -127,10 +127,18 @@ esttab cb_variables log_scope1 log_scope2 log_total_emissions log_energy_consump
 	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
 	rename(log_scope1 "LN S1" log_scope2 "LN S2" log_total_emissions "LN TOT" log_energy_consumption "LN ENG")
 	varlabels(
-	log_scope1 "LN SCOPE1"
-	log_scope2 "LN SCOPE2"
-	log_total_emissions "LN TOTAL"
-	log_energy_consumption "LN ENERGY"
+	log_scope1 "LN S1"
+	log_scope2 "LN S2"
+	log_total_emissions "LN TOT"
+	log_energy_consumption "LN ENG"
+	change_scope1 "\$\Delta\$ S1"
+	change_scope2 "\$\Delta\$ S2"
+	change_total_emissions "\$\Delta\$ TOT"
+	change_energy_consumption "\$\Delta\$ ENG"
+	scope1_int "S1 INT"
+	scope2_int "S2 INT"
+	total_emissions_int "TOT INT"
+	energy_consumption_int "ENG INT"
 	logsize LOGSIZE
 	bm B/M
 	leverage LEVERAGE
@@ -143,9 +151,10 @@ esttab cb_variables log_scope1 log_scope2 log_total_emissions log_energy_consump
 	salesgr SALESGR
 	epsgr EPSGR
 	)
-	title(Carbon Beta and Firm Characteristics: Level of Emissions)
+	title(Carbon Beta and Firm Characteristics)
+	order(log_scope1 log_scope2 log_total_emissions log_energy_consumption logsize bm leverage mom investa roe logppe beta volat salesgr epsgr)
 	nomtitles
-	nodepvars
+	depvars
 	compress
 	nogaps
 	replace;

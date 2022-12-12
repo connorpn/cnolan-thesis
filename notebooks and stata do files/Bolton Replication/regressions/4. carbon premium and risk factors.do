@@ -37,6 +37,12 @@ esttab using "br_carbon_premium_and_risk_factors.tex",
 	s(N r2_a,
 	label("Observations" "R2-Adj"))
 	title("Carbon Premium and Traditional Risk Factors")
+	varlabels(
+	smb "SMB"
+	hml "HML"
+	rmw "RMW"
+	cma "CMA"
+	wml "wml"
 	nomtitles
 	nodepvars
 	replace;

@@ -69,6 +69,7 @@ esttab cb cb_vars cb_ind cb_vars_ind using "cb_pricing_risk.tex",
 	s(date_fe industry_fe N r2_a,
 	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
 	varlabels(
+	ret RET
 	log_scope1 "LN SCOPE1"
 	log_scope2 "LN SCOPE2"
 	log_total_emissions "LN TOTAL"
@@ -85,9 +86,9 @@ esttab cb cb_vars cb_ind cb_vars_ind using "cb_pricing_risk.tex",
 	salesgr SALESGR
 	epsgr EPSGR
 	)
-	title(Pricing of Carbon Risk: Level of Emissions)
+	title(Pricing of Carbon Risk)
 	nomtitles
-	nodepvars
+	depvars
 	compress
 	nogaps
 	replace;
