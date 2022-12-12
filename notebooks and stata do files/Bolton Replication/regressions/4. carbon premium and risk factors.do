@@ -29,6 +29,8 @@ estadd local industry_fe "no" , replace
 
 estfe, labels(industry "Industry FE")
 
+cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications"
+
 #delimit ;
 esttab using "br_carbon_premium_and_risk_factors.tex", 
 	label se star(* 0.10 ** 0.05 *** 0.01)

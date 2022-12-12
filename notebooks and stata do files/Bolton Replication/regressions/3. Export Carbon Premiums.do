@@ -7,7 +7,7 @@ ssc install asreg
 clear
 
 
-cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\carbon premiums"
+
 
 import delimited "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_emissions_and_stock_returns.csv"
 
@@ -83,4 +83,5 @@ drop  _Nobs _R2 _adjR2 _b_logsize _b_winsor_bm _b_winsor_leverage _b_winsor_mom 
 
 drop ticker industry ret log_scope1 log_scope2 log_total_emissions log_energy_consumption change_scope1 change_scope2 change_total_emissions change_energy_consumption scope1_int scope2_int total_emissions_int energy_consumption_int logsize bm leverage mom investa roe logppe beta volat salesgr epsgr ticker_encode date winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe winsor_volat winsor_salesgr winsor_epsgr
 
-export delimited "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\br_carbon_premium_ts", replace
+
+export delimited "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications\br_carbon_premium_ts.csv", replace

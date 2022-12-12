@@ -35,6 +35,7 @@ winsor epsgr, gen(winsor_epsgr) p(0.005)
 
 
 destring log_scope2, replace force
+destring change_scope2, replace force
 
 
 *log emissions
@@ -78,7 +79,7 @@ estadd local industry_fe "no" , replace
 
 estfe, labels(date "Year/Month FE" industry "Industry FE")
 
-cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs"
+cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications"
 
 #delimit ;
 esttab using "br_carbon_emissions_and_stock_returns_log_emissions.tex", 
@@ -149,7 +150,7 @@ estadd local industry_fe "no" , replace
 
 estfe, labels(date "Year/Month FE" industry "Industry FE")
 
-cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs"
+cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications"
 
 #delimit ;
 esttab using "br_carbon_emissions_and_stock_returns_change_emissions.tex",
@@ -221,7 +222,7 @@ estadd local industry_fe "no" , replace
 
 estfe, labels(date "Year/Month FE" industry "Industry FE")
 
-cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs"
+cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications"
 
 #delimit ;
 esttab using "br_carbon_emissions_and_stock_returns_emissions_int.tex", 
