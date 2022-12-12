@@ -69,11 +69,7 @@ esttab cb cb_vars cb_ind cb_vars_ind using "cb_pricing_risk.tex",
 	s(date_fe industry_fe N r2_a,
 	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
 	varlabels(
-	ret RET
-	log_scope1 "LN SCOPE1"
-	log_scope2 "LN SCOPE2"
-	log_total_emissions "LN TOTAL"
-	log_energy_consumption "LN ENERGY"
+	carbon_beta "CARBON BETA"
 	logsize LOGSIZE
 	bm B/M
 	leverage LEVERAGE
@@ -86,11 +82,13 @@ esttab cb cb_vars cb_ind cb_vars_ind using "cb_pricing_risk.tex",
 	salesgr SALESGR
 	epsgr EPSGR
 	)
-	title(Pricing of Carbon Risk)
-	nomtitles
-	depvars
+	title(Pricing of Carbon Risk: test2)
+	order(ret carbon_beta logsize bm leverage mom investa roe logppe beta volat salesgr epsgr _cons)
 	compress
+	nomtitles
 	nogaps
+	mgroups("Returns i,t: (Monthly Stock Returns) ", pattern(0 0 0 0) ///
+prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
 	replace;
 #delimit cr
 

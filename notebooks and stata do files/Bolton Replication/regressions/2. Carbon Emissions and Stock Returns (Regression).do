@@ -108,7 +108,7 @@ esttab using "br_carbon_emissions_and_stock_returns_log_emissions.tex",
 	s(ym_fe industry_fe N r2_a,
 	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
 	title(Carbon Emissions and Stock Returns: LOG Emission)
-	depvars
+	mtitles("RET" "RET" "RET" "RET" "RET" "RET" "RET" "RET")
 	replace;
 #delimit cr
 *nomtitles
@@ -179,7 +179,7 @@ esttab using "br_carbon_emissions_and_stock_returns_change_emissions.tex",
 	s(ym_fe industry_fe N r2_a,
 	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
 	title(Carbon Emissions and Stock Returns: Yearly Change in Emissions)
-	depvars
+	mtitles("RET" "RET" "RET" "RET" "RET" "RET" "RET" "RET")
 	replace;
 #delimit cr
 *nomtitles
@@ -251,7 +251,7 @@ esttab using "br_carbon_emissions_and_stock_returns_emissions_int.tex",
 	s(ym_fe industry_fe N r2_a,
 	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
 	title(Carbon Emissions and Stock Returns: Emission Intensity)
-	depvars
+	mtitles("RET" "RET" "RET" "RET" "RET" "RET" "RET" "RET")
 	replace;
 #delimit cr
 
