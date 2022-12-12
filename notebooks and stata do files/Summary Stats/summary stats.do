@@ -1,16 +1,35 @@
 clear
 eststo clear
 
-import delimited "https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/regression/regression%20variables/pricing_carbon_risk.csv"
+import delimited "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\summary stats\summ_stats.csv"
 
-/*
-label variable ticker "ticker"
-sort ticker
-encode ticker, gen(ticker_encode)
-*/
 
 destring log_scope2, replace force
 destring change_scope2, replace force
+
+winsor change_scope1, gen(winsor_change_scope1) p(0.025)
+winsor change_scope2, gen(winsor_change_scope2) p(0.025)
+winsor change_total_emissions, gen(winsor_change_total_emissions) p(0.025)
+winsor change_energy_consumption, gen(winsor_change_energy_consumption) p(0.025)
+
+drop change_scope1 change_scope2 change_total_emissions change_energy_consumption
+
+rename winsor_change_scope1 change_scope1
+rename winsor_change_scope2 change_scope2
+rename winsor_change_total_emissions change_total_emissions
+rename winsor_change_energy_consumption change_energy_consumption
+
+winsor scope1_int, gen(winsor_scope1_int) p(0.025)
+winsor scope2_int, gen(winsor_scope2_int) p(0.025)
+winsor total_emissions_int, gen(winsor_total_emissions_int) p(0.025)
+winsor energy_consumption_int, gen(winsor_energy_consumption_int) p(0.025)
+
+drop scope1_int scope2_int total_emissions_int energy_consumption
+
+rename winsor_scope1_int scope1_int
+rename winsor_scope2_int scope2_int
+rename winsor_total_emissions_int total_emissions_int
+rename winsor_energy_consumption_int energy_consumption_int
 
 winsor bm, gen(winsor_bm) p(0.025)
 winsor leverage, gen(winsor_leverage) p(0.025)
@@ -23,19 +42,15 @@ winsor epsgr, gen(winsor_epsgr) p(0.005)
 
 
 drop bm leverage mom investa roe volat salesgr epsgr
-rename ret ret
-rename logsize logsize
+
 rename winsor_bm bm
 rename winsor_leverage leverage
 rename winsor_mom mom
 rename winsor_investa investa
 rename winsor_roe roe
-rename logppe logppe
-rename beta beta
 rename winsor_volat volat
 rename winsor_salesgr salesgr
 rename winsor_epsgr epsgr
 
-drop yearmonth ticker industry 
 
 logout, save(cb_summarize.tex) tex replace: tabstat log_scope1 log_scope2 log_total_emissions log_energy_consumption change_scope1 change_scope2 change_total_emissions change_energy_consumption scope1_int scope2_int total_emissions_int energy_consumption_int ret carbon_beta logsize bm leverage mom investa roe logppe beta volat salesgr epsgr, statistics(n mean sd min max p1 p5 p10 p25 p50 p75 p90 p95 p99 skewness kurtosis) columns(statistics)

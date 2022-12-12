@@ -82,8 +82,8 @@ esttab cb cb_vars cb_ind cb_vars_ind using "cb_pricing_risk.tex",
 	salesgr SALESGR
 	epsgr EPSGR
 	)
-	title(Pricing of Carbon Risk: test2)
-	order(ret carbon_beta logsize bm leverage mom investa roe logppe beta volat salesgr epsgr _cons)
+	title(Pricing of Carbon Risk: test4)
+	order(carbon_beta logsize bm leverage mom investa roe logppe beta volat salesgr epsgr _cons)
 	compress
 	nomtitles
 	nogaps
