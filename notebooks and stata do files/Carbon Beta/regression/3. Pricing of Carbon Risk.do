@@ -68,6 +68,23 @@ esttab cb cb_vars cb_ind cb_vars_ind using "cb_pricing_risk.tex",
 	label se star(* 0.10 ** 0.05 *** 0.01)
 	s(date_fe industry_fe N r2_a,
 	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
+	varlabels(
+	log_scope1 "LN SCOPE1"
+	log_scope2 "LN SCOPE2"
+	log_total_emissions "LN TOTAL"
+	log_energy_consumption "LN ENERGY"
+	logsize LOGSIZE
+	bm B/M
+	leverage LEVERAGE
+	mom MOM
+	investa INVEST/A
+	roe ROE
+	logppe LOGPPE
+	beta BETA
+	volat VOLAT
+	salesgr SALESGR
+	epsgr EPSGR
+	)
 	title(Pricing of Carbon Risk: Level of Emissions)
 	nomtitles
 	nodepvars
