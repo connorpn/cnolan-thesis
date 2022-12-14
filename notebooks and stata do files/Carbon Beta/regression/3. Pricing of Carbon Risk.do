@@ -11,16 +11,41 @@ ssc install erepost
 clear
 eststo clear
 
+*import data
 import delimited "https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/regression/regression%20variables/pricing_carbon_risk.csv"
 
+*encode ticker
 label variable ticker "ticker"
 sort ticker
 encode ticker, gen(ticker_encode)
 
+*datetime
 numdate monthly date = yearmonth, p(YM)
 
+*destring
 destring log_scope2, replace force
 
+*winsorize
+
+winsor bm, gen(winsor_bm) p(0.025)
+winsor leverage, gen(winsor_leverage) p(0.025)
+winsor mom, gen(winsor_mom) p(0.005)
+winsor investa, gen(winsor_investa) p(0.025)
+winsor roe, gen(winsor_roe) p(0.025)
+winsor volat, gen(winsor_volat) p(0.005)
+winsor salesgr, gen(winsor_salesgr) p(0.005)
+winsor epsgr, gen(winsor_epsgr) p(0.005)
+
+
+drop bm leverage mom investa roe volat salesgr epsgr
+rename winsor_bm bm
+rename winsor_leverage leverage
+rename winsor_mom mom
+rename winsor_investa investa
+rename winsor_roe roe
+rename winsor_volat volat
+rename winsor_salesgr salesgr
+rename winsor_epsgr epsgr
 
 * Run and store regressions
 

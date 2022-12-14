@@ -10,18 +10,46 @@ ssc install erepost
 clear
 eststo clear
 
-cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables"
+*import data
+import delimited "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_determinants_of_carbon_emissions.csv"
 
-import delimited "br_determinants_of_carbon_emissions.csv"
 
-destring log_scope2, replace force
-destring change_scope2, replace force
-
+*encode ticker
 label variable ticker "ticker"
 sort ticker
 encode ticker, gen(ticker_encode)
 
+*datetime 
 numdate yearly date = year, p(Y)
+
+*destring
+
+destring log_scope2, replace force
+destring change_scope2, replace force
+
+*winsorize
+
+winsor change_scope1, gen(winsor_change_scope1) p(0.025)
+winsor change_scope2, gen(winsor_change_scope2) p(0.025)
+winsor change_total_emissions, gen(winsor_change_total_emissions) p(0.025)
+winsor change_energy_consumption, gen(winsor_change_energy_consumption) p(0.025)
+
+drop change_scope1 change_scope2 change_total_emissions change_energy_consumption
+rename winsor_change_scope1 change_scope1
+rename winsor_change_scope2 change_scope2
+rename winsor_change_total_emissions change_total_emissions
+rename winsor_change_energy_consumption change_energy_consumption
+
+winsor scope1_int, gen(winsor_scope1_int) p(0.025)
+winsor scope2_int, gen(winsor_scope2_int) p(0.025)
+winsor total_emissions_int, gen(winsor_total_emissions_int) p(0.025)
+winsor energy_consumption_int, gen(winsor_energy_consumption_int) p(0.025)
+
+drop scope1_int scope2_int total_emissions_int energy_consumption_int
+rename winsor_scope1_int scope1_int
+rename winsor_scope2_int scope2_int
+rename winsor_total_emissions_int total_emissions_int
+rename winsor_energy_consumption_int energy_consumption_int
 
 winsor bm, gen(winsor_bm) p(0.025)
 winsor roe, gen(winsor_roe) p(0.025)

@@ -92,7 +92,7 @@ ret_merge = ret[['ticker_year_month','ticker','year','month','ret']]
 
 independent_vars = nger_data_matched
 independent_vars = pd.merge(independent_vars, ms_data[['ticker_year','revenue']], how='left', on=['ticker_year'])
-
+independent_vars = independent_vars.replace([np.inf, -np.inf], np.nan)
 "LOG EMISSIONS"
 
 #log scope1, scope2, total_emissions, and energy consumption
@@ -100,6 +100,8 @@ independent_vars['log_scope1'] = np.log(independent_vars['scope1'])
 independent_vars['log_scope2'] = np.log(independent_vars['scope2'])
 independent_vars['log_total_emissions'] = np.log(independent_vars['total_emissions'])
 independent_vars['log_energy_consumption'] = np.log(independent_vars['energy_consumption'])
+independent_vars = independent_vars.replace([np.inf, -np.inf], np.nan).reset_index(drop=True)
+
 
 "YEAR BY YEAR CHANGE IN EMISSIONS"
 
@@ -152,6 +154,7 @@ independent_vars['change_scope2'] = independent_vars.groupby(['ticker'])['scope2
 independent_vars['change_total_emissions'] = independent_vars.groupby(['ticker'])['total_emissions'].diff()
 independent_vars['change_energy_consumption'] = independent_vars.groupby(['ticker'])['energy_consumption'].diff()
 
+independent_vars = independent_vars.replace([np.inf, -np.inf], np.nan).reset_index(drop=True)
 '''
 CALCULATE LOG CHANGE EMISSIONS
 '''
@@ -160,11 +163,10 @@ independent_vars['change_scope2'] = np.log(independent_vars['change_scope2'])
 independent_vars['change_total_emissions'] = np.log(independent_vars['change_scope2'])
 independent_vars['change_energy_consumption'] = np.log(independent_vars['change_scope2'])
 
+independent_vars = independent_vars.replace([np.inf, -np.inf], np.nan).reset_index(drop=True)
 
 
-'''
-X
-'''
+
 #%%
 "EMISSIONS INTENSITY"
 

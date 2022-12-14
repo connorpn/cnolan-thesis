@@ -1223,10 +1223,11 @@ asx500 = asx500[asx500.fuzzy_matched != 1]
 len_after = len(asx500)
 print('Dropped:' + str(len_before-len_after))
 
+asx500_filtered = asx500
 "Save asx500"
 output_filename = 'asx500_filtered.csv'
 outputname = output_path + output_filename
-asx500.to_csv(outputname, mode='w', index=False)
+asx500_filtered.to_csv(outputname, mode='w', index=False)
 print("Exported File: " + outputname)
 
 
@@ -1264,6 +1265,9 @@ asx500_ret.to_csv(outputname, mode='w', index=False)
 print("Exported File: " + outputname)
 
 #%%
+'''
+RISK FREE RATE AND RMRF
+'''
 rf = pd.read_csv('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/data/rf.csv')
 rf = rf.groupby(['yearmonth'])['rf'].agg('mean')
 rf = rf.reset_index()

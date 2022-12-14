@@ -61,3 +61,5 @@ output_path = 'C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-th
 outputname = output_path + output_filename
 br_carbon_emissions_and_stock_returns.to_csv(outputname, mode='w', index=False)
 print("Exported File: " + outputname)
+
+print("RUN EXPORT CARBON PREMIUM")

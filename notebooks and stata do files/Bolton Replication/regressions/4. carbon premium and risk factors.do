@@ -1,14 +1,17 @@
+/*
+ssc install numdate
+*/
+
 clear 
 eststo clear
 
-ssc install numdate
-
-
+*import data
 import delimited "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\br_carbon_premium_risk_factors.csv"
 
-
+*datetime
 numdate monthly date = yearmonth, p(YM)
 
+*set date to lag on
 tsset date, monthly
 
 eststo: newey log_scope1, lag(12) force
@@ -29,6 +32,7 @@ eststo: newey log_energy_consumption rmrf smb hml rmw cma wml, lag(12) force
 
 *estfe, labels(industry "Industry FE")
 
+*export regression table
 cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications"
 
 #delimit ;
@@ -51,9 +55,13 @@ prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
 	replace;
 #delimit cr
 
-eststo clear
+
 
 /*
+*regression change emission
+
+eststo clear
+
 eststo: newey change_scope1, lag(12) force
 eststo: newey change_scope1 rmrf smb hml rmw cma wml, lag(12) force
 *estadd local industry_fe "no" , replace
@@ -72,6 +80,7 @@ eststo: newey change_energy_consumption rmrf smb hml rmw cma wml, lag(12) force
 
 *estfe, labels(industry "Industry FE")
 
+*export regression table
 cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications"
 
 #delimit ;
@@ -94,6 +103,10 @@ prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
 	replace;
 #delimit cr
 */
+
+
+*regression emission int
+
 eststo clear
 
 eststo: newey scope1_int, lag(12) force
@@ -115,6 +128,8 @@ eststo: newey energy_consumption_int rmrf smb hml rmw cma wml, lag(12) force
 
 *estfe, labels(industry "Industry FE")
 
+
+*export regression table
 cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\bolton replications"
 
 #delimit ;
