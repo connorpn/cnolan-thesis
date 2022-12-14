@@ -61,3 +61,4 @@ print("Exported File: " + outputname)
 
 #%%
 print("done")
+print("RUN STATA - 4. CARBON PREMIUM AND RISK FACTORS")

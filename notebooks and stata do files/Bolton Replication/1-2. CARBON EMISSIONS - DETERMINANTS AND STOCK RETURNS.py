@@ -61,5 +61,6 @@ output_path = 'C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-th
 outputname = output_path + output_filename
 br_carbon_emissions_and_stock_returns.to_csv(outputname, mode='w', index=False)
 print("Exported File: " + outputname)
-
-print("RUN EXPORT CARBON PREMIUM")
+print("RUN STATA - 1. DETERMINANTS OF CARBON EMISSIONS")
+print("RUN STATA - 2. CARBON EMISSIONS AND STOCK RETURNS")
+print("RUN STATA - 3. EXPORT CARBON PREMIUM")

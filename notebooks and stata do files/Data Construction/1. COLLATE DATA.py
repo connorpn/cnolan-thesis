@@ -1285,4 +1285,4 @@ rmrf.to_csv(outputname, mode='w', index=False)
 print("Exported File: " + outputname)
 #%%
 print('COLLATE DATA - DONE')
-
+print('Run - 2. CONSTRUCT SAMPLE (MATCH NGER FIRMS)')

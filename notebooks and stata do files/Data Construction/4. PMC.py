@@ -153,6 +153,9 @@ carbon_beta_vars.to_csv(outputname, mode='w', index=False)
 print("Exported File: " + outputname)
 
 print("PMC - DONE")
-print("RUN REGRESSION ON CARBON BETA VARS")
+print("RUN PY - 1-2 CARBON EMISSIONS - DETERMINANTS AND STOCK RETURNS")
+print("RUN STATA - 1. ESTIMATION ON  CARBON BETAS")
+print("RUN STATA - 1. ASX500 ESTIMATION ON  CARBON BETAS")
 
-"RUN REGRESSION ON CARBON BETA VARS"
+
+
