@@ -89,7 +89,7 @@ pricing_carbon_risk = carbon_beta_csr[['yearmonth','ticker','industry',
                                         ]]
 
 "Save pricing_carbon_risk"
-output_filename = 'pricing_carbon_risk.csv'
+output_filename = 'cb_pricing_carbon_risk.csv'
 output_path = 'C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/regression/regression variables/'
 outputname = output_path + output_filename
 pricing_carbon_risk.to_csv(outputname, mode='w', index=False)

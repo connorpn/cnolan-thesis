@@ -12,7 +12,7 @@ clear
 eststo clear
 
 *import data
-import delimited "https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/regression/regression%20variables/pricing_carbon_risk.csv"
+import delimited "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\cb_pricing_carbon_risk.csv"
 
 *encode ticker
 label variable ticker "ticker"

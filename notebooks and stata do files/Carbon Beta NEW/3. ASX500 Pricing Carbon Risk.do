@@ -11,7 +11,7 @@ clear
 eststo clear
 
 *import data
-import delimited "https://raw.githubusercontent.com/connorpn/cnolan-thesis/main/regression/regression%20variables/pricing_carbon_risk.csv"
+import delimited "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\cb_asx500_pricing_carbon_risk.csv"
 
 *encode ticker
 label variable ticker "ticker"
@@ -20,6 +20,10 @@ encode ticker, gen(ticker_encode)
 
 *datetime
 numdate monthly date = yearmonth, p(YM)
+
+*filter date
+drop if date < tm(2010m7)
+drop if date > tm(2022m6)
 
 
 *winsorize

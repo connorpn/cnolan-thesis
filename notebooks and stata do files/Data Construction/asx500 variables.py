@@ -159,6 +159,17 @@ asx500_csr['ppea'] = asx500_csr.ppe / asx500_csr.assets
 #cant get r&d
 
 
+#replace -inf with nan
+asx500_csr = asx500_csr.replace([np.inf, -np.inf], np.nan)
+
+'''
+#MOM
+mom['lag_monthly_return'] = mom.monthly_return.shift(1)
+mom['mom'] = mom.lag_monthly_return.rolling(12).mean()
+mom = mom.reset_index(drop=True)
+mom['ticker_year_month'] = mom['ticker'] + '_' + mom['year'] + '_' + mom['month']
+mom_merge = mom[['ticker_year_month','mom']]
+'''
 
 '''
 "CONSTRUCT CONTROL VARIABLES"
@@ -278,6 +289,8 @@ epsgr_merge = epsgr[['ticker_year_month', 'epsgr']]
 '''
 
 #%%
+
+
 "save asx500 csr"
 asx500_csr_output = asx500_csr[['yearmonth', 'ticker', 'industry', 'monthly return', 'ln_marketcap', 'bm', 'roe','leverage', 'investa', 'logppe', 'ppea']]
 asx500_csr_output = asx500_csr_output.dropna(subset=['monthly return', 'ln_marketcap', 'bm', 'roe','leverage', 'investa', 'logppe', 'ppea'], how ='any').reset_index(drop=True)

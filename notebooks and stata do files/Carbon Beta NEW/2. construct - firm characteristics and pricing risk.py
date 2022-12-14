@@ -33,7 +33,7 @@ print('Set WD: Done')
 #%%
 "IMPORT DATA"
 #FROM REGRESSION ON CARBON BETA VARS
-asx500_carbon_beta = pd.read_csv ('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/regression/regression outputs/carbon beta/asx500_carbon_beta_regression_output.csv')
+asx500_carbon_beta = pd.read_csv ("C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/regression/regression outputs/carbon beta/asx500 estimation/cb_asx500_carbon_beta_regression_output.csv")
 
 asx500_csr = pd.read_csv ('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis./output/asx500_csr.csv')
 
@@ -90,10 +90,12 @@ pricing of carbon risk : using monthly returns + bolton controls
 asx500_pricing_carbon_risk = carbon_beta_csr
 
 "Save pricing_carbon_risk"
-output_filename = 'asx500_pricing_carbon_risk.csv'
+output_filename = 'cb_asx500_pricing_carbon_risk.csv'
 output_path = 'C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/regression/regression variables/'
 outputname = output_path + output_filename
 asx500_pricing_carbon_risk.to_csv(outputname, mode='w', index=False)
+print("Exported File: " + outputname)
+
 
 
 
