@@ -37,3 +37,5 @@ export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesi
 
 
 *END
+
+display "RUN PY - 2. CONSTRUCT FIRM CHARACTERISTICS AND PRICING RISK"

@@ -11,7 +11,7 @@ clear
 eststo clear
 
 *import data
-import delimited "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression variables\cb_asx500_pricing_carbon_risk.csv"
+import delimited "Z:/OneDrive/University Study/Honours Thesis/cnolan-thesis/regression/regression variables/cb_asx500_pricing_carbon_risk.csv"
 
 *encode ticker
 label variable ticker "ticker"
@@ -28,26 +28,29 @@ drop if date > tm(2022m6)
 
 *winsorize
 
-winsor ln_marketcap, gen(winsor_ln_marketcap)
+winsor ret, gen(winsor_ret) p(0.025)
+winsor ln_marketcap, gen(winsor_ln_marketcap) p(0.025)
 winsor bm, gen(winsor_bm) p(0.025)
+winsor roe, gen(winsor_roe) p(0.025) 
 winsor leverage, gen(winsor_leverage) p(0.025)
-winsor mom, gen(winsor_mom) p(0.005)
 winsor investa, gen(winsor_investa) p(0.025)
-winsor roe, gen(winsor_roe) p(0.025)
-winsor volat, gen(winsor_volat) p(0.005)
-winsor salesgr, gen(winsor_salesgr) p(0.005)
-winsor epsgr, gen(winsor_epsgr) p(0.005)
+winsor logppe, gen(winsor_logppe) p(0.025)
+winsor ppea, gen(winsor_ppea) p(0.025)
+winsor carbon_beta, gen(winsor_carbon_beta) p(0.025)
 
 
-drop bm leverage mom investa roe volat salesgr epsgr
+drop ret ln_marketcap bm roe leverage investa logppe ppea carbon_beta
+rename winsor_ret ret
+rename winsor_ln_marketcap ln_marketcap
 rename winsor_bm bm
-rename winsor_leverage leverage
-rename winsor_mom mom
-rename winsor_investa investa
 rename winsor_roe roe
-rename winsor_volat volat
-rename winsor_salesgr salesgr
-rename winsor_epsgr epsgr
+rename winsor_leverage leverage
+rename winsor_investa investa
+rename winsor_logppe logppe
+rename winsor_ppea ppea
+rename winsor_carbon_beta carbon_beta
+
+
 
 * Run and store regressions
 
@@ -62,7 +65,7 @@ estadd local date_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
 eststo cb_vars: ///
-reghdfe ret carbon_beta logsize bm leverage mom investa roe logppe beta volat salesgr epsgr, ///
+reghdfe ret carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
 absorb(date) ///
 vce(cluster ticker_encode)
 estadd local date_fe "yes" , replace
@@ -76,7 +79,7 @@ estadd local date_fe "yes" , replace
 estadd local industry_fe "yes" , replace
 
 eststo cb_vars_ind: ///
-reghdfe ret carbon_beta  logsize bm leverage mom investa roe logppe beta volat salesgr epsgr , ///
+reghdfe ret carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
 absorb(date industry) ///
 vce(cluster ticker_encode)
 estadd local date_fe "yes" , replace
@@ -87,35 +90,32 @@ estadd local industry_fe "yes" , replace
 estfe, labels(date "Year/Month FE" industry "Industry FE")
 *estadd scalar r2_adjusted = e(r2_a)
 
-cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\carbon beta"
+cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\carbon beta\asx500 estimation"
 
 #delimit ;
-esttab cb cb_vars cb_ind cb_vars_ind using "cb_pricing_risk.tex", 
+esttab cb cb_vars cb_ind cb_vars_ind using "cb_asx500_pricing_risk.tex", 
 	indicate(`r(indicate_fe)')
 	label se star(* 0.10 ** 0.05 *** 0.01)
 	s(date_fe industry_fe N r2_a,
 	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
 	varlabels(
-	carbon_beta "CARBON BETA"
-	logsize LOGSIZE
-	bm B/M
+	carbon_beta "Carbon Beta"
+	ln_marketcap "ln(Market Cap.)"
+	bm Book/Market
+	roe "Return on Equity"
 	leverage LEVERAGE
-	mom MOM
-	investa INVEST/A
-	roe ROE
-	logppe LOGPPE
-	beta BETA
-	volat VOLAT
-	salesgr SALESGR
-	epsgr EPSGR
+	investa Capex/Assets
+	logppe "ln(PPE)"
+	ppea PPE/Assets
 	)
-	title(Pricing of Carbon Risk: test4)
-	order(carbon_beta logsize bm leverage mom investa roe logppe beta volat salesgr epsgr _cons)
+	title(Pricing of Carbon Risk Using ASX500 SAMPLE)
+	order(carbon_beta ln_marketcap bm roe leverage investa logppe ppea _cons)
 	compress
 	nomtitles
 	nogaps
-	mgroups("Returns i,t: (Monthly Stock Returns) ", pattern(0 0 0 0) ///
+	mgroups("Returns i,t: (Monthly Stock Returns) ", pattern(1 0 0 0) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
+	note("All Variables are Winsorized at 2.5%")
 	replace;
 #delimit cr
 
