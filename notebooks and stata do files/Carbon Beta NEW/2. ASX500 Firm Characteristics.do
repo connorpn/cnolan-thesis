@@ -80,102 +80,101 @@ rename winsor_energy_consumption_int energy_consumption_int
 
 * Run and store regressions
 
-
+*TOTAL EMISSIONS
 eststo clear
 
 
-eststo cb_vars: ///
+eststo asx500: ///
 reghdfe asx500_carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
 absorb(date) ///
 vce(cluster ticker_encode)
 estadd local ym_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
-eststo cb_vars: ///
+eststo nger: ///
 reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
 absorb(date) ///
 vce(cluster ticker_encode)
 estadd local ym_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
-eststo cb_vars: ///
+eststo log_scope1: ///
 reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea log_scope1, ///
 absorb(date) ///
 vce(cluster ticker_encode)
 estadd local ym_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
-eststo cb_vars: ///
+eststo log_scope2: ///
 reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea log_scope2, ///
 absorb(date) ///
 vce(cluster ticker_encode)
 estadd local ym_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
-eststo cb_vars: ///
+eststo log_total_emissions: ///
 reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea log_total_emissions, ///
 absorb(date) ///
 vce(cluster ticker_encode)
 estadd local ym_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
-eststo cb_vars: ///
+eststo log_ec: ///
 reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea log_energy_consumption, ///
 absorb(date) ///
 vce(cluster ticker_encode)
 estadd local ym_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
-eststo cb_vars: ///
+eststo asx500_ind: ///
 reghdfe asx500_carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
 absorb(date industry) ///
 vce(cluster ticker_encode)
 estadd local ym_fe "yes" , replace
-estadd local industry_fe "yes", replace
+estadd local industry_fe "yes" , replace
 
-eststo cb_vars: ///
+eststo nger_ind: ///
 reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
 absorb(date industry) ///
 vce(cluster ticker_encode)
 estadd local ym_fe "yes" , replace
-estadd local industry_fe "yes", replace
+estadd local industry_fe "yes" , replace
 
-eststo cb_vars: ///
+eststo log_scope1_ind: ///
 reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea log_scope1, ///
 absorb(date industry) ///
 vce(cluster ticker_encode)
 estadd local ym_fe "yes" , replace
-estadd local industry_fe "yes", replace
+estadd local industry_fe "yes" , replace
 
-eststo cb_vars: ///
+eststo log_scope2_ind: ///
 reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea log_scope2, ///
 absorb(date industry) ///
 vce(cluster ticker_encode)
 estadd local ym_fe "yes" , replace
-estadd local industry_fe "yes", replace
+estadd local industry_fe "yes" , replace
 
-eststo cb_vars: ///
+eststo log_total_emissions_ind: ///
 reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea log_total_emissions, ///
 absorb(date industry) ///
 vce(cluster ticker_encode)
 estadd local ym_fe "yes" , replace
-estadd local industry_fe "yes", replace
+estadd local industry_fe "yes" , replace
 
-eststo cb_vars: ///
+eststo log_ec_ind: ///
 reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea log_energy_consumption, ///
 absorb(date industry) ///
 vce(cluster ticker_encode)
 estadd local ym_fe "yes" , replace
-estadd local industry_fe "yes", replace
-
+estadd local industry_fe "yes" , replace
 
 estfe, labels(date "Year/Month FE" industry "Industry FE")
 *estadd scalar r2_adjusted = e(r2_a)
 
 cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\carbon beta"
 
-
-esttab using "cb_determinants_log.tex", 
+#delimit ;
+esttab * using "cb_determinants_log.tex", 
 	varlabels(
 	log_scope1 "LN S1"
 	log_scope2 "LN S2"
@@ -184,7 +183,7 @@ esttab using "cb_determinants_log.tex",
 	ln_marketcap "ln(Market Cap.)"
 	bm Book/Market
 	roe "Return on Equity"
-	leverage LEVERAGE
+	leverage Leverage
 	investa Capex/Assets
 	logppe "ln(PPE)"
 	ppea PPE/Assets
@@ -200,3 +199,246 @@ prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
 	noconstant
 	replace;
 #delimit cr
+
+
+*CHANGE EMISSIONS
+eststo clear
+
+
+eststo asx500: ///
+reghdfe asx500_carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
+absorb(date) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "no" , replace
+
+eststo nger: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
+absorb(date) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "no" , replace
+
+eststo change_scope1: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea change_scope1, ///
+absorb(date) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "no" , replace
+
+eststo change_scope2: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea change_scope2, ///
+absorb(date) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "no" , replace
+
+eststo change_total_emissions: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea change_total_emissions, ///
+absorb(date) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "no" , replace
+
+eststo change_ec: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea change_energy_consumption, ///
+absorb(date) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "no" , replace
+
+eststo asx500_ind: ///
+reghdfe asx500_carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
+absorb(date industry) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "yes" , replace
+
+eststo nger_ind: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
+absorb(date industry) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "yes" , replace
+
+eststo change_scope1_ind: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea change_scope1, ///
+absorb(date industry) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "yes" , replace
+
+eststo change_scope2_ind: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea change_scope2, ///
+absorb(date industry) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "yes" , replace
+
+eststo change_total_emissions_ind: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea change_total_emissions, ///
+absorb(date industry) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "yes" , replace
+
+eststo change_ec_ind: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea change_energy_consumption, ///
+absorb(date industry) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "yes" , replace
+
+estfe, labels(date "Year/Month FE" industry "Industry FE")
+*estadd scalar r2_adjusted = e(r2_a)
+
+cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\carbon beta"
+
+#delimit ;
+esttab * using "cb_determinants_change.tex", 
+	varlabels(
+	change_scope1 "\$\Delta\$ S1"
+	change_scope2 "\$\Delta\$ S2"
+	change_total_emissions "\$\Delta\$ TOT"
+	change_energy_consumption "\$\Delta\$ ENG"
+	ln_marketcap "ln(Market Cap.)"
+	bm Book/Market
+	roe "Return on Equity"
+	leverage Leverage
+	investa Capex/Assets
+	logppe "ln(PPE)"
+	ppea PPE/Assets
+	)
+	indicate(`r(indicate_fe)')
+	order(change_scope1 change_scope2 change_total_emissions change_energy_consumption ln_marketcap bm roe leverage investa logppe ppea )
+	label se star(* 0.10 ** 0.05 *** 0.01)
+	s(ym_fe industry_fe N r2_a,
+	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
+	nomtitles
+	mgroups("Dependent Variable: Carbon Beta) ", pattern(1 0 0 0 0 0 0 0 0 0 0 0) ///
+prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
+	noconstant
+	replace;
+#delimit cr
+
+
+* EMISSIONS INTENSITY
+eststo clear
+
+
+eststo asx500: ///
+reghdfe asx500_carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
+absorb(date) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "no" , replace
+
+eststo nger: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
+absorb(date) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "no" , replace
+
+eststo scope1_int: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea scope1_int, ///
+absorb(date) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "no" , replace
+
+eststo scope2_int: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea scope2_int, ///
+absorb(date) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "no" , replace
+
+eststo total_emissions_int: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea total_emissions_int, ///
+absorb(date) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "no" , replace
+
+eststo energy_consumption_int: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea energy_consumption_int, ///
+absorb(date) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "no" , replace
+
+eststo asx500_ind: ///
+reghdfe asx500_carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
+absorb(date industry) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "yes" , replace
+
+eststo nger_ind: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
+absorb(date industry) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "yes" , replace
+
+eststo scope1_ind: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea scope1_int, ///
+absorb(date industry) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "yes" , replace
+
+eststo scope2_ind: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea scope2_int, ///
+absorb(date industry) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "yes" , replace
+
+eststo total_emissions_ind: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea total_emissions_int, ///
+absorb(date industry) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "yes" , replace
+
+eststo energy_consumption_ind: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea energy_consumption_int, ///
+absorb(date industry) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "yes" , replace
+
+estfe, labels(date "Year/Month FE" industry "Industry FE")
+*estadd scalar r2_adjusted = e(r2_a)
+
+cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\carbon beta"
+
+#delimit ;
+esttab * using "cb_determinants_int.tex", 
+	varlabels(
+	scope1_int "S1 INT"
+	scope2_int "S2 INT"
+	total_emissions_int "TOT INT"
+	energy_consumption_int "ENG INT"
+	ln_marketcap "ln(Market Cap.)"
+	bm Book/Market
+	roe "Return on Equity"
+	leverage Leverage
+	investa Capex/Assets
+	logppe "ln(PPE)"
+	ppea PPE/Assets
+	)
+	indicate(`r(indicate_fe)')
+	order(scope1_int scope2_int total_emissions_int energy_consumption_int ln_marketcap bm roe leverage investa logppe ppea )
+	label se star(* 0.10 ** 0.05 *** 0.01)
+	s(ym_fe industry_fe N r2_a,
+	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
+	nomtitles
+	mgroups("Dependent Variable: Carbon Beta) ", pattern(1 0 0 0 0 0 0 0 0 0 0 0) ///
+prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
+	noconstant
+	replace;
+#delimit cr
+
