@@ -48,9 +48,13 @@ rename winsor_ppea ppea
 *drop ret
 *rename winsor_ret ret
 
-*winsor carbon_beta, gen(winsor_carbon_beta) p(0.025)
-*drop carbon_beta
-*rename winsor_carbon_beta carbon_beta
+winsor asx500_carbon_beta, gen(winsor_asx500_carbon_beta) p(0.025)
+drop asx500_carbon_beta
+rename winsor_asx500_carbon_beta asx500_carbon_beta
+
+winsor nger_carbon_beta, gen(winsor_nger_carbon_beta) p(0.025)
+drop nger_carbon_beta
+rename winsor_nger_carbon_beta nger_carbon_beta
 
 *winsorize emissions variables
 
@@ -192,7 +196,7 @@ esttab * using "cb_determinants_log.tex",
 	order(log_scope1 log_scope2 log_total_emissions log_energy_consumption ln_marketcap bm roe leverage investa logppe ppea )
 	label se star(* 0.10 ** 0.05 *** 0.01)
 	s(ym_fe industry_fe N r2_a,
-	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
+	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
 	nomtitles
 	mgroups("Dependent Variable: Carbon Beta", pattern(1 0 0 0 0 0 0 0 0 0 0 0) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
@@ -313,7 +317,7 @@ esttab * using "cb_determinants_change.tex",
 	order(change_scope1 change_scope2 change_total_emissions change_energy_consumption ln_marketcap bm roe leverage investa logppe ppea )
 	label se star(* 0.10 ** 0.05 *** 0.01)
 	s(ym_fe industry_fe N r2_a,
-	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
+	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
 	nomtitles
 	mgroups("Dependent Variable: Carbon Beta", pattern(1 0 0 0 0 0 0 0 0 0 0 0) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
@@ -434,7 +438,7 @@ esttab * using "cb_determinants_int.tex",
 	order(scope1_int scope2_int total_emissions_int energy_consumption_int ln_marketcap bm roe leverage investa logppe ppea )
 	label se star(* 0.10 ** 0.05 *** 0.01)
 	s(ym_fe industry_fe N r2_a,
-	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
+	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
 	nomtitles
 	mgroups("Dependent Variable: Carbon Beta", pattern(1 0 0 0 0 0 0 0 0 0 0 0) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))

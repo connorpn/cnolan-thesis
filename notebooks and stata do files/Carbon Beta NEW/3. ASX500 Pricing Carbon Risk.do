@@ -22,8 +22,8 @@ encode ticker, gen(ticker_encode)
 numdate monthly date = yearmonth, p(YM)
 
 *filter date
-drop if date < tm(2010m7)
-drop if date > tm(2022m6)
+drop if date < tm(2008m7)
+drop if date > tm(2021m6)
 
 
 *winsorize
@@ -144,7 +144,7 @@ esttab * using "cb_asx500_pricing_risk.tex",
 	order(carbon_beta ln_marketcap bm roe leverage investa logppe ppea beta mom)
 	label se star(* 0.10 ** 0.05 *** 0.01)
 	s(date_fe industry_fe N r2_a,
-	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
+	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
 	nomtitles
 	mgroups("Dependent Variable: Monthly Stock Returns", pattern(1 0 0 0 ) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))

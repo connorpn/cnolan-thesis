@@ -139,7 +139,7 @@ esttab using "br_carbon_emissions_and_stock_returns_log_emissions.tex",
 	order(log_scope1 log_scope2 log_total_emissions log_energy_consumption logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr)
 	label se star(* 0.10 ** 0.05 *** 0.01)
 	s(ym_fe industry_fe N r2_a,
-	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
+	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
 	nomtitles
 	mgroups("RET: Monthly Stock Returns) ", pattern(1 0 0 0) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
@@ -212,7 +212,7 @@ esttab using "br_carbon_emissions_and_stock_returns_change_emissions.tex",
 	order(change_scope1 change_scope2 change_total_emissions change_energy_consumption logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr)
 	label se star(* 0.10 ** 0.05 *** 0.01)
 	s(ym_fe industry_fe N r2_a,
-	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
+	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
 	mgroups("RET: Monthly Stock Returns) ", pattern(1 0 0 0) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
 	noconstant
@@ -285,7 +285,7 @@ esttab using "br_carbon_emissions_and_stock_returns_emissions_int.tex",
 	order(scope1_int scope2_int total_emissions_int energy_consumption_int logsize winsor_bm winsor_leverage winsor_mom winsor_investa winsor_roe logppe beta winsor_volat winsor_salesgr winsor_epsgr)
 	label se star(* 0.10 ** 0.05 *** 0.01)
 	s(ym_fe industry_fe N r2_a,
-	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
+	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
 	mgroups("RET: Monthly Stock Returns) ", pattern(1 0 0 0) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
 	noconstant

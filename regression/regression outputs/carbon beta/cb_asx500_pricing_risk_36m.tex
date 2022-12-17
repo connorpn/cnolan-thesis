@@ -1,0 +1,37 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{4}{c}}
+\hline\hline
+                    &\multicolumn{4}{c}{Dependent Variable: Monthly Stock Returns}                          \\\cmidrule(lr){2-5}
+                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         \\
+\hline
+Carbon Beta         &     0.00393\sym{***}&     0.00349\sym{***}&     0.00424\sym{***}&     0.00374\sym{***}\\
+                    &   (0.00111)         &   (0.00104)         &   (0.00116)         &   (0.00107)         \\
+ln(Market Cap.)     &                     &     0.00339\sym{***}&                     &     0.00512\sym{***}\\
+                    &                     &   (0.00113)         &                     &   (0.00140)         \\
+Book/Market         &                     &     -0.0117\sym{***}&                     &     -0.0114\sym{***}\\
+                    &                     &   (0.00215)         &                     &   (0.00248)         \\
+Return on Equity    &                     &      0.0273\sym{***}&                     &      0.0235\sym{***}\\
+                    &                     &   (0.00507)         &                     &   (0.00545)         \\
+Leverage            &                     &     -0.0215\sym{***}&                     &     -0.0296\sym{***}\\
+                    &                     &   (0.00642)         &                     &   (0.00795)         \\
+Capex/Assets        &                     &      0.0491\sym{***}&                     &      0.0440\sym{**} \\
+                    &                     &    (0.0159)         &                     &    (0.0175)         \\
+ln(PPE)             &                     &   -0.000540         &                     &    -0.00129         \\
+                    &                     &  (0.000817)         &                     &   (0.00102)         \\
+PPE/Assets          &                     &     0.00797         &                     &     0.00956         \\
+                    &                     &   (0.00709)         &                     &   (0.00888)         \\
+CAPM Beta           &                     &  -0.0000321         &                     &  -0.0000357         \\
+                    &                     &  (0.000103)         &                     &  (0.000103)         \\
+Momentum            &                     &      0.0249         &                     &      0.0142         \\
+                    &                     &    (0.0189)         &                     &    (0.0197)         \\
+\hline
+Year/Month FE       &         yes         &         yes         &         yes         &         yes         \\
+Industry FE         &          no         &          no         &         yes         &         yes         \\
+Observations        &       19352         &       19352         &       19352         &       19352         \\
+R2-Adj              &       0.140         &       0.151         &       0.143         &       0.151         \\
+\hline\hline
+\multicolumn{5}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+}
