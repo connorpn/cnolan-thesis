@@ -64,10 +64,10 @@ carbon_beta_csr = carbon_beta_csr.dropna(subset=['carbon_beta'])
 print('[dropna carbon_beta] Dropped: '+ str(len_before-len(carbon_beta_csr))+' From : '+ str(len_before)+' to ' + str(len(carbon_beta_csr)))
 
 len_before = len(carbon_beta_csr)
-carbon_beta_csr = carbon_beta_csr.dropna(subset=['ret', 'ln_marketcap', 'bm', 'roe', 'leverage', 'investa', 'logppe', 'ppea'])
+carbon_beta_csr = carbon_beta_csr.dropna(subset=['ret', 'ln_marketcap', 'bm', 'roe', 'leverage', 'investa', 'logppe', 'ppea','beta','mom'])
 print('[other variables] Dropped: '+ str(len_before-len(carbon_beta_csr))+' From : '+ str(len_before)+' to ' + str(len(carbon_beta_csr)))
 
-
+#%%
 '''
 FORMATE ESTIMATION OF CARBON BETA NGER
 '''

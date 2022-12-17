@@ -324,7 +324,7 @@ epsgr_merge = epsgr[['ticker_year_month', 'epsgr']]
 
 
 "save asx500 csr"
-asx500_csr_output = asx500_csr[['yearmonth', 'ticker', 'industry', 'monthly return', 'ln_marketcap', 'bm', 'roe','leverage', 'investa', 'logppe', 'ppea']]
+asx500_csr_output = asx500_csr[['yearmonth', 'ticker', 'industry', 'monthly return', 'ln_marketcap', 'bm', 'roe','leverage', 'investa', 'logppe', 'ppea','beta','mom']]
 asx500_csr_output = asx500_csr_output.dropna(subset=['monthly return', 'ln_marketcap', 'bm', 'roe','leverage', 'investa', 'logppe', 'ppea'], how ='any').reset_index(drop=True)
 asx500_csr_output = asx500_csr_output.rename(columns={'monthly return':'ret'})
 "Save asx500"
@@ -452,7 +452,7 @@ print("RUN REGRESSION ON CARBON BETA VARS")
 
 #%%
 
-"CONSTRUCT BETA VERSION OF VARIABLES FOR NGER"
+"CONSTRUCT CARBON BETA VERSION OF VARIABLES FOR NGER"
 
 nger_firms['nger'] = 1
 cb_csr_nger = pd.merge(ms_data, nger_firms, on=['ticker'], how='inner')
