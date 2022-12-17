@@ -22,11 +22,14 @@ encode ticker, gen(ticker_encode)
 *datetime 
 numdate yearly date = year, p(Y)
 
+*filter date
+drop if year < 2008
+drop if year > 2021
+/*
 *destring
-
 destring log_scope2, replace force
 destring change_scope2, replace force
-
+*/
 *winsorize
 
 winsor change_scope1, gen(winsor_change_scope1) p(0.025)
@@ -150,7 +153,6 @@ esttab log_scope1 log_scope2 log_total_emissions log_energy_consumption change_s
 	label se star(* 0.10 ** 0.05 *** 0.01)
 	s(year_fe industry_fe N r2_a,
 	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
-	title(Determinants of Carbon Emissions)
 	mtitles("LN S1" "LN S2" "LN TOT" "LN ENG" "\$\Delta\$ S1" "\$\Delta\$ S2" "\$\Delta\$ TOT" "\$\Delta\$ ENG" "S1 INT" "S2 INT" "TOT INT" "ENG INT"
 	)
 	replace;

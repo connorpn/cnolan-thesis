@@ -18,8 +18,10 @@ encode ticker, gen(ticker_encode)
 *datetime
 numdate monthly date = yearmonth, p(YM)
 
+/*
 *destring
 *destring log_scope2, replace force
+*/
 
 *winsorize
 winsor change_scope1, gen(winsor_change_scope1) p(0.025)

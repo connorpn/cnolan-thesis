@@ -11,6 +11,10 @@ import delimited "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regr
 *datetime
 numdate monthly date = yearmonth, p(YM)
 
+*filter date
+drop if date < tm(2008m7)
+drop if date > tm(2021m6)
+
 *set date to lag on
 tsset date, monthly
 

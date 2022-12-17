@@ -23,9 +23,15 @@ encode ticker, gen(ticker_encode)
 *datetime
 numdate monthly date = yearmonth, p(YM)
 
+*filter date
+drop if date < tm(2008m7)
+drop if date > tm(2021m6)
+
+/*
 *destring
 destring log_scope2, replace force
 destring change_scope2, replace force
+*/
 
 *winsorize
 

@@ -65,7 +65,7 @@ price_data.set_index('Date',inplace=True)
 #calculate monthly return
 monthly_price_data = price_data.resample('M').ffill()
 monthly_price_change = monthly_price_data / monthly_price_data.shift(1) - 1 
-columns = ['29M', 'ARI', 'ABB1', 'ABC', 'ABY1', 'AIS', 'AGL', 'ALK', 'AQZ', 'AMP', 'ALD', 'ALG', 'AOE', 'AHY', 'AIO', 'AGO', 'AMI', 'AZJ', 'AST', 'AQC', 'AHG', 'BPT', 'BGA', 'BHP', 'BIN', 'BSL', 'BLD', 'B2Y', 'BKN', 'BKW', 'BRS', 'CAA', 'CBH1', 'CEY', 'CTP', 'CHC', 'CIM', 'CWY', 'CCL', 'CGJ', 'CBA', 'CWN', 'CSL', 'CSR', 'CDU', 'CEP', 'CER', 'CRG', 'DCN', 'DJS', 'DXS', 'DOW', 'APE', 'ENV1', 'EPW', 'EVT', 'EVN', 'ESG', 'ELD', 'ENE1', 'FMG', 'FGL1', 'FXJ', 'FLX1', 'FML', 'GCY', 'GFF', 'GNC', 'GRR', 'GCL', 'GNS', 'HVN', 'HSO', 'HGO', 'HRL', 'IGO', 'ILU', 'IMA', 'IPL', 'ING', 'IVA', 'IGR', 'IPG2', 'JBH', 'KZL', 'LLC', 'LAU', 'AEJ']
+columns = ['29M', 'ARI', 'ABB1', 'ABC', 'ABY1', 'AIS', 'AGL', 'ALK', 'AQZ', 'AMP', 'ALD', 'ALG', 'AOE', 'AHY', 'AIO', 'AGO', 'AMI', 'AZJ', 'AST', 'AQC', 'AHG', 'BPT', 'BGA', 'BHP', 'BIN', 'BSL', 'BLD', 'B2Y', 'BKN', 'BKW', 'BRS', 'CAA', 'CBH1', 'CEY', 'CTP', 'CHC', 'CIM', 'CWY', 'CCL', 'CGJ', 'CBA', 'CWN', 'CSL', 'CSR', 'CDU','CER', 'CRG', 'DCN', 'DJS', 'DXS', 'DOW', 'APE', 'ENV1', 'EPW', 'EVT', 'EVN', 'ESG', 'ELD', 'ENE1', 'FMG', 'FGL1', 'FXJ', 'FLX1', 'FML', 'GCY', 'GFF', 'GNC', 'GRR', 'GCL', 'GNS', 'HVN', 'HSO', 'HGO', 'HRL', 'IGO', 'ILU', 'IMA', 'IPL', 'ING', 'IVA', 'IGR', 'IPG2', 'JBH', 'KZL', 'LLC', 'LAU', 'AEJ']
 for i in columns:
     monthly_price_change[i] = monthly_price_change[i].replace(0, np.nan)
 
@@ -75,7 +75,7 @@ monthly_price_change['year'] = monthly_price_change['Date'].dt.strftime('%Y')
 monthly_price_change['month'] = monthly_price_change['Date'].dt.strftime('%m')
 
 #reshape df into time series format
-monthly_price_change = pd.melt(monthly_price_change, id_vars = ['Date', 'year', 'month'], value_vars= ['29M', 'ARI', 'ABB1', 'ABC', 'ABY1', 'AIS', 'AGL', 'ALK', 'AQZ', 'AMP', 'ALD', 'ALG', 'AOE', 'AHY', 'AIO', 'AGO', 'AMI', 'AZJ', 'AST', 'AQC', 'AHG', 'BPT', 'BGA', 'BHP', 'BIN', 'BSL', 'BLD', 'B2Y', 'BKN', 'BKW', 'BRS', 'CAA', 'CBH1', 'CEY', 'CTP', 'CHC', 'CIM', 'CWY', 'CCL', 'CGJ', 'CBA', 'CWN', 'CSL', 'CSR', 'CDU', 'CEP', 'CER', 'CRG', 'DCN', 'DJS', 'DXS', 'DOW', 'APE', 'ENV1', 'EPW', 'EVT', 'EVN', 'ESG', 'ELD', 'ENE1', 'FMG', 'FGL1', 'FXJ', 'FLX1', 'FML', 'GCY', 'GFF', 'GNC', 'GRR', 'GCL', 'GNS', 'HVN', 'HSO', 'HGO', 'HRL', 'IGO', 'ILU', 'IMA', 'IPL', 'ING', 'IVA', 'IGR', 'IPG2', 'JBH', 'KZL', 'LLC', 'LAU', 'AEJ'], var_name = 'ticker', value_name='monthly_return',col_level=None)
+monthly_price_change = pd.melt(monthly_price_change, id_vars = ['Date', 'year', 'month'], value_vars= ['29M', 'ARI', 'ABB1', 'ABC', 'ABY1', 'AIS', 'AGL', 'ALK', 'AQZ', 'AMP', 'ALD', 'ALG', 'AOE', 'AHY', 'AIO', 'AGO', 'AMI', 'AZJ', 'AST', 'AQC', 'AHG', 'BPT', 'BGA', 'BHP', 'BIN', 'BSL', 'BLD', 'B2Y', 'BKN', 'BKW', 'BRS', 'CAA', 'CBH1', 'CEY', 'CTP', 'CHC', 'CIM', 'CWY', 'CCL', 'CGJ', 'CBA', 'CWN', 'CSL', 'CSR', 'CDU', 'CER', 'CRG', 'DCN', 'DJS', 'DXS', 'DOW', 'APE', 'ENV1', 'EPW', 'EVT', 'EVN', 'ESG', 'ELD', 'ENE1', 'FMG', 'FGL1', 'FXJ', 'FLX1', 'FML', 'GCY', 'GFF', 'GNC', 'GRR', 'GCL', 'GNS', 'HVN', 'HSO', 'HGO', 'HRL', 'IGO', 'ILU', 'IMA', 'IPL', 'ING', 'IVA', 'IGR', 'IPG2', 'JBH', 'KZL', 'LLC', 'LAU', 'AEJ'], var_name = 'ticker', value_name='monthly_return',col_level=None)
 monthly_price_change['monthly_return'] = monthly_price_change.monthly_return.astype(float)
 
 
@@ -100,7 +100,9 @@ independent_vars['log_scope1'] = np.log(independent_vars['scope1'])
 independent_vars['log_scope2'] = np.log(independent_vars['scope2'])
 independent_vars['log_total_emissions'] = np.log(independent_vars['total_emissions'])
 independent_vars['log_energy_consumption'] = np.log(independent_vars['energy_consumption'])
-independent_vars = independent_vars.replace([np.inf, -np.inf], np.nan).reset_index(drop=True)
+
+#independent_vars = independent_vars.replace([np.inf, -np.inf], np.nan).reset_index(drop=True)
+
 
 
 "YEAR BY YEAR CHANGE IN EMISSIONS"
@@ -139,32 +141,41 @@ firms_allyears['dummy_index'] = firms_allyears['dummy_index'] = 2
 independent_vars = pd.concat([independent_vars, firms_allyears]).reset_index(drop=True)
 
 #sort dataframe by corporation name and year
-independent_vars = independent_vars.sort_values(by=['ticker', 'year','ticker']).reset_index(drop=True)
+independent_vars = independent_vars.sort_values(by=['ticker', 'year']).reset_index(drop=True)
 
 #drop duplicates keeping first row (main  data file) as by dummy_index sorting
-independent_vars = independent_vars.drop_duplicates(['ticker', 'year','ticker'], keep='first').reset_index(drop=True)
+independent_vars = independent_vars.drop_duplicates(['ticker', 'year',], keep='first').reset_index(drop=True)
 
 
-independent_vars['year'] =  pd.to_datetime(independent_vars['year'], format='%Y').dt.to_period("Y")
+#independent_vars['year'] =  pd.to_datetime(independent_vars['year'], format='%Y').dt.to_period("Y")
 
-independent_vars = independent_vars.sort_values(by=['year'])
+independent_vars = independent_vars.sort_values(by=['ticker','year'])
+
 #calculate yearly change in emissions by corporation for scope1, scope2, total_emissions, and energy consumption
-independent_vars['change_scope1'] = independent_vars.groupby(['ticker'])['scope1'].diff()
-independent_vars['change_scope2'] = independent_vars.groupby(['ticker'])['scope2'].diff()
-independent_vars['change_total_emissions'] = independent_vars.groupby(['ticker'])['total_emissions'].diff()
-independent_vars['change_energy_consumption'] = independent_vars.groupby(['ticker'])['energy_consumption'].diff()
+
+
+#on log emissions
+
+independent_vars = independent_vars.sort_values(by=['ticker','year'])
+independent_vars['change_scope1'] = independent_vars.groupby(['ticker'])['log_scope1'].diff()
+independent_vars['change_scope2'] = independent_vars.groupby(['ticker'])['log_scope2'].diff()
+independent_vars['change_total_emissions'] = independent_vars.groupby(['ticker'])['log_total_emissions'].diff()
+independent_vars['change_energy_consumption'] = independent_vars.groupby(['ticker'])['log_energy_consumption'].diff()
 
 independent_vars = independent_vars.replace([np.inf, -np.inf], np.nan).reset_index(drop=True)
+
+#%%
+
 '''
 CALCULATE LOG CHANGE EMISSIONS
-'''
+
 independent_vars['change_scope1'] = np.log(independent_vars['change_scope1'])
 independent_vars['change_scope2'] = np.log(independent_vars['change_scope2'])
 independent_vars['change_total_emissions'] = np.log(independent_vars['change_scope2'])
 independent_vars['change_energy_consumption'] = np.log(independent_vars['change_scope2'])
 
 independent_vars = independent_vars.replace([np.inf, -np.inf], np.nan).reset_index(drop=True)
-
+'''
 
 
 #%%
@@ -182,10 +193,10 @@ independent_vars['scope1_int'] = independent_vars['scope1_int']/100
 independent_vars['scope2_int'] = independent_vars['scope2_int']/100
 independent_vars['total_emissions_int'] = independent_vars['total_emissions_int']/100
 independent_vars['energy_consumption_int'] = independent_vars['energy_consumption_int']/100
-
+#%%
 
 "DROP BLANK OBSERVATIONS"
-independent_vars = independent_vars.dropna(subset=['scope1', 'scope2', 'energy_consumption', 'total_emissions'],how='any').reset_index(drop=True)
+independent_vars = independent_vars.dropna(subset=['log_scope1', 'log_scope2', 'log_total_emissions', 'log_energy_consumption', 'change_scope1', 'change_scope2', 'change_total_emissions', 'change_energy_consumption', 'scope1_int', 'scope2_int', 'total_emissions_int', 'energy_consumption_int'],how='all').reset_index(drop=True)
 independent_vars = independent_vars[['year', 'ticker', 'ticker_year', 'log_scope1', 'log_scope2', 'log_total_emissions', 'log_energy_consumption', 'change_scope1', 'change_scope2', 'change_total_emissions', 'change_energy_consumption', 'scope1_int', 'scope2_int', 'total_emissions_int', 'energy_consumption_int']]
 
 independent_vars_merge = independent_vars[['ticker_year','year','ticker','log_scope1', 'log_scope2', 'log_total_emissions', 'log_energy_consumption', 'change_scope1', 'change_scope2', 'change_total_emissions', 'change_energy_consumption', 'scope1_int', 'scope2_int', 'total_emissions_int', 'energy_consumption_int']]
@@ -254,7 +265,7 @@ beta_merge = beta[['ticker_year','beta']]
 
 #VOLAT
 volat = price_data
-volat = volat.drop('CEP', axis = 1)
+#volat = volat.drop('CEP', axis = 1)
 volat = volat.resample('M').ffill()
 volat_cols = list(volat)
 volat = volat.reset_index()
