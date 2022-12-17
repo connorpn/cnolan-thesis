@@ -149,12 +149,13 @@ esttab log_scope1 log_scope2 log_total_emissions log_energy_consumption change_s
 	indicate(
 	`r(indicate_fe)'
 	)
-	order(logsize winsor_bm winsor_roe winsor_leverage winsor_investa logppe winsor_salesgr winsor_epsgr _cons)
+	order(logsize winsor_bm winsor_roe winsor_leverage winsor_investa logppe winsor_salesgr winsor_epsgr)
 	label se star(* 0.10 ** 0.05 *** 0.01)
 	s(year_fe industry_fe N r2_a,
 	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
 	mtitles("LN S1" "LN S2" "LN TOT" "LN ENG" "\$\Delta\$ S1" "\$\Delta\$ S2" "\$\Delta\$ TOT" "\$\Delta\$ ENG" "S1 INT" "S2 INT" "TOT INT" "ENG INT"
 	)
+	noconstant
 	replace;
 #delimit cr
 

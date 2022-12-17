@@ -33,7 +33,8 @@ winsor pmc, gen(winsor_pmc) p(0.02)
 bys ticker_encode: asreg winsor_ret winsor_rmrf winsor_smb winsor_hml winsor_rmw winsor_cma winsor_wml winsor_pmc, wind (date 36) fitted
 
 *export estimated carbon beta
-export delimited using "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\carbon beta\cb_asx500_carbon_beta_regression_output.csv", replace
+cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\carbon beta"
+export delimited using "cb_asx500_carbon_beta_regression_output.csv", replace
 
 
 *END
