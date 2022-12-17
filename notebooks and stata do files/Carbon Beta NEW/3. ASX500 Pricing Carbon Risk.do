@@ -28,7 +28,7 @@ drop if date > tm(2022m6)
 
 *winsorize
 
-winsor ret, gen(winsor_ret) p(0.025)
+winsor ret, gen(winsor_ret) p(0.005)
 winsor ln_marketcap, gen(winsor_ln_marketcap) p(0.025)
 winsor bm, gen(winsor_bm) p(0.025)
 winsor roe, gen(winsor_roe) p(0.025) 
@@ -37,8 +37,8 @@ winsor investa, gen(winsor_investa) p(0.025)
 winsor logppe, gen(winsor_logppe) p(0.025)
 winsor ppea, gen(winsor_ppea) p(0.025)
 winsor carbon_beta, gen(winsor_carbon_beta) p(0.025)
-winsor beta, gen(winsor_beta) p(0.025)
-winsor mom, gen(winsor_mom) p(0.025)
+winsor beta, gen(winsor_beta) p(0.005)
+winsor mom, gen(winsor_mom) p(0.005)
 
 
 drop ret ln_marketcap bm roe leverage investa logppe ppea carbon_beta beta mom
@@ -133,7 +133,7 @@ esttab * using "cb_asx500_pricing_risk.tex",
 	ln_marketcap "ln(Market Cap.)"
 	bm Book/Market
 	roe "Return on Equity"
-	leverage LEVERAGE
+	leverage Leverage
 	investa Capex/Assets
 	logppe "ln(PPE)"
 	ppea PPE/Assets
@@ -143,7 +143,7 @@ esttab * using "cb_asx500_pricing_risk.tex",
 	indicate(`r(indicate_fe)')
 	order(carbon_beta ln_marketcap bm roe leverage investa logppe ppea beta mom)
 	label se star(* 0.10 ** 0.05 *** 0.01)
-	s(ym_fe industry_fe N r2_a,
+	s(date_fe industry_fe N r2_a,
 	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
 	nomtitles
 	mgroups("Dependent Variable: Monthly Stock Returns", pattern(1 0 0 0 ) ///
