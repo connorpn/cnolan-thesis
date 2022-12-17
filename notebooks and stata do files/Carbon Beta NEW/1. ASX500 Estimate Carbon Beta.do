@@ -17,7 +17,7 @@ encode ticker, gen(ticker_encode)
 *datetime
 numdate monthly date = yearmonth, p(YM)
 
-
+/*
 *winsorize
 winsor ret, gen(winsor_ret) p(0.02)
 winsor rmrf, gen(winsor_rmrf) p(0.02)
@@ -31,6 +31,10 @@ winsor pmc, gen(winsor_pmc) p(0.02)
 
 *regression to estimate carbon beta
 bys ticker_encode: asreg winsor_ret winsor_rmrf winsor_smb winsor_hml winsor_rmw winsor_cma winsor_wml winsor_pmc, wind (date 36) fitted
+*/
+
+*regression to estimate carbon beta
+bys ticker_encode: asreg ret rmrf smb hml rmw cma wml pmc, wind (date 36) fitted
 
 *export estimated carbon beta
 cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\carbon beta"

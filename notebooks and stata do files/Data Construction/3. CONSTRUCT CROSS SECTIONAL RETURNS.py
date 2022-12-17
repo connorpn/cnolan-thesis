@@ -240,6 +240,15 @@ mom = mom.reset_index(drop=True)
 mom['ticker_year_month'] = mom['ticker'] + '_' + mom['year'] + '_' + mom['month']
 mom_merge = mom[['ticker_year_month','mom']]
 
+mom_export = mom[['ticker','yearmonth','mom']]
+
+"Save mom"
+output_filename = 'nger_mom.csv'
+outputname = output_path + output_filename
+mom_export.to_csv(outputname, mode='w', index=False)
+print("Exported File: " + outputname)
+
+
 
 #INVEST/A
 control_vars['investa'] = control_vars.capex / control_vars.assets

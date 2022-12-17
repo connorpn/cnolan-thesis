@@ -39,7 +39,9 @@ print('Set WD: Done')
 #THIS DATA IS COLLATED AND PROCESSED FROM NOTEBOOK: 1. Collate Data
 ms_data = pd.read_csv ('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/output/ms_data.csv', encoding='latin1')
 asx500 = pd.read_csv("C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/output/asx500_all.csv")
-
+ms_data = pd.read_csv ('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/output/ms_data.csv', encoding='latin1')
+nger_firms = pd.read_csv("C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/output/matched_tickers.csv")
+cross_sectional_returns_data = pd.read_csv ('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/output/cross_sectional_returns_data.csv')
 #%%
 
 asx500_firms = asx500[['Ticker', 'Name']]
@@ -167,7 +169,7 @@ asx500_csr = asx500_csr.replace([np.inf, -np.inf], np.nan)
 
 rmrf_rf = pd.read_csv('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis./output/rmrf_rf.csv')
 asx500_csr = pd.merge(asx500_csr, rmrf_rf, how='left', on=['yearmonth'])
-asx500_csr['mom'] = (asx500_csr['monthly return'] - asx500_csr['rf'])/asx500_csr['rmrf']
+asx500_csr['beta'] = (asx500_csr['monthly return'] - asx500_csr['rf'])/asx500_csr['rmrf']
 
 #%%
 "MOM"
@@ -446,4 +448,80 @@ print("RUN REGRESSION ON CARBON BETA VARS")
 
 "RUN REGRESSION ON CARBON BETA VARS"
 
+
+
+#%%
+
+"CONSTRUCT BETA VERSION OF VARIABLES FOR NGER"
+
+nger_firms['nger'] = 1
+cb_csr_nger = pd.merge(ms_data, nger_firms, on=['ticker'], how='inner')
+
+months_list_df = pd.DataFrame({'month':[['01','02','03','04','05','06','07','08','09','10','11','12']]})
+len_cb_csr_nger = len(cb_csr_nger)
+months_list_df = pd.concat([months_list_df]*len_cb_csr_nger, ignore_index=True)
+cb_csr_nger = cb_csr_nger.join(months_list_df)
+
+cb_csr_nger = cb_csr_nger.explode('month')
+
+cb_csr_nger['year'] = cb_csr_nger['year'].astype(str)
+cb_csr_nger['yearmonth'] = cb_csr_nger['year'] + cb_csr_nger['month']
+cb_csr_nger['yearmonth'] = cb_csr_nger['yearmonth'].astype(int)
+
+cb_csr_nger = pd.merge(cb_csr_nger, cross_sectional_returns_data[['ticker','yearmonth','industry','ret']], how='left', on=['ticker','yearmonth'])
+
+"construct variables"
+
+#ln(marketcap)
+cb_csr_nger['ln_marketcap'] = np.log(cb_csr_nger['marketcap'])
+
+#book/market
+cb_csr_nger['bm'] = (cb_csr_nger['assets'] - cb_csr_nger['liabilities']) / cb_csr_nger['marketcap']
+
+#ROE (already included)
+
+#debt/assets
+cb_csr_nger['totaldebt'] = cb_csr_nger.stdebt.fillna(0) + cb_csr_nger.ltdebt.fillna(0) #calculate total debt, skipping nan values (this means total debt can be constructed from ltdebt, stdebt, or both)
+cb_csr_nger['leverage'] = cb_csr_nger.totaldebt / cb_csr_nger.assets #calculate leverage
+
+#Investment/Assets
+cb_csr_nger['investa'] = cb_csr_nger.capex / cb_csr_nger.assets
+
+#LOGPPE
+cb_csr_nger['logppe'] = np.log(cb_csr_nger['ppe'])
+
+#ppe/assets
+cb_csr_nger['ppea'] = cb_csr_nger.ppe / cb_csr_nger.assets
+
+#r&d / assets 
+#cant get r&d
+
+
+#replace -inf with nan
+cb_csr_nger = cb_csr_nger.replace([np.inf, -np.inf], np.nan)
+
+#%%
+"BETA"
+
+
+rmrf_rf = pd.read_csv('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis./output/rmrf_rf.csv')
+cb_csr_nger = pd.merge(cb_csr_nger, rmrf_rf, how='left', on=['yearmonth'])
+cb_csr_nger['beta'] = (cb_csr_nger['ret'] - cb_csr_nger['rf'])/cb_csr_nger['rmrf']
+
+#%%
+"MOM"
+mom_nger = pd.read_csv("C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/output/nger_mom.csv")
+cb_csr_nger = pd.merge(cb_csr_nger,mom_nger, how='left', on=['ticker','yearmonth'])
+
+#%%
+
+cb_csr_nger_export = cb_csr_nger[['yearmonth','ticker','ln_marketcap','bm','leverage','investa','logppe','ppea','roe']]
+
+
+"Save cb_csr_nger_export"
+output_filename = 'cb_csr_nger.csv'
+output_path = 'C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/output/'
+outputname = output_path + output_filename
+cb_csr_nger_export.to_csv(outputname, mode='w', index=False)
+print("Exported File: " + outputname)
 

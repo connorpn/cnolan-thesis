@@ -11,7 +11,7 @@ clear
 eststo clear
 
 *import data
-import delimited "Z:/OneDrive/University Study/Honours Thesis/cnolan-thesis/regression/regression variables/cb_asx500_pricing_carbon_risk.csv"
+import delimited "Z:/OneDrive/University Study/Honours Thesis/cnolan-thesis/regression/regression variables/cb_firm_characteristics_vars.csv"
 
 *encode ticker
 label variable ticker "ticker"
@@ -22,13 +22,11 @@ encode ticker, gen(ticker_encode)
 numdate monthly date = yearmonth, p(YM)
 
 *filter date
-drop if date < tm(2010m7)
-drop if date > tm(2022m6)
+drop if date < tm(2008m7)
+drop if date > tm(2021m6)
 
 
-*winsorize
-
-winsor ret, gen(winsor_ret) p(0.025)
+*winsorize firm variables
 winsor ln_marketcap, gen(winsor_ln_marketcap) p(0.025)
 winsor bm, gen(winsor_bm) p(0.025)
 winsor roe, gen(winsor_roe) p(0.025) 
@@ -36,11 +34,8 @@ winsor leverage, gen(winsor_leverage) p(0.025)
 winsor investa, gen(winsor_investa) p(0.025)
 winsor logppe, gen(winsor_logppe) p(0.025)
 winsor ppea, gen(winsor_ppea) p(0.025)
-winsor carbon_beta, gen(winsor_carbon_beta) p(0.025)
 
-
-drop ret ln_marketcap bm roe leverage investa logppe ppea carbon_beta
-rename winsor_ret ret
+drop ln_marketcap bm roe leverage investa logppe ppea
 rename winsor_ln_marketcap ln_marketcap
 rename winsor_bm bm
 rename winsor_roe roe
@@ -48,7 +43,38 @@ rename winsor_leverage leverage
 rename winsor_investa investa
 rename winsor_logppe logppe
 rename winsor_ppea ppea
-rename winsor_carbon_beta carbon_beta
+
+*winsor ret, gen(winsor_ret) p(0.025)
+*drop ret
+*rename winsor_ret ret
+
+*winsor carbon_beta, gen(winsor_carbon_beta) p(0.025)
+*drop carbon_beta
+*rename winsor_carbon_beta carbon_beta
+
+*winsorize emissions variables
+
+winsor change_scope1, gen(winsor_change_scope1) p(0.025)
+winsor change_scope2, gen(winsor_change_scope2) p(0.025)
+winsor change_total_emissions, gen(winsor_change_total_emissions) p(0.025)
+winsor change_energy_consumption, gen(winsor_change_energy_consumption) p(0.025)
+
+drop change_scope1 change_scope2 change_total_emissions change_energy_consumption
+rename winsor_change_scope1 change_scope1
+rename winsor_change_scope2 change_scope2
+rename winsor_change_total_emissions change_total_emissions
+rename winsor_change_energy_consumption change_energy_consumption
+
+winsor scope1_int, gen(winsor_scope1_int) p(0.025)
+winsor scope2_int, gen(winsor_scope2_int) p(0.025)
+winsor total_emissions_int, gen(winsor_total_emissions_int) p(0.025)
+winsor energy_consumption_int, gen(winsor_energy_consumption_int) p(0.025)
+
+drop scope1_int scope2_int total_emissions_int energy_consumption_int
+rename winsor_scope1_int scope1_int
+rename winsor_scope2_int scope2_int
+rename winsor_total_emissions_int total_emissions_int
+rename winsor_energy_consumption_int energy_consumption_int
 
 
 
@@ -57,49 +83,104 @@ rename winsor_carbon_beta carbon_beta
 
 eststo clear
 
-eststo cb: ///
-reghdfe ret carbon_beta, ///
+
+eststo cb_vars: ///
+reghdfe asx500_carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
 absorb(date) ///
 vce(cluster ticker_encode)
-estadd local date_fe "yes" , replace
+estadd local ym_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
 eststo cb_vars: ///
-reghdfe ret carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
 absorb(date) ///
 vce(cluster ticker_encode)
-estadd local date_fe "yes" , replace
+estadd local ym_fe "yes" , replace
 estadd local industry_fe "no" , replace
 
-eststo cb_ind: ///
-reghdfe ret carbon_beta, ///
+eststo cb_vars: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea log_scope1, ///
+absorb(date) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "no" , replace
+
+eststo cb_vars: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea log_scope2, ///
+absorb(date) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "no" , replace
+
+eststo cb_vars: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea log_total_emissions, ///
+absorb(date) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "no" , replace
+
+eststo cb_vars: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea log_energy_consumption, ///
+absorb(date) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "no" , replace
+
+eststo cb_vars: ///
+reghdfe asx500_carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
 absorb(date industry) ///
 vce(cluster ticker_encode)
-estadd local date_fe "yes" , replace
-estadd local industry_fe "yes" , replace
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "yes", replace
 
-eststo cb_vars_ind: ///
-reghdfe ret carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
+eststo cb_vars: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea, ///
 absorb(date industry) ///
 vce(cluster ticker_encode)
-estadd local date_fe "yes" , replace
-estadd local industry_fe "yes" , replace
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "yes", replace
 
+eststo cb_vars: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea log_scope1, ///
+absorb(date industry) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "yes", replace
+
+eststo cb_vars: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea log_scope2, ///
+absorb(date industry) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "yes", replace
+
+eststo cb_vars: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea log_total_emissions, ///
+absorb(date industry) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "yes", replace
+
+eststo cb_vars: ///
+reghdfe nger_carbon_beta ln_marketcap bm roe leverage investa logppe ppea log_energy_consumption, ///
+absorb(date industry) ///
+vce(cluster ticker_encode)
+estadd local ym_fe "yes" , replace
+estadd local industry_fe "yes", replace
 
 
 estfe, labels(date "Year/Month FE" industry "Industry FE")
 *estadd scalar r2_adjusted = e(r2_a)
 
-cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\carbon beta\asx500 estimation"
+cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\carbon beta"
 
-#delimit ;
-esttab cb cb_vars cb_ind cb_vars_ind using "cb_asx500_pricing_risk.tex", 
-	indicate(`r(indicate_fe)')
-	label se star(* 0.10 ** 0.05 *** 0.01)
-	s(date_fe industry_fe N r2_a,
-	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
+
+esttab using "cb_determinants_log.tex", 
 	varlabels(
-	carbon_beta "Carbon Beta"
+	log_scope1 "LN S1"
+	log_scope2 "LN S2"
+	log_total_emissions "LN TOT"
+	log_energy_consumption "LN ENG"
 	ln_marketcap "ln(Market Cap.)"
 	bm Book/Market
 	roe "Return on Equity"
@@ -108,14 +189,14 @@ esttab cb cb_vars cb_ind cb_vars_ind using "cb_asx500_pricing_risk.tex",
 	logppe "ln(PPE)"
 	ppea PPE/Assets
 	)
-	title(Pricing of Carbon Risk Using ASX500 SAMPLE)
-	order(carbon_beta ln_marketcap bm roe leverage investa logppe ppea _cons)
-	compress
+	indicate(`r(indicate_fe)')
+	order(log_scope1 log_scope2 log_total_emissions log_energy_consumption ln_marketcap bm roe leverage investa logppe ppea )
+	label se star(* 0.10 ** 0.05 *** 0.01)
+	s(ym_fe industry_fe N r2_a,
+	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
 	nomtitles
-	nogaps
-	mgroups("Returns i,t: (Monthly Stock Returns) ", pattern(1 0 0 0) ///
+	mgroups("Dependent Variable: Carbon Beta) ", pattern(1 0 0 0 0 0 0 0 0 0 0 0) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
-	note("All Variables are Winsorized at 2.5%")
+	noconstant
 	replace;
 #delimit cr
-
