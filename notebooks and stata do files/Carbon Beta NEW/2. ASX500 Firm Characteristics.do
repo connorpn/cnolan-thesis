@@ -194,7 +194,7 @@ esttab * using "cb_determinants_log.tex",
 	s(ym_fe industry_fe N r2_a,
 	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
 	nomtitles
-	mgroups("Dependent Variable: Carbon Beta) ", pattern(1 0 0 0 0 0 0 0 0 0 0 0) ///
+	mgroups("Dependent Variable: Carbon Beta", pattern(1 0 0 0 0 0 0 0 0 0 0 0) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
 	noconstant
 	replace;
@@ -315,7 +315,7 @@ esttab * using "cb_determinants_change.tex",
 	s(ym_fe industry_fe N r2_a,
 	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
 	nomtitles
-	mgroups("Dependent Variable: Carbon Beta) ", pattern(1 0 0 0 0 0 0 0 0 0 0 0) ///
+	mgroups("Dependent Variable: Carbon Beta", pattern(1 0 0 0 0 0 0 0 0 0 0 0) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
 	noconstant
 	replace;
@@ -436,7 +436,7 @@ esttab * using "cb_determinants_int.tex",
 	s(ym_fe industry_fe N r2_a,
 	label("Year FE" "Industry FE" "Observations" "R2-Adj"))
 	nomtitles
-	mgroups("Dependent Variable: Carbon Beta) ", pattern(1 0 0 0 0 0 0 0 0 0 0 0) ///
+	mgroups("Dependent Variable: Carbon Beta", pattern(1 0 0 0 0 0 0 0 0 0 0 0) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
 	noconstant
 	replace;

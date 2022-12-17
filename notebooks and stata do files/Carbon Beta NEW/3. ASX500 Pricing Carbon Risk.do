@@ -90,7 +90,7 @@ estadd local industry_fe "yes" , replace
 estfe, labels(date "Year/Month FE" industry "Industry FE")
 *estadd scalar r2_adjusted = e(r2_a)
 
-cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\carbon beta\asx500 estimation"
+cd "Z:\OneDrive\University Study\Honours Thesis\cnolan-thesis\regression\regression outputs\carbon beta\"
 
 #delimit ;
 esttab cb cb_vars cb_ind cb_vars_ind using "cb_asx500_pricing_risk.tex", 
@@ -108,14 +108,13 @@ esttab cb cb_vars cb_ind cb_vars_ind using "cb_asx500_pricing_risk.tex",
 	logppe "ln(PPE)"
 	ppea PPE/Assets
 	)
-	title(Pricing of Carbon Risk Using ASX500 SAMPLE)
 	order(carbon_beta ln_marketcap bm roe leverage investa logppe ppea _cons)
 	compress
 	nomtitles
 	nogaps
-	mgroups("Returns i,t: (Monthly Stock Returns) ", pattern(1 0 0 0) ///
+	mgroups("Dependent Variable: Monthly Stock Returns") ", pattern(1 0 0 0) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
-	note("All Variables are Winsorized at 2.5%")
+	noconstant
 	replace;
 #delimit cr
 
