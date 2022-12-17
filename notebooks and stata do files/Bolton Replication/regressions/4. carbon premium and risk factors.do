@@ -44,7 +44,6 @@ esttab using "br_carbon_premium_and_risk_factors_log.tex",
 	label se star(* 0.10 ** 0.05 *** 0.01)
 	s(N r2,
 	label("Observations" "R2"))
-	title("Carbon Premium and Traditional Risk Factors: LOG EMISSIONS")
 	varlabels(
 	smb "SMB"
 	hml "HML"
@@ -61,7 +60,7 @@ prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
 
 
 
-/*
+
 *regression change emission
 
 eststo clear
@@ -92,7 +91,6 @@ esttab using "br_carbon_premium_and_risk_factors_change.tex",
 	label se star(* 0.10 ** 0.05 *** 0.01)
 	s(N r2,
 	label("Observations" "R2"))
-	title("Carbon Premium and Traditional Risk Factors: CHANGE EMISSIONS")
 	varlabels(
 	smb "SMB"
 	hml "HML"
@@ -141,7 +139,6 @@ esttab using "br_carbon_premium_and_risk_factors_int.tex",
 	label se star(* 0.10 ** 0.05 *** 0.01)
 	s(N r2,
 	label("Observations" "R2"))
-	title("Carbon Premium and Traditional Risk Factors: EMISSIONS INT")
 	varlabels(
 	rmrf "RMRF"
 	smb "SMB"
