@@ -207,6 +207,7 @@ control_vars['bm'] = (control_vars['assets'] - control_vars['liabilities']) / co
 control_vars['totaldebt'] = control_vars.stdebt.fillna(0) + control_vars.ltdebt.fillna(0) #calculate total debt, skipping nan values (this means total debt can be constructed from ltdebt, stdebt, or both)
 control_vars['leverage'] = control_vars.totaldebt / control_vars.assets #calculate leverage
 
+'''
 #MOM
 mom = monthly_price_change.reset_index(drop=True)
 mom = mom.set_index('Date')
@@ -216,6 +217,18 @@ mom['mom'] = mom.lag_monthly_return.rolling(12).mean()
 mom = mom.reset_index(drop=True)
 mom['ticker_year_month'] = mom['ticker'] + '_' + mom['year'] + '_' + mom['month']
 mom_merge = mom[['ticker_year_month','mom']]
+'''
+#MOM
+mom = monthly_price_change.reset_index(drop=True)
+mom['year'] = mom['year'].astype(str)
+mom['month'] = mom['month'].astype(str)
+mom['yearmonth'] = mom['year'] + mom['month']
+mom = mom.sort_values(by=['ticker','yearmonth']).reset_index(drop=True)
+mom['mom'] = mom.groupby('ticker')['monthly_return'].shift(1).rolling(12, min_periods=2).mean()
+mom = mom.reset_index(drop=True)
+mom['ticker_year_month'] = mom['ticker'] + '_' + mom['year'] + '_' + mom['month']
+mom_merge = mom[['ticker_year_month','mom']]
+
 
 #INVEST/A
 control_vars['investa'] = control_vars.capex / control_vars.assets

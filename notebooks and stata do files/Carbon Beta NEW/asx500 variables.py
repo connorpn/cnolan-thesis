@@ -162,6 +162,36 @@ asx500_csr['ppea'] = asx500_csr.ppe / asx500_csr.assets
 #replace -inf with nan
 asx500_csr = asx500_csr.replace([np.inf, -np.inf], np.nan)
 
+#%%
+"BETA"
+
+rmrf_rf = pd.read_csv('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis./output/rmrf_rf.csv')
+asx500_csr = pd.merge(asx500_csr, rmrf_rf, how='left', on=['yearmonth'])
+asx500_csr['mom'] = (asx500_csr['monthly return'] - asx500_csr['rf'])/asx500_csr['rmrf']
+
+#%%
+"MOM"
+
+
+
+#MOM
+'''
+asx500_csr['day'] = '01'
+asx500_csr['yearmonth'] = asx500_csr['yearmonth'].astype(str)
+asx500_csr['date'] = asx500_csr['yearmonth']+ asx500_csr['day']
+asx500_csr['date'] = pd.to_datetime(asx500_csr['date'], format='%Y%m%d')
+asx500_csr = asx500_csr.set_index('date')
+#asx500_csr = asx500_csr.to_period(freq="m")
+'''
+#0_csr['monthly return'].shift(1)
+asx500_csr = asx500_csr.sort_values(by=['ticker','yearmonth']).reset_index(drop=True)
+asx500_csr['mom'] = asx500_csr.groupby('ticker')['monthly return'].shift(1).rolling(12, min_periods=2).mean()
+#asx500_csr = asx500_csr.reset_index(drop=True)
+#asx500_csr['yearmonth'] = asx500_csr['yearmonth'].astype(int)
+
+
+#%%
+
 '''
 #MOM
 mom['lag_monthly_return'] = mom.monthly_return.shift(1)

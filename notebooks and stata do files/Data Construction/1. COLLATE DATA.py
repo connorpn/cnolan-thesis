@@ -1276,13 +1276,29 @@ rf['rf'] = rf['rf']/100
 rmrf = pd.read_csv("C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis./output/asx500_returns.csv")
 rmrf = pd.merge(rmrf, rf, how='left', on=['yearmonth'])
 rmrf['rmrf'] = rmrf['asx500_ret'] - rmrf['rf']
-rmrf = rmrf[['yearmonth','rmrf']]
+rmrf_output = rmrf[['yearmonth','rmrf']]
+rmrf_rf_output = rmrf[['yearmonth','rmrf','rf']]
+
+
 
 "Save rmrf"
 output_filename = 'rmrf.csv'
 outputname = output_path + output_filename
 rmrf.to_csv(outputname, mode='w', index=False)
 print("Exported File: " + outputname)
+
+"Save rmrf_rf_output"
+output_filename = 'rmrf_rf.csv'
+outputname = output_path + output_filename
+rmrf_rf_output.to_csv(outputname, mode='w', index=False)
+print("Exported File: " + outputname)
+
+#%%
+'''
+MOM
+'''
+
+
 #%%
 print('COLLATE DATA - DONE')
 print('Run - 2. CONSTRUCT SAMPLE (MATCH NGER FIRMS)')

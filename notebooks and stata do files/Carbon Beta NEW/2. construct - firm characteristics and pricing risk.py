@@ -33,7 +33,7 @@ print('Set WD: Done')
 #%%
 "IMPORT DATA"
 #FROM REGRESSION ON CARBON BETA VARS
-asx500_carbon_beta = pd.read_csv ("C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/regression/regression outputs/carbon beta/cb_asx500_cb_regression_output.csv")
+asx500_carbon_beta = pd.read_csv ("C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis/regression/regression outputs/carbon beta/cb_asx500_carbon_beta_regression_output.csv")
 
 asx500_csr = pd.read_csv ('C:/Users/conno/OneDrive/University Study/Honours Thesis/cnolan-thesis./output/asx500_csr.csv')
 
