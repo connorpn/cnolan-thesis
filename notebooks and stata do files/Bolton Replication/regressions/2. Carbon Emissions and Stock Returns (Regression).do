@@ -141,7 +141,7 @@ esttab using "br_carbon_emissions_and_stock_returns_log_emissions.tex",
 	s(ym_fe industry_fe N r2_a,
 	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
 	nomtitles
-	mgroups("RET: Monthly Stock Returns) ", pattern(1 0 0 0) ///
+	mgroups("Dependent Variable: Monthly Stock Returns", pattern(1 0 0 0) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
 	noconstant
 	replace;
@@ -213,9 +213,10 @@ esttab using "br_carbon_emissions_and_stock_returns_change_emissions.tex",
 	label se star(* 0.10 ** 0.05 *** 0.01)
 	s(ym_fe industry_fe N r2_a,
 	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
-	mgroups("RET: Monthly Stock Returns) ", pattern(1 0 0 0) ///
+	mgroups("Dependent Variable: Monthly Stock Returns", pattern(1 0 0 0) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
 	noconstant
+	nomtitles
 	replace;
 #delimit cr
 *nomtitles
@@ -286,9 +287,10 @@ esttab using "br_carbon_emissions_and_stock_returns_emissions_int.tex",
 	label se star(* 0.10 ** 0.05 *** 0.01)
 	s(ym_fe industry_fe N r2_a,
 	label("Year/Month FE" "Industry FE" "Observations" "R2-Adj"))
-	mgroups("RET: Monthly Stock Returns) ", pattern(1 0 0 0) ///
+	mgroups("Dependent Variable: Monthly Stock Returns", pattern(1 0 0 0) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
 	noconstant
+	nomtitles
 	replace;
 #delimit cr
 

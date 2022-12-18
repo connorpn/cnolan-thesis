@@ -91,7 +91,7 @@ esttab using "br_carbon_premium_and_risk_factors_log.tex",
 	)
 	order(rmrf smb hml rmw cma wml _cons)
 	mtitles("LN S1" "LN S1" "LN S2" "LN S2" "LN TOT" "LN TOT" "LN ENG" "LN ENG")
-	mgroups("Monthly Carbon Premium", pattern(1 0 0 0 0 0 0 0) ///
+	mgroups("Dependent Variable: Monthly Carbon Premium", pattern(1 0 0 0 0 0 0 0) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
 	replace;
 #delimit cr
@@ -171,7 +171,7 @@ esttab using "br_carbon_premium_and_risk_factors_change.tex",
 	)
 	order(rmrf smb hml rmw cma wml _cons)
 	mtitles("\$\Delta\$ S1" "\$\Delta\$ S1" "\$\Delta\$ S2" "\$\Delta\$ S2" "\$\Delta\$ TOT" "\$\Delta\$ TOT" "\$\Delta\$ ENG" "\$\Delta\$ ENG" )
-	mgroups("Monthly Carbon Premium", pattern(1 0 0 0 0 0 0 0) ///
+	mgroups("Dependent Variable: Monthly Carbon Premium", pattern(1 0 0 0 0 0 0 0) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
 	replace;
 #delimit cr
@@ -253,7 +253,7 @@ esttab using "br_carbon_premium_and_risk_factors_int.tex",
 	)
 	order(rmrf smb hml rmw cma wml _cons)
 	mtitles("S1 INT" "S1 INT" "S2 INT" "S2 INT" "TOT INT" "TOT INT" "ENG INT" "ENG INT")
-	mgroups("Monthly Carbon Premium", pattern(1 0 0 0 0 0 0 0) ///
+	mgroups("Dependent Variable: Monthly Carbon Premium", pattern(1 0 0 0 0 0 0 0) ///
 prefix(\multicolumn{@span}{c}{) suffix(}) span erepeat(\cmidrule(lr){@span}))
 	replace;
 #delimit cr
